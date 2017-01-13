@@ -29,14 +29,14 @@ class ViewController: UIViewController {
     @IBAction func loginButtonClicked(sender: UIButton) {
         SVProgressHUD.show()
         
-        PPEServiceGateway.login(email: "peinspector@metegrity.com",
-                                password: "Default29)",
-                                server: "https://dev.pipelineenterprise.com/mobile",
-                                success: { (response, data) in
-                                    SVProgressHUD.showSuccess(withStatus: data as! String)
+        PPEServiceGateway.authenticate(email: "peinspector@metegrity.com",
+                                       password: "Default29)",
+                                       server: "https://dev.pipelineenterprise.com/mobile",
+                                       success: { (response, data) in
+                                        SVProgressHUD.showSuccess(withStatus: "Logged in")
         },
-                                failure: { (response, error) in
-                                    SVProgressHUD.showError(withStatus: error.localizedDescription)
+                                       failure: { (response, error) in
+                                        SVProgressHUD.showError(withStatus: error.localizedDescription)
         })
     }
 }

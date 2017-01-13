@@ -20,6 +20,7 @@
 		11728D3A1E22E8A1000FC4DB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D371E22E8A1000FC4DB /* Errors.swift */; };
 		11728D3C1E22E955000FC4DB /* NSError+Utitities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D3B1E22E955000FC4DB /* NSError+Utitities.swift */; };
 		11728D3E1E22EB25000FC4DB /* PPEServiceErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D3D1E22EB25000FC4DB /* PPEServiceErrorHandler.swift */; };
+		11B9C5051E29646D000D8B30 /* PPEServiceManager+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B9C5041E29646D000D8B30 /* PPEServiceManager+Profile.swift */; };
 		6B670172A6A6155755BA4CCD /* Pods_PEUpdates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6D64D427903D017356C701 /* Pods_PEUpdates.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		11728D371E22E8A1000FC4DB /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		11728D3B1E22E955000FC4DB /* NSError+Utitities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Utitities.swift"; sourceTree = "<group>"; };
 		11728D3D1E22EB25000FC4DB /* PPEServiceErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEServiceErrorHandler.swift; sourceTree = "<group>"; };
+		11B9C5041E29646D000D8B30 /* PPEServiceManager+Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEServiceManager+Profile.swift"; sourceTree = "<group>"; };
 		4993C27132A9CC99C0117B74 /* Pods-PEUpdates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEUpdates.release.xcconfig"; path = "Pods/Target Support Files/Pods-PEUpdates/Pods-PEUpdates.release.xcconfig"; sourceTree = "<group>"; };
 		AB6D64D427903D017356C701 /* Pods_PEUpdates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PEUpdates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43861A042FE1A485806A191 /* Pods-PEUpdates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEUpdates.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PEUpdates/Pods-PEUpdates.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				11728D3D1E22EB25000FC4DB /* PPEServiceErrorHandler.swift */,
 				116771DA1E21638500ACBD76 /* PPEServiceManager.swift */,
 				11728D281E22C6D2000FC4DB /* PPEServiceManager+Login.swift */,
+				11B9C5041E29646D000D8B30 /* PPEServiceManager+Profile.swift */,
 			);
 			path = PPEServiceManager;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				11728D3E1E22EB25000FC4DB /* PPEServiceErrorHandler.swift in Sources */,
 				11728D321E22CEBD000FC4DB /* PPEServiceGateway+Login.swift in Sources */,
 				11728D3A1E22E8A1000FC4DB /* Errors.swift in Sources */,
+				11B9C5051E29646D000D8B30 /* PPEServiceManager+Profile.swift in Sources */,
 				11728D301E22CD06000FC4DB /* PPEServiceGateway.swift in Sources */,
 				11728D391E22E8A1000FC4DB /* Constants.swift in Sources */,
 			);

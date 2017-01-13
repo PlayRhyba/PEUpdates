@@ -89,12 +89,44 @@ class PPEServiceManager: NSObject {
     }
     
     
+    func sendGET(path: String,
+                 baseURL: URL?,
+                 parameters: Any?,
+                 sessionManagerConfigurationBlock: SessionManagerConfigurationBlock?,
+                 success: SuccessBlock?,
+                 progress: ProgressBlock?,
+                 failure: FailureBlock?) -> URLSessionDataTask? {
+        let manager = createSessionManager(baseURL: baseURL,
+                                           sessionManagerConfigurationBlock: sessionManagerConfigurationBlock)
+        let task = manager.get(path,
+                               parameters: parameters,
+                               progress: progress,
+                               success: { [unowned self] (task, data) in
+                                self.handleSuccess(task: task,
+                                                   data: data,
+                                                   successHandler: success,
+                                                   failureHandler: failure)
+        }) { [unowned self] (task, error) in
+            self.handleFailure(task: task,
+                               error: error,
+                               handler: failure)
+        }
+        
+        self.tasks.add(task)
+        
+        return task
+    }
+    
+    
     //MARK: Internal Logic
     
     
     private func createSessionManager(baseURL: URL?,
                                       sessionManagerConfigurationBlock:SessionManagerConfigurationBlock?) -> AFHTTPSessionManager {
         let manager = AFHTTPSessionManager(baseURL: baseURL)
+        manager.requestSerializer = AFHTTPRequestSerializer()
+        manager.responseSerializer = AFHTTPResponseSerializer()
+        
         manager.securityPolicy.allowInvalidCertificates = true
         manager.securityPolicy.validatesDomainName = false
         
@@ -124,7 +156,7 @@ class PPEServiceManager: NSObject {
         self.tasks.remove(task)
         
         if let block = handler {
-            let processedError = PPEServiceErrorHandler.process(error: error)
+            let processedError = PPEServiceResultsHandler.process(error: error)
             block(task?.response as? HTTPURLResponse, processedError)
         }
     }

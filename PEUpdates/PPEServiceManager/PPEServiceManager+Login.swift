@@ -19,39 +19,31 @@ extension PPEServiceManager {
                                   success: SuccessBlock?,
                                   failure: FailureBlock?) -> URLSessionDataTask? {
         let parameters = [Constants.Keys.Email: email,
-                          Constants.Keys.Password: password]
+                          Constants.Keys.Password: password,
+                          Constants.Keys.From: Constants.Strings.iPad]
         
         return self.sendPOST(path: Constants.ServerPaths.Login,
                              baseURL: serverURL,
                              parameters: parameters,
-                             sessionManagerConfigurationBlock: { (manager) in
-                                manager.requestSerializer = AFHTTPRequestSerializer()
-                                manager.responseSerializer = AFHTTPResponseSerializer()
-        },
+                             sessionManagerConfigurationBlock: nil,
                              success: { (response, data) in
-                                let invokeFailure = { (error: Error) in
-                                    if let block = failure {
-                                        block(response, error)
-                                    }
-                                }
-                                
-                                if (data != nil && data is Data && (data as! Data).count > 0) {
-                                    let dataString = String(data: data as! Data, encoding: String.Encoding.utf8)
-                                    
-                                    if (dataString == Constants.Strings.LoggedIn) {
-                                        if let block = success {
-                                            block(response, dataString)
-                                        }
-                                    }
-                                    else {
-                                        invokeFailure(Errors.loginError(string: dataString))
-                                    }
-                                }
-                                else {
-                                    invokeFailure(Errors.unexpectedResponseDataStructureError())
-                                }
-        },
-                             progress: nil,
-                             failure: failure);
+                                PPEServiceResultsHandler.process(response: response,
+                                                                 data: data,
+                                                                 expectedResultType: .String,
+                                                                 success: { (response, data) in
+                                                                    let dataString = data as! String
+                                                                    
+                                                                    if (dataString == Constants.Strings.LoggedIn) {
+                                                                        if let block = success {
+                                                                            block(response, dataString)
+                                                                        }
+                                                                    }
+                                                                    else {
+                                                                        if let block = failure {
+                                                                            block(response, Errors.loginError(string: dataString))
+                                                                        }
+                                                                    }
+                                }, failure: failure)
+        }, progress: nil, failure: failure)
     }
 }
