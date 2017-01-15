@@ -9,6 +9,11 @@
 
 struct Constants {
     
+    struct Configuration {
+        static let DataModelName = "PPEDB";
+    }
+    
+    
     struct Keys {
         static let Email = "email"
         static let Password = "password"

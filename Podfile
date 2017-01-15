@@ -7,5 +7,6 @@ target 'PEUpdates' do
 
   pod 'AFNetworking'
   pod 'SVProgressHUD'
-
+  pod 'MagicalRecord'
+  
 end

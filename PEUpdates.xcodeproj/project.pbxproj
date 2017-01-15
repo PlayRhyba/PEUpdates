@@ -19,8 +19,10 @@
 		11728D391E22E8A1000FC4DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D361E22E8A1000FC4DB /* Constants.swift */; };
 		11728D3A1E22E8A1000FC4DB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D371E22E8A1000FC4DB /* Errors.swift */; };
 		11728D3C1E22E955000FC4DB /* NSError+Utitities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D3B1E22E955000FC4DB /* NSError+Utitities.swift */; };
-		11728D3E1E22EB25000FC4DB /* PPEServiceErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D3D1E22EB25000FC4DB /* PPEServiceErrorHandler.swift */; };
+		11728D3E1E22EB25000FC4DB /* PPEServiceResultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D3D1E22EB25000FC4DB /* PPEServiceResultsHandler.swift */; };
 		11B9C5051E29646D000D8B30 /* PPEServiceManager+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B9C5041E29646D000D8B30 /* PPEServiceManager+Profile.swift */; };
+		11BB1FD01E2BFDA2006A7C16 /* PPEDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB1FCF1E2BFDA2006A7C16 /* PPEDataStorage.swift */; };
+		11BB1FD41E2C035C006A7C16 /* PPEDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11BB1FD21E2C035C006A7C16 /* PPEDB.xcdatamodeld */; };
 		6B670172A6A6155755BA4CCD /* Pods_PEUpdates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6D64D427903D017356C701 /* Pods_PEUpdates.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +41,10 @@
 		11728D361E22E8A1000FC4DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		11728D371E22E8A1000FC4DB /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		11728D3B1E22E955000FC4DB /* NSError+Utitities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Utitities.swift"; sourceTree = "<group>"; };
-		11728D3D1E22EB25000FC4DB /* PPEServiceErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEServiceErrorHandler.swift; sourceTree = "<group>"; };
+		11728D3D1E22EB25000FC4DB /* PPEServiceResultsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEServiceResultsHandler.swift; sourceTree = "<group>"; };
 		11B9C5041E29646D000D8B30 /* PPEServiceManager+Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEServiceManager+Profile.swift"; sourceTree = "<group>"; };
+		11BB1FCF1E2BFDA2006A7C16 /* PPEDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEDataStorage.swift; sourceTree = "<group>"; };
+		11BB1FD31E2C035C006A7C16 /* PPEDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PPEDB.xcdatamodel; sourceTree = "<group>"; };
 		4993C27132A9CC99C0117B74 /* Pods-PEUpdates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEUpdates.release.xcconfig"; path = "Pods/Target Support Files/Pods-PEUpdates/Pods-PEUpdates.release.xcconfig"; sourceTree = "<group>"; };
 		AB6D64D427903D017356C701 /* Pods_PEUpdates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PEUpdates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43861A042FE1A485806A191 /* Pods-PEUpdates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEUpdates.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PEUpdates/Pods-PEUpdates.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,10 +83,12 @@
 		116771C61E215DCC00ACBD76 /* PEUpdates */ = {
 			isa = PBXGroup;
 			children = (
+				11BB1FD11E2C0340006A7C16 /* DataModel */,
 				11728D351E22E8A1000FC4DB /* Common */,
 				11728D381E22E8A1000FC4DB /* Extensions */,
 				11728D2E1E22CCF1000FC4DB /* PPEServiceGateway */,
 				116771D91E21636800ACBD76 /* PPEServiceManager */,
+				11BB1FCE1E2BFD54006A7C16 /* PPEDataStorage */,
 				116771C71E215DCC00ACBD76 /* AppDelegate.swift */,
 				116771C91E215DCC00ACBD76 /* ViewController.swift */,
 				116771CB1E215DCC00ACBD76 /* Main.storyboard */,
@@ -96,7 +102,7 @@
 		116771D91E21636800ACBD76 /* PPEServiceManager */ = {
 			isa = PBXGroup;
 			children = (
-				11728D3D1E22EB25000FC4DB /* PPEServiceErrorHandler.swift */,
+				11728D3D1E22EB25000FC4DB /* PPEServiceResultsHandler.swift */,
 				116771DA1E21638500ACBD76 /* PPEServiceManager.swift */,
 				11728D281E22C6D2000FC4DB /* PPEServiceManager+Login.swift */,
 				11B9C5041E29646D000D8B30 /* PPEServiceManager+Profile.swift */,
@@ -128,6 +134,22 @@
 				11728D3B1E22E955000FC4DB /* NSError+Utitities.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		11BB1FCE1E2BFD54006A7C16 /* PPEDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				11BB1FCF1E2BFDA2006A7C16 /* PPEDataStorage.swift */,
+			);
+			path = PPEDataStorage;
+			sourceTree = "<group>";
+		};
+		11BB1FD11E2C0340006A7C16 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				11BB1FD21E2C035C006A7C16 /* PPEDB.xcdatamodeld */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		7713D113D7B0A2EAE8DD55A2 /* Frameworks */ = {
@@ -270,12 +292,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11BB1FD41E2C035C006A7C16 /* PPEDB.xcdatamodeld in Sources */,
 				11728D3C1E22E955000FC4DB /* NSError+Utitities.swift in Sources */,
 				116771CA1E215DCC00ACBD76 /* ViewController.swift in Sources */,
 				11728D291E22C6D2000FC4DB /* PPEServiceManager+Login.swift in Sources */,
+				11BB1FD01E2BFDA2006A7C16 /* PPEDataStorage.swift in Sources */,
 				116771DB1E21638500ACBD76 /* PPEServiceManager.swift in Sources */,
 				116771C81E215DCC00ACBD76 /* AppDelegate.swift in Sources */,
-				11728D3E1E22EB25000FC4DB /* PPEServiceErrorHandler.swift in Sources */,
+				11728D3E1E22EB25000FC4DB /* PPEServiceResultsHandler.swift in Sources */,
 				11728D321E22CEBD000FC4DB /* PPEServiceGateway+Login.swift in Sources */,
 				11728D3A1E22E8A1000FC4DB /* Errors.swift in Sources */,
 				11B9C5051E29646D000D8B30 /* PPEServiceManager+Profile.swift in Sources */,
@@ -445,6 +469,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		11BB1FD21E2C035C006A7C16 /* PPEDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				11BB1FD31E2C035C006A7C16 /* PPEDB.xcdatamodel */,
+			);
+			currentVersion = 11BB1FD31E2C035C006A7C16 /* PPEDB.xcdatamodel */;
+			path = PPEDB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 116771BC1E215DCC00ACBD76 /* Project object */;
 }
