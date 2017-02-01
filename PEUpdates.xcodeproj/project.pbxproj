@@ -23,9 +23,12 @@
 		11B9C5051E29646D000D8B30 /* PPEServiceManager+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B9C5041E29646D000D8B30 /* PPEServiceManager+Profile.swift */; };
 		11BB1FD01E2BFDA2006A7C16 /* PPEDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB1FCF1E2BFDA2006A7C16 /* PPEDataStorage.swift */; };
 		11BB1FD41E2C035C006A7C16 /* PPEDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11BB1FD21E2C035C006A7C16 /* PPEDB.xcdatamodeld */; };
-		11DF4A921E2C2C8000D28E06 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF4A901E2C2C8000D28E06 /* Profile+CoreDataClass.swift */; };
-		11DF4A931E2C2C8000D28E06 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF4A911E2C2C8000D28E06 /* Profile+CoreDataProperties.swift */; };
 		6B670172A6A6155755BA4CCD /* Pods_PEUpdates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6D64D427903D017356C701 /* Pods_PEUpdates.framework */; };
+		C727CDA71E4218830070C0B2 /* PPEDataStorage+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C727CDA61E4218830070C0B2 /* PPEDataStorage+Profile.swift */; };
+		C727CDA91E4220640070C0B2 /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C727CDA81E4220640070C0B2 /* String+Utilities.swift */; };
+		C78D3DE31E40B78600D62EC7 /* BaseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78D3DE21E40B78600D62EC7 /* BaseDataModel.swift */; };
+		C78D3DE51E40B9E000D62EC7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78D3DE41E40B9E000D62EC7 /* Profile.swift */; };
+		C78D3DE71E40D53000D62EC7 /* DispatchQueue+Utitities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78D3DE61E40D53000D62EC7 /* DispatchQueue+Utitities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,10 +50,13 @@
 		11B9C5041E29646D000D8B30 /* PPEServiceManager+Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEServiceManager+Profile.swift"; sourceTree = "<group>"; };
 		11BB1FCF1E2BFDA2006A7C16 /* PPEDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEDataStorage.swift; sourceTree = "<group>"; };
 		11BB1FD31E2C035C006A7C16 /* PPEDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PPEDB.xcdatamodel; sourceTree = "<group>"; };
-		11DF4A901E2C2C8000D28E06 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
-		11DF4A911E2C2C8000D28E06 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4993C27132A9CC99C0117B74 /* Pods-PEUpdates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEUpdates.release.xcconfig"; path = "Pods/Target Support Files/Pods-PEUpdates/Pods-PEUpdates.release.xcconfig"; sourceTree = "<group>"; };
 		AB6D64D427903D017356C701 /* Pods_PEUpdates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PEUpdates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C727CDA61E4218830070C0B2 /* PPEDataStorage+Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEDataStorage+Profile.swift"; sourceTree = "<group>"; };
+		C727CDA81E4220640070C0B2 /* String+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
+		C78D3DE21E40B78600D62EC7 /* BaseDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDataModel.swift; sourceTree = "<group>"; };
+		C78D3DE41E40B9E000D62EC7 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		C78D3DE61E40D53000D62EC7 /* DispatchQueue+Utitities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Utitities.swift"; sourceTree = "<group>"; };
 		F43861A042FE1A485806A191 /* Pods-PEUpdates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEUpdates.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PEUpdates/Pods-PEUpdates.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				11728D3B1E22E955000FC4DB /* NSError+Utitities.swift */,
+				C78D3DE61E40D53000D62EC7 /* DispatchQueue+Utitities.swift */,
+				C727CDA81E4220640070C0B2 /* String+Utilities.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -144,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				11BB1FCF1E2BFDA2006A7C16 /* PPEDataStorage.swift */,
+				C727CDA61E4218830070C0B2 /* PPEDataStorage+Profile.swift */,
 			);
 			path = PPEDataStorage;
 			sourceTree = "<group>";
@@ -151,8 +160,8 @@
 		11BB1FD11E2C0340006A7C16 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				11DF4A901E2C2C8000D28E06 /* Profile+CoreDataClass.swift */,
-				11DF4A911E2C2C8000D28E06 /* Profile+CoreDataProperties.swift */,
+				C78D3DE21E40B78600D62EC7 /* BaseDataModel.swift */,
+				C78D3DE41E40B9E000D62EC7 /* Profile.swift */,
 				11BB1FD21E2C035C006A7C16 /* PPEDB.xcdatamodeld */,
 			);
 			path = DataModel;
@@ -273,7 +282,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FDCACA2A871BFBA463CE4578 /* [CP] Embed Pods Frameworks */ = {
@@ -298,18 +307,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C727CDA71E4218830070C0B2 /* PPEDataStorage+Profile.swift in Sources */,
+				C78D3DE51E40B9E000D62EC7 /* Profile.swift in Sources */,
 				11BB1FD41E2C035C006A7C16 /* PPEDB.xcdatamodeld in Sources */,
 				11728D3C1E22E955000FC4DB /* NSError+Utitities.swift in Sources */,
 				116771CA1E215DCC00ACBD76 /* ViewController.swift in Sources */,
 				11728D291E22C6D2000FC4DB /* PPEServiceManager+Login.swift in Sources */,
+				C727CDA91E4220640070C0B2 /* String+Utilities.swift in Sources */,
+				C78D3DE31E40B78600D62EC7 /* BaseDataModel.swift in Sources */,
 				11BB1FD01E2BFDA2006A7C16 /* PPEDataStorage.swift in Sources */,
 				116771DB1E21638500ACBD76 /* PPEServiceManager.swift in Sources */,
 				116771C81E215DCC00ACBD76 /* AppDelegate.swift in Sources */,
-				11DF4A931E2C2C8000D28E06 /* Profile+CoreDataProperties.swift in Sources */,
 				11728D3E1E22EB25000FC4DB /* PPEServiceResultsHandler.swift in Sources */,
 				11728D321E22CEBD000FC4DB /* PPEServiceGateway+Login.swift in Sources */,
-				11DF4A921E2C2C8000D28E06 /* Profile+CoreDataClass.swift in Sources */,
 				11728D3A1E22E8A1000FC4DB /* Errors.swift in Sources */,
+				C78D3DE71E40D53000D62EC7 /* DispatchQueue+Utitities.swift in Sources */,
 				11B9C5051E29646D000D8B30 /* PPEServiceManager+Profile.swift in Sources */,
 				11728D301E22CD06000FC4DB /* PPEServiceGateway.swift in Sources */,
 				11728D391E22E8A1000FC4DB /* Constants.swift in Sources */,
