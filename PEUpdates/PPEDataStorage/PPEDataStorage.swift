@@ -9,7 +9,6 @@
 
 import UIKit
 import MagicalRecord
-import CocoaLumberjack
 
 
 class PPEDataStorage: NSObject {
