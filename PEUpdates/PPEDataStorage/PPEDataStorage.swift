@@ -9,6 +9,7 @@
 
 import UIKit
 import MagicalRecord
+import CocoaLumberjack
 
 
 class PPEDataStorage: NSObject {
@@ -17,7 +18,7 @@ class PPEDataStorage: NSObject {
     
     
     //MARK: NSObject
-
+    
     
     private override init() {}
     
@@ -29,9 +30,9 @@ class PPEDataStorage: NSObject {
         MagicalRecord.setupCoreDataStack(withStoreNamed: Constants.Configuration.DataModelName)
         
         #if (arch(i386) || arch(x86_64)) && os(iOS)
-            NSLog("%@: DOCUMENTS DIRECTORY PATH: %@",
-                  String(describing: self),
-                  Constants.LocalPaths.DocumentsDirectory)
+            DDLogInfo(String(format: "%@: DOCUMENTS DIRECTORY PATH: %@",
+                             String(describing: self),
+                             Constants.LocalPaths.DocumentsDirectory))
         #endif
     }
     

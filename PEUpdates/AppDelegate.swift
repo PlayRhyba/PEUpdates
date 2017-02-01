@@ -13,15 +13,17 @@ import CocoaLumberjack
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     
     
     //MARK: Lifecycle Methods
-
-
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        self.configureLoggers()
         PPEDataStorage.sharedInstance.setup()
+        
         return true
     }
     
@@ -35,15 +37,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     private func configureLoggers() {
-        DDLog.add(DDTTYLogger.sharedInstance())
-        DDLog.add(DDASLLogger.sharedInstance())
+        #if DEBUG
+            let defaultLogLevel: DDLogLevel = DDLogLevel.all
+        #else
+            let defaultLogLevel: DDLogLevel = DDLogLevel.debug
+        #endif
         
-        let path = Constants.LocalPaths.DocumentsDirectory //appending(Constants.Configuration.LogsFolderName)
+        DDLog.add(DDTTYLogger.sharedInstance(), with: defaultLogLevel)
+        DDLog.add(DDASLLogger.sharedInstance(), with: defaultLogLevel)
         
+        let path = (Constants.LocalPaths.DocumentsDirectory as NSString).appendingPathComponent(Constants.Configuration.LogsFolderName)
+        let logFileManager = DDLogFileManagerDefault.init(logsDirectory: path)
+        logFileManager?.maximumNumberOfLogFiles = 10
         
-        //TODO: Configure file logger
+        let fileLogger = DDFileLogger.init(logFileManager: logFileManager)
+        fileLogger?.maximumFileSize = UInt64(3 * 1024 * 1024)
+        fileLogger?.rollingFrequency = TimeInterval(60 * 60 * 24 * 7)
         
-        
+        DDLog.add(fileLogger, with: defaultLogLevel)
     }
 }
 
