@@ -41,20 +41,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let defaultLogLevel: DDLogLevel = DDLogLevel.all
         #else
             let defaultLogLevel: DDLogLevel = DDLogLevel.debug
+            
+            let path = (Constants.LocalPaths.DocumentsDirectory as NSString).appendingPathComponent(Constants.Configuration.LogsFolderName)
+            let logFileManager = DDLogFileManagerDefault.init(logsDirectory: path)
+            logFileManager?.maximumNumberOfLogFiles = 10
+            
+            let fileLogger = DDFileLogger.init(logFileManager: logFileManager)
+            fileLogger?.maximumFileSize = UInt64(3 * 1024 * 1024)
+            fileLogger?.rollingFrequency = TimeInterval(60 * 60 * 24 * 7)
+            
+            DDLog.add(fileLogger, with: defaultLogLevel)
         #endif
         
         DDLog.add(DDTTYLogger.sharedInstance(), with: defaultLogLevel)
         DDLog.add(DDASLLogger.sharedInstance(), with: defaultLogLevel)
-        
-        let path = (Constants.LocalPaths.DocumentsDirectory as NSString).appendingPathComponent(Constants.Configuration.LogsFolderName)
-        let logFileManager = DDLogFileManagerDefault.init(logsDirectory: path)
-        logFileManager?.maximumNumberOfLogFiles = 10
-        
-        let fileLogger = DDFileLogger.init(logFileManager: logFileManager)
-        fileLogger?.maximumFileSize = UInt64(3 * 1024 * 1024)
-        fileLogger?.rollingFrequency = TimeInterval(60 * 60 * 24 * 7)
-        
-        DDLog.add(fileLogger, with: defaultLogLevel)
     }
 }
 

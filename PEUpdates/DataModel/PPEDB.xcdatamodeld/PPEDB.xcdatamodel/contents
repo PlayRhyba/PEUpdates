@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Profile" representedClassName="PPEProfile" syncable="YES">
+    <entity name="PPEProfile" representedClassName=".PPEProfile" syncable="YES">
         <attribute name="companyID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastJobUUID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastSpreadUUID" optional="YES" attributeType="String" syncable="YES"/>
@@ -13,6 +13,6 @@
         <attribute name="signatureData" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Profile" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="PPEProfile" positionX="-63" positionY="-18" width="128" height="195"/>
     </elements>
 </model>

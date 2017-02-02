@@ -40,7 +40,17 @@ extension PPEServiceGateway {
                                                serverURL: url,
                                                success: { (response, data) in
                                                 PPEServiceManager.sharedInstance.loadProfile(serverURL: url,
-                                                                                             success: invokeSuccess,
+                                                                                             success: { (response, data) in
+                                                                                                PPEDataStorage.sharedInstance.updateProfile(withDictionary: data as? Dictionary,
+                                                                                                                                            completion: { (profile) in
+                                                                                                                                                if let p = profile {
+                                                                                                                                                    invokeSuccess(response, p)
+                                                                                                                                                }
+                                                                                                                                                else {
+                                                                                                                                                    invokeFailure(response, Errors.internalError())
+                                                                                                                                                }
+                                                                                                })
+                                                },
                                                                                              failure: invokeFailure)
         }, failure: invokeFailure)
     }
