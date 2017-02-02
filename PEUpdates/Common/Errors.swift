@@ -24,6 +24,7 @@ struct Errors {
         case ResponseObjectErrorCode
         case OperationCanceledErrorCode
         case LoginErrorCode
+        case AuthorizationErrorCode
     }
     
     
@@ -59,5 +60,12 @@ struct Errors {
         return NSError(domain: Domains.LoginErrorDomain.rawValue,
                        code: Codes.LoginErrorCode.rawValue,
                        userInfo: [NSLocalizedDescriptionKey: description])
+    }
+    
+    
+    static func authorizationError(authInfo: PPEAuthorizationInfo) -> Error {
+        return NSError(domain: Domains.LoginErrorDomain.rawValue,
+                       code: Codes.AuthorizationErrorCode.rawValue,
+                       userInfo: [NSLocalizedDescriptionKey: authInfo.generateErrorMessage()])
     }
 }

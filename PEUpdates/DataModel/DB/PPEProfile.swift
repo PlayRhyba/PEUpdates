@@ -34,7 +34,7 @@ import Foundation
             lastWeldUUID = d["lastWeldUUID"] as? String
             measurementSystem = d["MeasurementSystem"] as? String
             name = d["name"] as? String
-            readOnly = d["ReadOnly"] as! Bool
+            readOnly = (d["ReadOnly"] as? NSNumber)?.boolValue ?? false
             role = d["role"] as? String
             roles = d["roles"] as? String
             signatureData = d["SignatureData"] as? String

@@ -35,23 +35,30 @@ extension PPEServiceGateway {
         
         let url = URL(string: server)
         
-        PPEServiceManager.sharedInstance.login(email: email,
-                                               password: password,
-                                               serverURL: url,
-                                               success: { (response, data) in
-                                                PPEServiceManager.sharedInstance.loadProfile(serverURL: url,
-                                                                                             success: { (response, data) in
-                                                                                                PPEDataStorage.sharedInstance.updateProfile(withDictionary: data as? Dictionary,
-                                                                                                                                            completion: { (profile) in
-                                                                                                                                                if let p = profile {
-                                                                                                                                                    invokeSuccess(response, p)
-                                                                                                                                                }
-                                                                                                                                                else {
-                                                                                                                                                    invokeFailure(response, Errors.internalError())
-                                                                                                                                                }
-                                                                                                })
-                                                },
-                                                                                             failure: invokeFailure)
+        PPEServiceManager.sharedInstance.login(email: email, password: password, serverURL: url, success: { (response, data) in
+            let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+            let build = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as! String
+            
+            PPEServiceManager.sharedInstance.authorize(version: version, build: build, serverURL: url, success: { (response, data) in
+                let authInfo = PPEAuthorizationInfo.init(withDictionary: data as? Dictionary<String, Any>)
+                
+                if authInfo.isAuthorized() {
+                    PPEServiceManager.sharedInstance.loadProfile(serverURL: url, success: { (response, data) in
+                        PPEDataStorage.sharedInstance.updateProfile(withDictionary: data as? Dictionary,
+                                                                    completion: { (profile) in
+                                                                        if let p = profile {
+                                                                            invokeSuccess(response, p)
+                                                                        }
+                                                                        else {
+                                                                            invokeFailure(response, Errors.internalError())
+                                                                        }
+                        })
+                    }, failure: invokeFailure)
+                }
+                else {
+                    invokeFailure(response, Errors.authorizationError(authInfo: authInfo))
+                }
+            }, failure: invokeFailure)
         }, failure: invokeFailure)
     }
 }

@@ -33,7 +33,8 @@ class ViewController: UIViewController {
                                        password: "Default29)",
                                        server: "https://dev.pipelineenterprise.com/mobile",
                                        success: { (response, data) in
-                                        SVProgressHUD.showSuccess(withStatus: "Logged in")
+                                        SVProgressHUD.showSuccess(withStatus: String(format: "Logged in. User: %@",
+                                                                                     (data as? PPEProfile)?.name ?? "Unknown"))
         },
                                        failure: { (response, error) in
                                         SVProgressHUD.showError(withStatus: error.localizedDescription)
