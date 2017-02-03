@@ -12,11 +12,41 @@ import Foundation
 
 extension PPEServiceGateway {
     
+    @discardableResult class func login(email: String,
+                                        password: String,
+                                        serverURL: URL?,
+                                        success: PPEServiceManager.SuccessBlock?,
+                                        failure: PPEServiceManager.FailureBlock?) -> URLSessionDataTask? {
+        let invokeFailure: PPEServiceManager.FailureBlock = { (response, error) in
+            if let block = failure {
+                DispatchQueue.main.async {
+                    block(response, error)
+                }
+            }
+        }
+        return PPEServiceManager.sharedInstance.login(email: email,
+                                                      password: password,
+                                                      serverURL: serverURL,
+                                                      success: { (response, data) in
+                                                        let dataString = data as! String
+                                                        
+                                                        if (dataString == Constants.Strings.LoggedIn) {
+                                                            if let block = success {
+                                                                block(response, dataString)
+                                                            }
+                                                        }
+                                                        else {
+                                                            invokeFailure(response, Errors.loginError(string: dataString))
+                                                        }
+        }, failure: invokeFailure)
+    }
+    
+    
     class func authenticate(email: String,
                             password: String,
                             server: String,
                             success: PPEServiceManager.SuccessBlock?,
-                            failure: PPEServiceManager.FailureBlock?) -> Void {
+                            failure: PPEServiceManager.FailureBlock?) {
         let invokeSuccess: PPEServiceManager.SuccessBlock = { (response, data) in
             if let block = success {
                 DispatchQueue.main.async {
@@ -35,7 +65,7 @@ extension PPEServiceGateway {
         
         let url = URL(string: server)
         
-        PPEServiceManager.sharedInstance.login(email: email, password: password, serverURL: url, success: { (response, data) in
+        self.login(email: email, password: password, serverURL: url, success: { (_, _) in
             let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
             let build = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as! String
             

@@ -35,35 +35,4 @@ class PPEAuthorizationInfo: NSObject {
             appVersionAuthorized != nil && appVersionAuthorized! &&
             isUserActive != nil && isUserActive!
     }
-    
-    
-    func generateErrorMessage() -> String {
-        var msg = "";
-        
-        if appAuthorizedForUser == nil || appAuthorizedForUser! == false {
-            msg += "Your user role is unauthorized to use this App. Contact your administrator if you need access to this app. You must be added to one of these roles : "
-            
-            if let roles = rolesAuthorizedForApp {
-                msg += roles
-            }
-        }
-        
-        if appVersionAuthorized == nil || appVersionAuthorized! == false {
-            if msg.isEmpty == false {
-                msg += "\n\n"
-            }
-            
-            msg += "Your App Version is unauthorized to use this server. Download the latest version of the iPad client."
-        }
-        
-        if isUserActive == nil || isUserActive! == false {
-            if msg.isEmpty == false {
-                msg += "\n\n"
-            }
-            
-            msg += "Your User account is not active.  Contact your administrator if you need access to Pipeline Enterprise."
-        }
-        
-        return msg
-    }
 }

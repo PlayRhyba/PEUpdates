@@ -30,7 +30,7 @@ class PPEServiceResultsHandler: NSObject {
                        data: Any?,
                        expectedResultType: ExpectedResultType,
                        success: PPEServiceManager.SuccessBlock?,
-                       failure: PPEServiceManager.FailureBlock?) -> Void {
+                       failure: PPEServiceManager.FailureBlock?) {
         let invokeSuccess = { (data: Any) in
             if let block = success {
                 block(response, data)

@@ -30,20 +30,8 @@ extension PPEServiceManager {
                                 PPEServiceResultsHandler.process(response: response,
                                                                  data: data,
                                                                  expectedResultType: .String,
-                                                                 success: { (response, data) in
-                                                                    let dataString = data as! String
-                                                                    
-                                                                    if (dataString == Constants.Strings.LoggedIn) {
-                                                                        if let block = success {
-                                                                            block(response, dataString)
-                                                                        }
-                                                                    }
-                                                                    else {
-                                                                        if let block = failure {
-                                                                            block(response, Errors.loginError(string: dataString))
-                                                                        }
-                                                                    }
-                                }, failure: failure)
+                                                                 success: success,
+                                                                 failure: failure)
         }, progress: nil, failure: failure)
     }
     

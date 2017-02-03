@@ -64,8 +64,32 @@ struct Errors {
     
     
     static func authorizationError(authInfo: PPEAuthorizationInfo) -> Error {
+        var msg = "";
+        
+        func append(_ string: String) {
+            if msg.isEmpty == false {
+                msg += "\n\n"
+            }
+        }
+        
+        if authInfo.appAuthorizedForUser == nil || authInfo.appAuthorizedForUser! == false {
+            append("Your user role is unauthorized to use this App. Contact your administrator if you need access to this app. You must be added to one of these roles : ")
+            
+            if let roles = authInfo.rolesAuthorizedForApp {
+                msg += roles
+            }
+        }
+        
+        if authInfo.appVersionAuthorized == nil || authInfo.appVersionAuthorized! == false {
+            append("Your App Version is unauthorized to use this server. Download the latest version of the iPad client.")
+        }
+        
+        if authInfo.isUserActive == nil || authInfo.isUserActive! == false {
+            append("Your User account is not active. Contact your administrator if you need access to Pipeline Enterprise.")
+        }
+        
         return NSError(domain: Domains.LoginErrorDomain.rawValue,
                        code: Codes.AuthorizationErrorCode.rawValue,
-                       userInfo: [NSLocalizedDescriptionKey: authInfo.generateErrorMessage()])
+                       userInfo: [NSLocalizedDescriptionKey: msg])
     }
 }

@@ -25,6 +25,7 @@ struct Constants {
         static let Json = "json"
         static let Version = "Version"
         static let Build = "Build"
+        static let FromIPad = "FromiPad"
     }
     
     
@@ -32,6 +33,7 @@ struct Constants {
         static let Login = "login.aspx"
         static let Authorize = "authorize.aspx"
         static let Profile = "profile.aspx"
+        static let JobsSpreadsData = "JobSpreadData.aspx"
     }
     
     

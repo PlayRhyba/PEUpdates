@@ -26,6 +26,8 @@
 		C727CDA71E4218830070C0B2 /* PPEDataStorage+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C727CDA61E4218830070C0B2 /* PPEDataStorage+Profile.swift */; };
 		C727CDA91E4220640070C0B2 /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C727CDA81E4220640070C0B2 /* String+Utilities.swift */; };
 		C78D3DE71E40D53000D62EC7 /* DispatchQueue+Utitities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78D3DE61E40D53000D62EC7 /* DispatchQueue+Utitities.swift */; };
+		C7BBD3FB1E44AEC80074AB56 /* PPEServiceManager+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BBD3FA1E44AEC80074AB56 /* PPEServiceManager+Data.swift */; };
+		C7BBD3FD1E44B5B80074AB56 /* PPEServiceGateway+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BBD3FC1E44B5B80074AB56 /* PPEServiceGateway+Data.swift */; };
 		C7E228D31E4374CB00EA9C83 /* PPEBaseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E228CF1E4374CB00EA9C83 /* PPEBaseDataModel.swift */; };
 		C7E228D41E4374CB00EA9C83 /* PPEDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C7E228D01E4374CB00EA9C83 /* PPEDB.xcdatamodeld */; };
 		C7E228D51E4374CB00EA9C83 /* PPEProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E228D21E4374CB00EA9C83 /* PPEProfile.swift */; };
@@ -55,6 +57,8 @@
 		C727CDA61E4218830070C0B2 /* PPEDataStorage+Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEDataStorage+Profile.swift"; sourceTree = "<group>"; };
 		C727CDA81E4220640070C0B2 /* String+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
 		C78D3DE61E40D53000D62EC7 /* DispatchQueue+Utitities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Utitities.swift"; sourceTree = "<group>"; };
+		C7BBD3FA1E44AEC80074AB56 /* PPEServiceManager+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEServiceManager+Data.swift"; sourceTree = "<group>"; };
+		C7BBD3FC1E44B5B80074AB56 /* PPEServiceGateway+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEServiceGateway+Data.swift"; sourceTree = "<group>"; };
 		C7E228CF1E4374CB00EA9C83 /* PPEBaseDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEBaseDataModel.swift; sourceTree = "<group>"; };
 		C7E228D11E4374CB00EA9C83 /* PPEDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PPEDB.xcdatamodel; sourceTree = "<group>"; };
 		C7E228D21E4374CB00EA9C83 /* PPEProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEProfile.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 				116771DA1E21638500ACBD76 /* PPEServiceManager.swift */,
 				11728D281E22C6D2000FC4DB /* PPEServiceManager+Login.swift */,
 				11B9C5041E29646D000D8B30 /* PPEServiceManager+Profile.swift */,
+				C7BBD3FA1E44AEC80074AB56 /* PPEServiceManager+Data.swift */,
 			);
 			path = PPEServiceManager;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 			children = (
 				11728D2F1E22CD06000FC4DB /* PPEServiceGateway.swift */,
 				11728D311E22CEBD000FC4DB /* PPEServiceGateway+Login.swift */,
+				C7BBD3FC1E44B5B80074AB56 /* PPEServiceGateway+Data.swift */,
 			);
 			path = PPEServiceGateway;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7E228D51E4374CB00EA9C83 /* PPEProfile.swift in Sources */,
+				C7BBD3FB1E44AEC80074AB56 /* PPEServiceManager+Data.swift in Sources */,
 				C727CDA71E4218830070C0B2 /* PPEDataStorage+Profile.swift in Sources */,
 				C7E228D31E4374CB00EA9C83 /* PPEBaseDataModel.swift in Sources */,
 				11728D3C1E22E955000FC4DB /* NSError+Utitities.swift in Sources */,
@@ -333,6 +340,7 @@
 				11728D3A1E22E8A1000FC4DB /* Errors.swift in Sources */,
 				C7E228D71E43750700EA9C83 /* PPEAuthorizationInfo.swift in Sources */,
 				C78D3DE71E40D53000D62EC7 /* DispatchQueue+Utitities.swift in Sources */,
+				C7BBD3FD1E44B5B80074AB56 /* PPEServiceGateway+Data.swift in Sources */,
 				11B9C5051E29646D000D8B30 /* PPEServiceManager+Profile.swift in Sources */,
 				C7E228D41E4374CB00EA9C83 /* PPEDB.xcdatamodeld in Sources */,
 				11728D301E22CD06000FC4DB /* PPEServiceGateway.swift in Sources */,
