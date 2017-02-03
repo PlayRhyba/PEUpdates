@@ -25,7 +25,7 @@ extension PPEServiceManager {
                             success: { (response, data) in
                                 PPEServiceResultsHandler.process(response: response,
                                                                  data: data,
-                                                                 expectedResultType: .JSON,
+                                                                 expectedResultType: .JSON_H,
                                                                  success: success,
                                                                  failure: failure)
         }, progress: progress, failure: failure)

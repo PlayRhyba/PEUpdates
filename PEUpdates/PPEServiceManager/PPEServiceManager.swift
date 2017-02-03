@@ -130,9 +130,7 @@ class PPEServiceManager: NSObject {
         manager.securityPolicy.allowInvalidCertificates = true
         manager.securityPolicy.validatesDomainName = false
         
-        if let block = sessionManagerConfigurationBlock {
-            block(manager)
-        }
+        sessionManagerConfigurationBlock?(manager)
         
         return manager
     }
@@ -143,10 +141,7 @@ class PPEServiceManager: NSObject {
                                successHandler: SuccessBlock?,
                                failureHandler: FailureBlock?) {
         self.tasks.remove(task)
-        
-        if let handler = successHandler {
-            handler(task.response as! HTTPURLResponse, data)
-        }
+        successHandler?(task.response as! HTTPURLResponse, data)
     }
     
     
@@ -155,9 +150,7 @@ class PPEServiceManager: NSObject {
                                handler: FailureBlock?) {
         self.tasks.remove(task)
         
-        if let block = handler {
-            let processedError = PPEServiceResultsHandler.process(error: error)
-            block(task?.response as? HTTPURLResponse, processedError)
-        }
+        let processedError = PPEServiceResultsHandler.process(error: error)
+        handler?(task?.response as? HTTPURLResponse, processedError)
     }
 }

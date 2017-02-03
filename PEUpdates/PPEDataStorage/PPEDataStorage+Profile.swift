@@ -22,19 +22,14 @@ extension (PPEDataStorage) {
                        completion: ((PPEProfile?) -> Void)?) {
         if let p = self.profile() {
             p.fill(withDictionary: dictionary)
-            
-            if let block = completion {
-                block(p)
-            }
+            completion?(p)
         }
         else {
             MagicalRecord.save({ (localContext) in
                 let profile = PPEProfile.mr_createEntity(in: localContext)
                 profile?.fill(withDictionary: dictionary)
                 
-                if let block = completion {
-                    block(profile)
-                }
+                completion?(profile)
             })
         }
     }

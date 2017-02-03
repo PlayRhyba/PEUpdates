@@ -17,13 +17,6 @@ extension PPEServiceGateway {
                                         serverURL: URL?,
                                         success: PPEServiceManager.SuccessBlock?,
                                         failure: PPEServiceManager.FailureBlock?) -> URLSessionDataTask? {
-        let invokeFailure: PPEServiceManager.FailureBlock = { (response, error) in
-            if let block = failure {
-                DispatchQueue.main.async {
-                    block(response, error)
-                }
-            }
-        }
         return PPEServiceManager.sharedInstance.login(email: email,
                                                       password: password,
                                                       serverURL: serverURL,
@@ -31,14 +24,12 @@ extension PPEServiceGateway {
                                                         let dataString = data as! String
                                                         
                                                         if (dataString == Constants.Strings.LoggedIn) {
-                                                            if let block = success {
-                                                                block(response, dataString)
-                                                            }
+                                                            success?(response, dataString)
                                                         }
                                                         else {
-                                                            invokeFailure(response, Errors.loginError(string: dataString))
+                                                            failure?(response, Errors.loginError(string: dataString))
                                                         }
-        }, failure: invokeFailure)
+        }, failure: failure)
     }
     
     

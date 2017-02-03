@@ -14,6 +14,7 @@ class PPEServiceResultsHandler: NSObject {
     enum ExpectedResultType {
         case String
         case JSON
+        case JSON_H //!!! SHOULD BE REMOVED. NEED TO USE STANDARD JSON PARSER ON SERVER
     }
     
     
@@ -31,28 +32,16 @@ class PPEServiceResultsHandler: NSObject {
                        expectedResultType: ExpectedResultType,
                        success: PPEServiceManager.SuccessBlock?,
                        failure: PPEServiceManager.FailureBlock?) {
-        let invokeSuccess = { (data: Any) in
-            if let block = success {
-                block(response, data)
-            }
-        }
-        
-        let invokeFalure = { (error: Error) in
-            if let block = failure {
-                block(response, error)
-            }
-        }
-        
         if (data != nil && data is Data) {
             switch expectedResultType {
             case .String:
                 let dataString = String(data: data as! Data, encoding: .utf8)
                 
                 if let value = dataString {
-                    invokeSuccess(value)
+                    success?(response, value)
                 }
                 else {
-                    invokeFalure(Errors.unexpectedResponseDataStructureError())
+                    failure?(response, Errors.unexpectedResponseDataStructureError())
                 }
                 
             case .JSON:
@@ -60,19 +49,30 @@ class PPEServiceResultsHandler: NSObject {
                     let dictionary = try JSONSerialization.jsonObject(with: data as! Data,
                                                                       options: []) as? [String: Any]
                     if let value = dictionary {
-                        invokeSuccess(value)
+                        success?(response, value)
                     }
                     else {
-                        invokeFalure(Errors.unexpectedResponseDataStructureError())
+                        failure?(response, Errors.unexpectedResponseDataStructureError())
                     }
                 }
                 catch {
-                    invokeFalure(error)
+                    failure?(response, error)
                 }
+                
+            case .JSON_H:
+                let jString = String(data: data as! Data, encoding: .utf8)
+                let cString = jString?.replacingOccurrences(of: "\r\n", with: "")
+                let jData = cString?.data(using: .utf8)
+                
+                self.process(response: response,
+                             data: jData,
+                             expectedResultType: .JSON,
+                             success: success,
+                             failure: failure)
             }
         }
         else {
-            invokeFalure(Errors.unexpectedResponseDataStructureError())
+            failure?(response, Errors.unexpectedResponseDataStructureError())
         }
     }
 }
