@@ -18,6 +18,11 @@ struct Constants {
     }
     
     
+    struct Tables {
+        static let Profile = "Profile"
+    }
+    
+    
     struct Keys {
         static let Email = "email"
         static let Password = "password"

@@ -10,9 +10,22 @@
 import CoreData
 
 
-@objc class PPEBaseDataModel: NSManagedObject {
+@objc class PPEBaseDBDataModel: NSManagedObject, PPEDataModel {
+    
+    
+    //MARK: Public Methods
+    
     
     func fill(withDictionary dictionary: Dictionary<String, Any>?) {}
+    
+    
+    //MARK: PPEDataModel
+    
+    
+    var tableName: String {
+        return ""
+    }
+    
     
     func postDictionary() -> Dictionary<String, Any> {
         return Dictionary()

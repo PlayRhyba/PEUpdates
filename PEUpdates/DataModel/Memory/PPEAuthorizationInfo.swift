@@ -10,7 +10,7 @@
 import Foundation
 
 
-class PPEAuthorizationInfo: NSObject {
+class PPEAuthorizationInfo: PPEBaseMemoryDataModel {
     
     var serverVersion: String?
     var appAuthorizedForUser: Bool?
@@ -19,7 +19,9 @@ class PPEAuthorizationInfo: NSObject {
     var isUserActive: Bool?
     
     
-    init(withDictionary dictionary: Dictionary<String, Any>?) {
+    override init(withDictionary dictionary: Dictionary<String, Any>?) {
+        super.init(withDictionary: dictionary)
+        
         if let d = dictionary {
             serverVersion = d["ServerVersion"] as? String
             appAuthorizedForUser = (d["AppAuthorizedForUser"] as? NSNumber)?.boolValue

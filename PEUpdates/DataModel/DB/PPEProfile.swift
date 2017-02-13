@@ -7,10 +7,10 @@
 //
 
 
-import Foundation
+import CoreData
 
 
-@objc class PPEProfile: PPEBaseDataModel {
+@objc class PPEProfile: PPEBaseDBDataModel {
     
     @NSManaged public var companyID: String?
     @NSManaged public var lastJobUUID: String?
@@ -22,6 +22,9 @@ import Foundation
     @NSManaged public var role: String?
     @NSManaged public var roles: String?
     @NSManaged public var signatureData: String?
+    
+    
+    //MARK: PPEBaseDBDataModel
     
     
     override func fill(withDictionary dictionary: Dictionary<String, Any>?) {
@@ -39,5 +42,13 @@ import Foundation
             roles = d["roles"] as? String
             signatureData = d["SignatureData"] as? String
         }
+    }
+    
+    
+    //MARK: PPEDataModel
+    
+    
+    override var tableName: String {
+        return Constants.Tables.Profile
     }
 }
