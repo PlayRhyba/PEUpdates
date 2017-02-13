@@ -9,6 +9,7 @@
 
 import UIKit
 import CocoaLumberjack
+import SVProgressHUD
 
 
 @UIApplicationMain
@@ -23,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.configureLoggers()
         PPEDataStorage.sharedInstance.setup()
+        self.loadConfiguration()
         
         return true
     }
@@ -55,6 +57,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         DDLog.add(DDTTYLogger.sharedInstance(), with: defaultLogLevel)
         DDLog.add(DDASLLogger.sharedInstance(), with: defaultLogLevel)
+    }
+    
+    
+    private func loadConfiguration() {
+        SVProgressHUD.show(withStatus: "Configuration loading...")
+        
+        PPEConfigurationManager.sharedInstance.load { (error) in
+            if let e = error {
+                SVProgressHUD.showError(withStatus: e.localizedDescription)
+            }
+            else {
+                SVProgressHUD.dismiss()
+            }
+        }
     }
 }
 

@@ -1,0 +1,12 @@
+[
+    { "type" : "companyID" },
+    { "type" : "lastJobUUID" },
+    { "type" : "lastSpreadUUID" },
+    { "type" : "lastWeldUUID" },
+    { "type" : "MeasurementSystem" },
+    { "type" : "name" },
+    { "type" : "ReadOnly" },
+    { "type" : "role" },
+    { "type" : "roles" },
+    { "type" : "SignatureData" },
+]

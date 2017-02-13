@@ -22,13 +22,11 @@ class PPEAuthorizationInfo: PPEBaseMemoryDataModel {
     override init(withDictionary dictionary: Dictionary<String, Any>?) {
         super.init(withDictionary: dictionary)
         
-        if let d = dictionary {
-            serverVersion = d["ServerVersion"] as? String
-            appAuthorizedForUser = (d["AppAuthorizedForUser"] as? NSNumber)?.boolValue
-            rolesAuthorizedForApp = d["RolesAuthorizedForApp"] as? String
-            appVersionAuthorized = (d["AppVersionAuthorized"] as? NSNumber)?.boolValue
-            isUserActive = (d["IsUserActive"] as? NSNumber)?.boolValue
-        }
+        serverVersion = dictionary?["ServerVersion"] as? String
+        appAuthorizedForUser = (dictionary?["AppAuthorizedForUser"] as? NSNumber)?.boolValue
+        rolesAuthorizedForApp = dictionary?["RolesAuthorizedForApp"] as? String
+        appVersionAuthorized = (dictionary?["AppVersionAuthorized"] as? NSNumber)?.boolValue
+        isUserActive = (dictionary?["IsUserActive"] as? NSNumber)?.boolValue
     }
     
     
