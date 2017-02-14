@@ -8,6 +8,7 @@
 
 
 import CoreData
+import CocoaLumberjack
 
 
 @objc class PPEBaseDBDataModel: NSManagedObject, PPEDataModel {
@@ -22,18 +23,19 @@ import CoreData
         let propertiesInfo = self.propertiesInfo()
         
         for (name, type) in propertiesInfo {
-            print("‘\(name)’ is ‘\(type)’") //!!!
-            
             let fieldDescription = PPEConfigurationManager.sharedInstance.fieldDesctiption(name: name,
                                                                                            table: tableName)
             if let fd = fieldDescription {
                 var value = d[fd.type!]
                 
-                if (type is Bool) {
+                if "\(type)".contains("Bool")  {
                     value = (value as? NSNumber)?.boolValue ?? false
                 }
                 
                 self.setValue(value, forKey: name)
+                
+                DDLogInfo(String(format: "%@: SETTING PROPERTY: %@ TYPE: %@ VALUE: %@",
+                                 "\(self.classForCoder)", name, "\(type)", "\(value)"))
             }
         }
     }

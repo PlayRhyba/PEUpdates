@@ -72,7 +72,7 @@ extension (NSObject) {
     }
     
     
-    private struct Reflection {
+    private struct LocalConstants {
         static let ValueTypesMap: Dictionary<String, Any> = [
             "c": Int8.self,
             "s": Int16.self,
@@ -93,7 +93,7 @@ extension (NSObject) {
         let index = attributes.index(attributes.startIndex, offsetBy: 1)
         let letter = attributes[index...index]
         
-        guard  let type = Reflection.ValueTypesMap[letter] else {
+        guard  let type = LocalConstants.ValueTypesMap[letter] else {
             return Any.self
         }
         

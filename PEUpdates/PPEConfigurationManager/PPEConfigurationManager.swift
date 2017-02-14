@@ -93,16 +93,11 @@ class PPEConfigurationManager: NSObject {
     
     
     func fieldDesctiption(name: String, table: String) -> PPEFieldDescription? {
-        
-        
-        //TODO: Fix caplitalized/not capitalized
-        
-        
         var key = self.keyName(fieldName: name, tableName: table)
         var field = fields[key]
         
         if (field == nil) {
-            key = self.keyName(fieldName: name.capitalized, tableName: table)
+            key = self.keyName(fieldName: name.capitalizingFirstLetter(), tableName: table)
             field = fields[key]
         }
         

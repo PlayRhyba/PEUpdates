@@ -30,8 +30,7 @@ class PPEDataStorage: NSObject {
         
         #if (arch(i386) || arch(x86_64)) && os(iOS)
             DDLogInfo(String(format: "%@: DOCUMENTS DIRECTORY PATH: %@",
-                             String(describing: self),
-                             Constants.LocalPaths.DocumentsDirectory))
+                             "\(self.classForCoder)", Constants.LocalPaths.DocumentsDirectory))
         #endif
     }
     

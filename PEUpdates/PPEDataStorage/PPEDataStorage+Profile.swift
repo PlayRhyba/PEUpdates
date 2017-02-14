@@ -28,7 +28,6 @@ extension (PPEDataStorage) {
             MagicalRecord.save({ (localContext) in
                 let profile = PPEProfile.mr_createEntity(in: localContext)
                 profile?.fill(withDictionary: dictionary)
-                
                 completion?(profile)
             })
         }
