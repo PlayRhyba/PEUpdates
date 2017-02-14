@@ -24,14 +24,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.configureLoggers()
         PPEDataStorage.sharedInstance.setup()
-        self.loadConfiguration()
         
         return true
     }
     
     
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        self.loadConfiguration()
+    }
+    
+    
     func applicationWillTerminate(_ application: UIApplication) {
-        PPEDataStorage.sharedInstance.cleanUp();
+        PPEDataStorage.sharedInstance.cleanUp()
     }
     
     
@@ -61,16 +65,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     private func loadConfiguration() {
-        SVProgressHUD.show(withStatus: "Configuration loading...")
+        let configurationManager = PPEConfigurationManager.sharedInstance
         
-        PPEConfigurationManager.sharedInstance.load { (error) in
-            if let e = error {
-                SVProgressHUD.showError(withStatus: e.localizedDescription)
-            }
-            else {
+        if (configurationManager.isLoaded() == false) {
+            SVProgressHUD.show(withStatus: "Configuration loading...")
+            
+            configurationManager.load { (_, error) in
                 SVProgressHUD.dismiss()
+                
+                if let e = error {
+                    SVProgressHUD.showError(withStatus: e.localizedDescription)
+                }
             }
         }
     }
 }
-

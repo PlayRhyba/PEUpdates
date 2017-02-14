@@ -37,11 +37,11 @@ class PPEServiceManager: NSObject {
     
     
     func cancellAllOperations() {
-        for task in self.tasks.allObjects {
+        for task in tasks.allObjects {
             task.cancel()
         }
         
-        self.tasks.removeAllObjects()
+        tasks.removeAllObjects()
     }
     
     
@@ -49,7 +49,7 @@ class PPEServiceManager: NSObject {
         var count: UInt = 0
         
         if let p = path {
-            for task in self.tasks.allObjects {
+            for task in tasks.allObjects {
                 if task.originalRequest?.url?.path == p {
                     count += 1
                 }
@@ -83,7 +83,7 @@ class PPEServiceManager: NSObject {
                                handler: failure)
         }
         
-        self.tasks.add(task)
+        tasks.add(task)
         
         return task
     }
@@ -112,7 +112,7 @@ class PPEServiceManager: NSObject {
                                handler: failure)
         }
         
-        self.tasks.add(task)
+        tasks.add(task)
         
         return task
     }
@@ -140,7 +140,7 @@ class PPEServiceManager: NSObject {
                                data: Any?,
                                successHandler: SuccessBlock?,
                                failureHandler: FailureBlock?) {
-        self.tasks.remove(task)
+        tasks.remove(task)
         successHandler?(task.response as! HTTPURLResponse, data)
     }
     
@@ -148,7 +148,7 @@ class PPEServiceManager: NSObject {
     private func handleFailure(task: URLSessionDataTask?,
                                error: Error,
                                handler: FailureBlock?) {
-        self.tasks.remove(task)
+        tasks.remove(task)
         
         let processedError = PPEServiceResultsHandler.process(error: error)
         handler?(task?.response as? HTTPURLResponse, processedError)

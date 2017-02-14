@@ -16,7 +16,27 @@ import CoreData
     //MARK: Public Methods
     
     
-    func fill(withDictionary dictionary: Dictionary<String, Any>?) {}
+    func fill(withDictionary dictionary: Dictionary<String, Any>?) {
+        guard let d = dictionary else { return }
+        
+        let propertiesInfo = self.propertiesInfo()
+        
+        for (name, type) in propertiesInfo {
+            print("‘\(name)’ is ‘\(type)’") //!!!
+            
+            let fieldDescription = PPEConfigurationManager.sharedInstance.fieldDesctiption(name: name,
+                                                                                           table: tableName)
+            if let fd = fieldDescription {
+                var value = d[fd.type!]
+                
+                if (type is Bool) {
+                    value = (value as? NSNumber)?.boolValue ?? false
+                }
+                
+                self.setValue(value, forKey: name)
+            }
+        }
+    }
     
     
     //MARK: PPEDataModel

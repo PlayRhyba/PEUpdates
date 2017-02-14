@@ -22,28 +22,7 @@ import CoreData
     @NSManaged public var role: String?
     @NSManaged public var roles: String?
     @NSManaged public var signatureData: String?
-    
-    
-    //MARK: PPEBaseDBDataModel
-    
-    
-    override func fill(withDictionary dictionary: Dictionary<String, Any>?) {
-        super.fill(withDictionary: dictionary)
-        
-        if let d = dictionary {
-            companyID = d["companyID"] as? String
-            lastJobUUID = d["lastJobUUID"] as? String
-            lastSpreadUUID = d["lastSpreadUUID"] as? String
-            lastWeldUUID = d["lastWeldUUID"] as? String
-            measurementSystem = d["MeasurementSystem"] as? String
-            name = d["name"] as? String
-            readOnly = (d["ReadOnly"] as? NSNumber)?.boolValue ?? false
-            role = d["role"] as? String
-            roles = d["roles"] as? String
-            signatureData = d["SignatureData"] as? String
-        }
-    }
-    
+
     
     //MARK: PPEDataModel
     

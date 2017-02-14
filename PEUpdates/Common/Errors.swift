@@ -16,6 +16,7 @@ struct Errors {
         case InternalErrorDomain = "InternalErrorDomain"
         case ResponseObjectErrorDomain = "ResponseObjectErrorDomain"
         case LoginErrorDomain = "LoginErrorDomain"
+        case ConfigurationManagerErrorDomain = "ConfigurationManagerErrorDomain"
     }
     
     
@@ -25,11 +26,12 @@ struct Errors {
         case OperationCanceledErrorCode
         case LoginErrorCode
         case AuthorizationErrorCode
+        case ConfigurationDataFormatErrorCode
     }
     
     
     struct Constants {
-        static let NotCompletedOperationErrorCode = -999;
+        static let NotCompletedOperationErrorCode = -999
     }
     
     
@@ -64,7 +66,7 @@ struct Errors {
     
     
     static func authorizationError(authInfo: PPEAuthorizationInfo) -> Error {
-        var msg = "";
+        var msg = ""
         
         func append(_ string: String) {
             if msg.isEmpty == false {
@@ -91,5 +93,12 @@ struct Errors {
         return NSError(domain: Domains.LoginErrorDomain.rawValue,
                        code: Codes.AuthorizationErrorCode.rawValue,
                        userInfo: [NSLocalizedDescriptionKey: msg])
+    }
+    
+    
+    static func configurationDataFormatError() -> Error {
+        return NSError(domain: Domains.ConfigurationManagerErrorDomain.rawValue,
+                       code: Codes.ConfigurationDataFormatErrorCode.rawValue,
+                       userInfo: [NSLocalizedDescriptionKey: "Configuration data format error"])
     }
 }

@@ -13,7 +13,7 @@ import Foundation
 struct Constants {
     
     struct Configuration {
-        static let DataModelName = "PPEDB";
+        static let DataModelName = "PPEDB"
         static let LogsFolderName = "PPELogs"
     }
     
