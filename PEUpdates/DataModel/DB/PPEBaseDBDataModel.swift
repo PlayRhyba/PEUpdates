@@ -26,12 +26,7 @@ import CocoaLumberjack
             let fieldDescription = PPEConfigurationManager.sharedInstance.fieldDesctiption(name: name,
                                                                                            table: tableName)
             if let fd = fieldDescription {
-                var value = d[fd.type!]
-                
-                if "\(type)".contains("Bool")  {
-                    value = (value as? NSNumber)?.boolValue ?? false
-                }
-                
+                let value = d[fd.type!]
                 self.setValue(value, forKey: name)
                 
                 DDLogInfo(String(format: "%@: SETTING PROPERTY: %@ TYPE: %@ VALUE: %@",

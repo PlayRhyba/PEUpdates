@@ -18,7 +18,7 @@ import CoreData
     @NSManaged public var lastWeldUUID: String?
     @NSManaged public var measurementSystem: String?
     @NSManaged public var name: String?
-    @NSManaged public var readOnly: Bool
+    @NSManaged public var readOnly: NSNumber?
     @NSManaged public var role: String?
     @NSManaged public var roles: String?
     @NSManaged public var signatureData: String?
