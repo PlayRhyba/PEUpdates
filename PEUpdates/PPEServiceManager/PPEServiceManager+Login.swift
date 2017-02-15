@@ -22,16 +22,16 @@ extension PPEServiceManager {
                           Constants.Keys.Password: password,
                           Constants.Keys.From: Constants.Strings.iPad]
         
-        return self.sendPOST(path: Constants.ServerPaths.Login,
-                             baseURL: serverURL,
-                             parameters: parameters,
-                             sessionManagerConfigurationBlock: nil,
-                             success: { (response, data) in
-                                PPEServiceResultsHandler.process(response: response,
-                                                                 data: data,
-                                                                 expectedResultType: .String,
-                                                                 success: success,
-                                                                 failure: failure)
+        return sendPOST(path: Constants.ServerPaths.Login,
+                        baseURL: serverURL,
+                        parameters: parameters,
+                        sessionManagerConfigurationBlock: nil,
+                        success: { (response, data) in
+                            PPEServiceResultsHandler.process(response: response,
+                                                             data: data,
+                                                             expectedResultType: .String,
+                                                             success: success,
+                                                             failure: failure)
         }, progress: nil, failure: failure)
     }
     

@@ -20,7 +20,7 @@ extension (PPEDataStorage) {
     
     func updateProfile(withDictionary dictionary: Dictionary<String, Any>?,
                        completion: ((PPEProfile?) -> Void)?) {
-        if let p = self.profile() {
+        if let p = profile() {
             p.fill(withDictionary: dictionary)
             completion?(p)
         }

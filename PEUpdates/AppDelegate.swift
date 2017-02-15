@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        self.configureLoggers()
+        configureLoggers()
         PPEDataStorage.sharedInstance.setup()
         
         return true
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        self.loadConfiguration()
+        loadConfiguration()
     }
     
     
@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if DEBUG
             let defaultLogLevel: DDLogLevel = DDLogLevel.all
         #else
-            let defaultLogLevel: DDLogLevel = DDLogLevel.debug
+            let defaultLogLevel: DDLogLevel = DDLogLevel.warning
             
             let path = (Constants.LocalPaths.DocumentsDirectory as NSString).appendingPathComponent(Constants.Configuration.LogsFolderName)
             let logFileManager = DDLogFileManagerDefault.init(logsDirectory: path)

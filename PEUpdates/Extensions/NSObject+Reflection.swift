@@ -20,13 +20,13 @@ extension (NSObject) {
     func propertiesInfo() -> [String: Any] {
         var result = [String: Any]()
         var count = UInt32()
-        let properties = class_copyPropertyList(self.classForCoder, &count)
+        let properties = class_copyPropertyList(classForCoder, &count)
         
         if properties != nil && count > 0 {
             for i in 0 ..< Int(count) {
                 let property = properties![i]
                 
-                guard let name = self.nameOf(property: property!) else {
+                guard let name = nameOf(property: property!) else {
                     DDLogWarn("NSOBJECT REFLECTION: COULDN'T UNWRAP PROPERTY NAME FOR \(property)")
                     continue
                 }

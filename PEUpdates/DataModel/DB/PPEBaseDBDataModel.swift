@@ -29,8 +29,8 @@ import CocoaLumberjack
                 let value = d[fd.type!]
                 self.setValue(value, forKey: name)
                 
-                DDLogInfo(String(format: "%@: SETTING PROPERTY: %@ TYPE: %@ VALUE: %@",
-                                 "\(self.classForCoder)", name, "\(type)", "\(value)"))
+                DDLogDebug(String(format: "%@: SETTING PROPERTY: %@ TYPE: %@ VALUE: %@",
+                                  "\(classForCoder)", name, "\(type)", "\(value)"))
             }
         }
     }

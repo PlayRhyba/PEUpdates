@@ -9,6 +9,7 @@
 
 import Foundation
 import AFNetworking
+import CocoaLumberjack
 
 
 class PPEServiceManager: NSObject {
@@ -17,6 +18,12 @@ class PPEServiceManager: NSObject {
     typealias FailureBlock = (HTTPURLResponse?, Error) -> Void
     typealias SessionManagerConfigurationBlock = (AFHTTPSessionManager) -> Void
     typealias ProgressBlock = (Progress) -> Void
+    
+    
+    private enum RequestType: String {
+        case GET = "GET"
+        case POST = "POST"
+    }
     
     
     static let sharedInstance = PPEServiceManager()
@@ -30,7 +37,25 @@ class PPEServiceManager: NSObject {
     //MARK: NSObject
     
     
-    private override init() {}
+    private override init() {
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.AFNetworkingTaskDidComplete,
+                                               object: nil,
+                                               queue: OperationQueue.main) { (notification) in
+                                                let error = notification.userInfo?[AFNetworkingTaskDidCompleteErrorKey] as? NSError
+                                                
+                                                if let e = error {
+                                                    let data = e.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as? Data
+                                                    
+                                                    if let d = data {
+                                                        let response = String(data: d, encoding: .utf8)
+                                                        
+                                                        DDLogError(String(format: "%@: AFNETWORKING TASK HAS BEEN COMPLETED WITH ERROR: %@. RESPONSE: %@",
+                                                                          "\(PPEServiceManager.self)", e, response!))
+                                                    }
+                                                    
+                                                }
+        }
+    }
     
     
     //MARK: Public Methods
@@ -73,15 +98,21 @@ class PPEServiceManager: NSObject {
                                 parameters: parameters,
                                 progress: progress,
                                 success: {[unowned self] (task, data) in
+                                    self.logResponseSuccess(url: baseURL!, path: path, type: .POST, data: data)
+                                    
                                     self.handleSuccess(task: task,
                                                        data: data,
                                                        successHandler: success,
                                                        failureHandler: failure)
         }) {[unowned self] (task, error) in
+            self.logResponseFailure(url: baseURL, path: path, type: .POST, error: error as NSError)
+            
             self.handleFailure(task: task,
                                error: error,
                                handler: failure)
         }
+        
+        logSentData(data: task?.originalRequest?.httpBody, type: .POST)
         
         tasks.add(task)
         
@@ -102,11 +133,15 @@ class PPEServiceManager: NSObject {
                                parameters: parameters,
                                progress: progress,
                                success: { [unowned self] (task, data) in
+                                self.logResponseSuccess(url: baseURL!, path: path, type: .GET, data: data)
+                                
                                 self.handleSuccess(task: task,
                                                    data: data,
                                                    successHandler: success,
                                                    failureHandler: failure)
         }) { [unowned self] (task, error) in
+            self.logResponseFailure(url: baseURL, path: path, type: .GET, error: error as NSError)
+            
             self.handleFailure(task: task,
                                error: error,
                                handler: failure)
@@ -152,5 +187,37 @@ class PPEServiceManager: NSObject {
         
         let processedError = PPEServiceResultsHandler.process(error: error)
         handler?(task?.response as? HTTPURLResponse, processedError)
+    }
+    
+    
+    private func logResponseSuccess(url: URL,
+                                    path: String,
+                                    type: RequestType,
+                                    data: Any?) {
+        if let d = data as? Data {
+            let stringRepresentation = String(data: d, encoding: .utf8)
+            
+            DDLogDebug(String(format: "%@: %@ PATH: %@. SUCCESS. RESPONSE: %@",
+                              "\(classForCoder)", type.rawValue, "\(url.appendingPathComponent(path))", stringRepresentation ?? ""))
+        }
+    }
+    
+    
+    private func logResponseFailure(url: URL?,
+                                    path: String,
+                                    type: RequestType,
+                                    error: NSError) {
+        let fullURL = url?.appendingPathComponent(path)
+        let data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as? Data
+        let response = String(data: data ?? Data(), encoding: .utf8)
+        
+        DDLogError(String(format: "%@: %@ PATH: %@. FAILURE. RESPONSE: %@. ERROR: %@",
+                          "\(classForCoder)", type.rawValue, "\(fullURL)", response ?? "", error.localizedDescription))
+    }
+    
+    
+    private func logSentData(data: Data?, type: RequestType) {
+        let str = String(data: data ?? Data(), encoding: .utf8)
+        DDLogDebug(String(format: "%@: %@ DATA: %@", "\(classForCoder)", type.rawValue, str ?? ""))
     }
 }

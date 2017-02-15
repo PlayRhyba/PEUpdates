@@ -44,7 +44,7 @@ extension PPEServiceGateway {
         
         let url = URL(string: server)
         
-        self.login(email: email, password: password, serverURL: url, success: { (_, _) in
+        login(email: email, password: password, serverURL: url, success: { (_, _) in
             PPEServiceManager.sharedInstance.loadJobsSpreads(serverURL: url, success: { (response, data) in
                 
                 

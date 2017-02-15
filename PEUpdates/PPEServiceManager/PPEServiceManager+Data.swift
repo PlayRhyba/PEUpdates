@@ -18,16 +18,16 @@ extension PPEServiceManager {
                                             progress: ProgressBlock?) -> URLSessionDataTask? {
         let parameters = [Constants.Keys.FromIPad: true]
         
-        return self.sendGET(path: Constants.ServerPaths.JobsSpreadsData,
-                            baseURL: serverURL,
-                            parameters: parameters,
-                            sessionManagerConfigurationBlock: nil,
-                            success: { (response, data) in
-                                PPEServiceResultsHandler.process(response: response,
-                                                                 data: data,
-                                                                 expectedResultType: .JSON_H,
-                                                                 success: success,
-                                                                 failure: failure)
+        return sendGET(path: Constants.ServerPaths.JobsSpreadsData,
+                       baseURL: serverURL,
+                       parameters: parameters,
+                       sessionManagerConfigurationBlock: nil,
+                       success: { (response, data) in
+                        PPEServiceResultsHandler.process(response: response,
+                                                         data: data,
+                                                         expectedResultType: .JSON_H,
+                                                         success: success,
+                                                         failure: failure)
         }, progress: progress, failure: failure)
     }
 }

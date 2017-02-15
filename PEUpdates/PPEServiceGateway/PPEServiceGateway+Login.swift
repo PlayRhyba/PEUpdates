@@ -56,7 +56,7 @@ extension PPEServiceGateway {
         
         let url = URL(string: server)
         
-        self.login(email: email, password: password, serverURL: url, success: { (_, _) in
+        login(email: email, password: password, serverURL: url, success: { (_, _) in
             let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
             let build = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as! String
             

@@ -13,6 +13,6 @@ import Foundation
 extension NSError {
     
     func isCanceledRequestOperationError() -> Bool {
-        return self.domain == NSURLErrorDomain && self.code == Errors.Constants.NotCompletedOperationErrorCode
+        return domain == NSURLErrorDomain && code == Errors.Constants.NotCompletedOperationErrorCode
     }
 }

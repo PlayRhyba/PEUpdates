@@ -64,11 +64,11 @@ class PPEServiceResultsHandler: NSObject {
                 let cString = jString?.replacingOccurrences(of: "\r\n", with: "")
                 let jData = cString?.data(using: .utf8)
                 
-                self.process(response: response,
-                             data: jData,
-                             expectedResultType: .JSON,
-                             success: success,
-                             failure: failure)
+                process(response: response,
+                        data: jData,
+                        expectedResultType: .JSON,
+                        success: success,
+                        failure: failure)
             }
         }
         else {
