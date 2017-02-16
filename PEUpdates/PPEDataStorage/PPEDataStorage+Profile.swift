@@ -19,17 +19,15 @@ extension (PPEDataStorage) {
     
     
     func updateProfile(withDictionary dictionary: [String: Any]?,
-                       completion: ((PPEProfile?) -> Void)?) {
-        if let p = profile() {
-            p.fill(withDictionary: dictionary)
-            completion?(p)
-        }
-        else {
-            MagicalRecord.save({ (localContext) in
+                       completion: ((Bool, Error?) -> Void)?) {
+        MagicalRecord.save({ (localContext) in
+            if let p = self.profile() {
+                p.fill(withDictionary: dictionary)
+            }
+            else {
                 let profile = PPEProfile.mr_createEntity(in: localContext)
                 profile?.fill(withDictionary: dictionary)
-                completion?(profile)
-            })
-        }
+            }
+        }, completion: completion)
     }
 }

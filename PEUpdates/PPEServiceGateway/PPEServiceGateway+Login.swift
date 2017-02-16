@@ -66,12 +66,13 @@ extension PPEServiceGateway {
                 if authInfo.isAuthorized() {
                     PPEServiceManager.sharedInstance.loadProfile(serverURL: url, success: { (response, data) in
                         PPEDataStorage.sharedInstance.updateProfile(withDictionary: data as? Dictionary,
-                                                                    completion: { (profile) in
-                                                                        if let p = profile {
-                                                                            invokeSuccess(response, p)
+                                                                    completion: { (_, error) in
+                                                                        if (error == nil) {
+                                                                            let profile = PPEDataStorage.sharedInstance.profile()
+                                                                            invokeSuccess(response, profile)
                                                                         }
                                                                         else {
-                                                                            invokeFailure(response, Errors.internalError())
+                                                                            invokeFailure(response, error!)
                                                                         }
                         })
                     }, failure: invokeFailure)

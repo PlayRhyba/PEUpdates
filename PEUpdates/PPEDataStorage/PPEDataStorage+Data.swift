@@ -14,7 +14,7 @@ import MagicalRecord
 extension (PPEDataStorage) {
     
     func saveJobsSpreadsData(withDictionary dictionary: [String: Any]?,
-                             completion: ((Bool) -> Void)?) {
+                             completion: ((Bool, Error?) -> Void)?) {
         
     }
 }
