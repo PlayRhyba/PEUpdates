@@ -73,7 +73,7 @@ extension (NSObject) {
     
     
     private struct LocalConstants {
-        static let ValueTypesMap: Dictionary<String, Any> = [
+        static let ValueTypesMap: [String: Any] = [
             "c": Int8.self,
             "s": Int16.self,
             "i": Int32.self,

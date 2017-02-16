@@ -50,7 +50,6 @@ import CoreData
     @NSManaged public var lastStatisticsUpdateDate: NSDate?
     @NSManaged public var centreOfRightOfWayWKT: String?
     @NSManaged public var ditchLineWKT: String?
-
     
     
     //MARK: PPEDataModel

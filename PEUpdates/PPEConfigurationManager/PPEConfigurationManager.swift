@@ -93,6 +93,11 @@ class PPEConfigurationManager: NSObject {
     
     
     func fieldDesctiption(name: String, table: String) -> PPEFieldDescription? {
+        
+        
+        //TODO: Handle p_ for name
+        
+        
         var key = keyName(fieldName: name, tableName: table)
         var field = fields[key]
         

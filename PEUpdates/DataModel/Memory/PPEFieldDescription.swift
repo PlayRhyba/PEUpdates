@@ -17,7 +17,7 @@ class PPEFieldDescription: PPEBaseMemoryDataModel {
     var tableName: String?
     
     
-    override init(withDictionary dictionary: Dictionary<String, Any>?) {
+    override init(withDictionary dictionary: [String: Any]?) {
         super.init(withDictionary: dictionary)
         
         type = dictionary?["type"] as? String

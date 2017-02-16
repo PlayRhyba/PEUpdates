@@ -15,5 +15,5 @@ import Foundation
     var tableName: String { get }
     
     
-    @objc optional func postDictionary() -> Dictionary<String, Any>
+    @objc optional func postDictionary() -> [String: Any]
 }

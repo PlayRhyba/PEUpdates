@@ -61,7 +61,7 @@ extension PPEServiceGateway {
             let build = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as! String
             
             PPEServiceManager.sharedInstance.authorize(version: version, build: build, serverURL: url, success: { (response, data) in
-                let authInfo = PPEAuthorizationInfo.init(withDictionary: data as? Dictionary<String, Any>)
+                let authInfo = PPEAuthorizationInfo.init(withDictionary: data as? [String: Any])
                 
                 if authInfo.isAuthorized() {
                     PPEServiceManager.sharedInstance.loadProfile(serverURL: url, success: { (response, data) in

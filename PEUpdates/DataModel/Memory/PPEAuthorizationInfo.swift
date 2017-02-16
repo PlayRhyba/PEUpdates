@@ -19,7 +19,7 @@ class PPEAuthorizationInfo: PPEBaseMemoryDataModel {
     var isUserActive: Bool?
     
     
-    override init(withDictionary dictionary: Dictionary<String, Any>?) {
+    override init(withDictionary dictionary: [String: Any]?) {
         super.init(withDictionary: dictionary)
         
         serverVersion = dictionary?["ServerVersion"] as? String

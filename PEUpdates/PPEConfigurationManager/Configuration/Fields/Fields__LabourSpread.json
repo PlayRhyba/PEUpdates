@@ -1,0 +1,8 @@
+[
+    { "type" : "LabourSpreadUUID" },
+    { "type" : "SpreadID" },
+    { "type" : "FullName" },
+    { "type" : "Title" },
+    { "type" : "Description" },
+    { "type" : "Note" },
+]

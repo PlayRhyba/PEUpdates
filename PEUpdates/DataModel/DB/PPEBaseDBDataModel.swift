@@ -17,7 +17,7 @@ import CocoaLumberjack
     //MARK: Public Methods
     
     
-    func fill(withDictionary dictionary: Dictionary<String, Any>?) {
+    func fill(withDictionary dictionary: [String: Any]?) {
         guard let d = dictionary else { return }
         
         let propertiesInfo = self.propertiesInfo()
@@ -44,7 +44,7 @@ import CocoaLumberjack
     }
     
     
-    func postDictionary() -> Dictionary<String, Any> {
+    func postDictionary() -> [String: Any] {
         return Dictionary()
     }
 }

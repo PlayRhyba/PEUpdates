@@ -17,5 +17,5 @@ class PPEBaseMemoryDataModel: NSObject {
     //MARK: Public Methods
     
     
-    init(withDictionary dictionary: Dictionary<String, Any>?) {}
+    init(withDictionary dictionary: [String: Any]?) {}
 }
