@@ -13,6 +13,10 @@ import CocoaLumberjack
 
 @objc class PPEBaseDBDataModel: NSManagedObject, PPEDataModel {
     
+    @NSManaged public var created: NSNumber?
+    @NSManaged public var modified: NSNumber?
+    @NSManaged public var p_deleted: NSNumber?
+    
     
     //MARK: Public Methods
     
@@ -20,11 +24,17 @@ import CocoaLumberjack
     func fill(withDictionary dictionary: [String: Any]?) {
         guard let d = dictionary else { return }
         
-        let propertiesInfo = self.propertiesInfo()
+        let baseModelSubclass = self.superclass === PPEBaseDBDataModel.self
+        let propertiesInfo = self.propertiesInfo(includeSuperclass: baseModelSubclass)
         
         for (name, type) in propertiesInfo {
-            let fieldDescription = PPEConfigurationManager.sharedInstance.fieldDesctiption(name: name,
-                                                                                           table: tableName)
+            let configurationManager = PPEConfigurationManager.sharedInstance
+            var fieldDescription = configurationManager.fieldDesctiption(name: name, table: self.tableName)
+            
+            if fieldDescription == nil && baseModelSubclass {
+                fieldDescription = configurationManager.fieldDesctiption(name: name, table: Constants.Tables.Base)
+            }
+            
             if let fd = fieldDescription {
                 var value: Any? = d[fd.type!]
                 
@@ -50,7 +60,7 @@ import CocoaLumberjack
     
     
     var tableName: String {
-        return ""
+        return Constants.Tables.Base
     }
     
     

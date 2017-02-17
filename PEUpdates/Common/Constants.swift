@@ -19,6 +19,7 @@ struct Constants {
     
     
     struct Tables {
+        static let Base = "Base"
         static let Profile = "Profile"
         static let Spread = "Spread"
         static let LabourSpread = "LabourSpread"

@@ -17,25 +17,34 @@ extension (NSObject) {
     //MARK: Public Methods
     
     
-    func propertiesInfo() -> [String: Any] {
+    func propertiesInfo(includeSuperclass: Bool) -> [String: Any] {
         var result = [String: Any]()
         var count = UInt32()
-        let properties = class_copyPropertyList(classForCoder, &count)
         
-        if properties != nil && count > 0 {
-            for i in 0 ..< Int(count) {
-                let property = properties![i]
-                
-                guard let name = nameOf(property: property!) else {
-                    DDLogWarn("NSOBJECT REFLECTION: COULDN'T UNWRAP PROPERTY NAME FOR \(property)")
-                    continue
+        func processProperties(_ properties: UnsafeMutablePointer<objc_property_t?>?) {
+            if properties != nil && count > 0 {
+                for i in 0 ..< Int(count) {
+                    let property = properties![i]
+                    
+                    guard let name = nameOf(property: property!) else {
+                        DDLogWarn("NSOBJECT REFLECTION: COULDN'T UNWRAP PROPERTY NAME FOR \(property)")
+                        continue
+                    }
+                    
+                    result[name] = typeOf(property: property!)
                 }
-                
-                result[name] = typeOf(property: property!)
             }
+            
+            free(properties)
         }
         
-        free(properties)
+        let selfProperties = class_copyPropertyList(self.classForCoder, &count)
+        processProperties(selfProperties)
+        
+        if includeSuperclass {
+            let superProperties = class_copyPropertyList(self.superclass, &count)
+            processProperties(superProperties)
+        }
         
         return result
     }

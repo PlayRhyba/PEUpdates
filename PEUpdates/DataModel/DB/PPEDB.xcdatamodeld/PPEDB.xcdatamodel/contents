@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="PPELabourSpread" representedClassName=".PPELabourSpread" syncable="YES">
+    <entity name="PPEBaseDBDataModel" representedClassName=".PPEBaseDBDataModel" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="modified" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="p_deleted" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="PPELabourSpread" representedClassName=".PPELabourSpread" parentEntity="PPEBaseDBDataModel" syncable="YES">
         <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="labourSpreadUUID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
@@ -8,7 +13,7 @@
         <attribute name="spreadID" optional="YES" attributeType="Integer 16" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="PPEProfile" representedClassName=".PPEProfile" syncable="YES">
+    <entity name="PPEProfile" representedClassName=".PPEProfile" parentEntity="PPEBaseDBDataModel" syncable="YES">
         <attribute name="companyID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastJobUUID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastSpreadUUID" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,7 +25,7 @@
         <attribute name="roles" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="signatureData" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="PPESpread" representedClassName=".PPESpread" syncable="YES">
+    <entity name="PPESpread" representedClassName=".PPESpread" parentEntity="PPEBaseDBDataModel" syncable="YES">
         <attribute name="billingEmailList" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="centreOfRightOfWayWKT" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
@@ -62,7 +67,8 @@
     </entity>
     <elements>
         <element name="PPELabourSpread" positionX="-153" positionY="135" width="128" height="135"/>
-        <element name="PPEProfile" positionX="-63" positionY="-18" width="128" height="193"/>
+        <element name="PPEProfile" positionX="-63" positionY="-18" width="128" height="195"/>
         <element name="PPESpread" positionX="-236" positionY="54" width="128" height="615"/>
+        <element name="PPEBaseDBDataModel" positionX="-153" positionY="135" width="128" height="90"/>
     </elements>
 </model>
