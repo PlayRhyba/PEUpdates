@@ -45,18 +45,26 @@ struct Constants {
     
     
     struct DateFormats {
+        static let DateFormat = "dd-MMM-yyyy"
+        static let ShortDateFormat = "MMM dd"
+        static let DateTimeFormat = "dd-MMM-yyyy HH:mm:ss"
+        static let SqlDateFormat = "yy-MM-dd"
+        static let SqlDateTimeFormat = "yy-MM-dd HH:mm:ss"
+        static let TimeFormat = "HH:mm:ss"
+        static let TimeFormatHourMinutes = "HH:mm"
         
         
-        //TODO: Describe date formates
-        
-        
-//        #define DATE_FORMAT @"dd-MMM-yyyy"
-//        #define DATE_SHORT_FORMAT @"MMM dd"
-//        #define DATE_TIME_FORMAT @"dd-MMM-yyyy HH:mm:ss"
-//        #define SQL_DATE_FORMAT @"yy-MM-dd"
-//        #define SQL_DATE_TIME_FORMAT @"yy-MM-dd HH:mm:ss"
-//        #define TIME_FORMAT @"HH:mm:ss"
-//        #define TIME_FORMAT_HOURS_MINUTES @"HH:mm"
+        static func date(fromString string: String) -> Date? {
+            let formats = [self.DateFormat,
+                           self.ShortDateFormat,
+                           self.DateTimeFormat,
+                           self.SqlDateFormat,
+                           self.SqlDateTimeFormat,
+                           self.TimeFormat,
+                           self.TimeFormatHourMinutes]
+            
+            return string.date(withFormats: formats)
+        }
     }
     
     

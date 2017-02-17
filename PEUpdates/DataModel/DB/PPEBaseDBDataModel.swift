@@ -26,17 +26,13 @@ import CocoaLumberjack
             let fieldDescription = PPEConfigurationManager.sharedInstance.fieldDesctiption(name: name,
                                                                                            table: tableName)
             if let fd = fieldDescription {
-                var value = d[fd.type!]
+                var value: Any? = d[fd.type!]
                 
                 if value is NSNull {
                     value = nil;
                 }
-                else if type is NSDate.Type {
-                    
-                    
-                    //TODO: Handle Dates
-                    
-                    
+                else if type is NSDate.Type && value is String {
+                    value = Constants.DateFormats.date(fromString:value as! String)
                 }
                 
                 self.setValue(value, forKey: name)
