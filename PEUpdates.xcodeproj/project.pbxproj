@@ -40,7 +40,7 @@
 		C7E228D31E4374CB00EA9C83 /* PPEBaseDBDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E228CF1E4374CB00EA9C83 /* PPEBaseDBDataModel.swift */; };
 		C7E228D41E4374CB00EA9C83 /* PPEDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C7E228D01E4374CB00EA9C83 /* PPEDB.xcdatamodeld */; };
 		C7E228D51E4374CB00EA9C83 /* PPEProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E228D21E4374CB00EA9C83 /* PPEProfile.swift */; };
-		C7FB91F31E56076F0044C9F2 /* PPEDataStorage+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB91F21E56076F0044C9F2 /* PPEDataStorage+Data.swift */; };
+		C7FB91F31E56076F0044C9F2 /* PPEDataStorage+JobsSpreads.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB91F21E56076F0044C9F2 /* PPEDataStorage+JobsSpreads.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +80,7 @@
 		C7E228CF1E4374CB00EA9C83 /* PPEBaseDBDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEBaseDBDataModel.swift; sourceTree = "<group>"; };
 		C7E228D11E4374CB00EA9C83 /* PPEDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PPEDB.xcdatamodel; sourceTree = "<group>"; };
 		C7E228D21E4374CB00EA9C83 /* PPEProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEProfile.swift; sourceTree = "<group>"; };
-		C7FB91F21E56076F0044C9F2 /* PPEDataStorage+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEDataStorage+Data.swift"; sourceTree = "<group>"; };
+		C7FB91F21E56076F0044C9F2 /* PPEDataStorage+JobsSpreads.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEDataStorage+JobsSpreads.swift"; sourceTree = "<group>"; };
 		F43861A042FE1A485806A191 /* Pods-PEUpdates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEUpdates.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PEUpdates/Pods-PEUpdates.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,7 +181,7 @@
 			children = (
 				11BB1FCF1E2BFDA2006A7C16 /* PPEDataStorage.swift */,
 				C727CDA61E4218830070C0B2 /* PPEDataStorage+Profile.swift */,
-				C7FB91F21E56076F0044C9F2 /* PPEDataStorage+Data.swift */,
+				C7FB91F21E56076F0044C9F2 /* PPEDataStorage+JobsSpreads.swift */,
 			);
 			path = PPEDataStorage;
 			sourceTree = "<group>";
@@ -390,7 +390,7 @@
 				C76176DC1E51FD5B00CFFC40 /* PPEConfigurationManager.swift in Sources */,
 				C76176DF1E52026800CFFC40 /* PPEAuthorizationInfo.swift in Sources */,
 				C78D3DE71E40D53000D62EC7 /* DispatchQueue+Utitities.swift in Sources */,
-				C7FB91F31E56076F0044C9F2 /* PPEDataStorage+Data.swift in Sources */,
+				C7FB91F31E56076F0044C9F2 /* PPEDataStorage+JobsSpreads.swift in Sources */,
 				C7BBD3FD1E44B5B80074AB56 /* PPEServiceGateway+Data.swift in Sources */,
 				11B9C5051E29646D000D8B30 /* PPEServiceManager+Profile.swift in Sources */,
 				C77F73501E5495A4001A0F54 /* PPESpread.swift in Sources */,

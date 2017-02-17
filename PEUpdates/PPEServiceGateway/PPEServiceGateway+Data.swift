@@ -44,19 +44,24 @@ extension PPEServiceGateway {
         
         let url = URL(string: server)
         
+        let serviceManager = PPEServiceManager.sharedInstance
+        let dataStorage = PPEDataStorage.sharedInstance
+        
         login(email: email, password: password, serverURL: url, success: { (_, _) in
-            PPEServiceManager.sharedInstance.loadJobsSpreads(serverURL: url, success: { (response, data) in
-                
-                
-                //TODO: Load jobs/spreads to DB
-                
-                
-                //TODO: Load welds
-                
-                
-                invokeSuccess(response, data)
-                
-                
+            serviceManager.loadJobsSpreads(serverURL: url, success: { (response, data) in
+                dataStorage.saveJobsSpreadsData(withDictionary: data as? Dictionary, completion: { (_, error) in
+                    if (error == nil) {
+                        
+                        
+                        //TODO: Load welds
+                        
+                        
+                        invokeSuccess(response, data)
+                    }
+                    else {
+                        invokeFailure(response, error!)
+                    }
+                })
             }, failure: invokeFailure, progress: invokeProgress)
         }, failure: invokeFailure)
     }

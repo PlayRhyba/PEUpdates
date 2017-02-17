@@ -60,20 +60,23 @@ extension PPEServiceGateway {
             let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
             let build = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as! String
             
-            PPEServiceManager.sharedInstance.authorize(version: version, build: build, serverURL: url, success: { (response, data) in
+            let serviceManager = PPEServiceManager.sharedInstance
+            let dataStorage = PPEDataStorage.sharedInstance
+            
+            serviceManager.authorize(version: version, build: build, serverURL: url, success: { (response, data) in
                 let authInfo = PPEAuthorizationInfo.init(withDictionary: data as? [String: Any])
                 
                 if authInfo.isAuthorized() {
-                    PPEServiceManager.sharedInstance.loadProfile(serverURL: url, success: { (response, data) in
-                        PPEDataStorage.sharedInstance.updateProfile(withDictionary: data as? Dictionary,
-                                                                    completion: { (_, error) in
-                                                                        if (error == nil) {
-                                                                            let profile = PPEDataStorage.sharedInstance.profile()
-                                                                            invokeSuccess(response, profile)
-                                                                        }
-                                                                        else {
-                                                                            invokeFailure(response, error!)
-                                                                        }
+                    serviceManager.loadProfile(serverURL: url, success: { (response, data) in
+                        dataStorage.updateProfile(withDictionary: data as? Dictionary,
+                                                  completion: { (_, error) in
+                                                    if (error == nil) {
+                                                        let profile = dataStorage.profile()
+                                                        invokeSuccess(response, profile)
+                                                    }
+                                                    else {
+                                                        invokeFailure(response, error!)
+                                                    }
                         })
                     }, failure: invokeFailure)
                 }
