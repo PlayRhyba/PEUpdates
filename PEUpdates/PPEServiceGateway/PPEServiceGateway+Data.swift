@@ -50,7 +50,7 @@ extension PPEServiceGateway {
         login(email: email, password: password, serverURL: url, success: { (_, _) in
             serviceManager.loadJobsSpreads(serverURL: url, success: { (response, data) in
                 dataStorage.saveJobsSpreadsData(withDictionary: data as? Dictionary, completion: { (_, error) in
-                    if (error == nil) {
+                    if error == nil {
                         
                         
                         //TODO: Load welds

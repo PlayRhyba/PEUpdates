@@ -18,6 +18,11 @@ extension (PPEDataStorage) {
         MagicalRecord.save({ (localContext) in
             self.saveSpreads(withDictionary: dictionary, localContext: localContext)
             self.saveLabourSpreads(withDictionary: dictionary, localContext: localContext)
+            
+            
+            //TODO: Handle other data models
+            
+            
         }, completion: completion)
     }
     

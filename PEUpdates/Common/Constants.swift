@@ -44,6 +44,22 @@ struct Constants {
     }
     
     
+    struct DateFormats {
+        
+        
+        //TODO: Describe date formates
+        
+        
+//        #define DATE_FORMAT @"dd-MMM-yyyy"
+//        #define DATE_SHORT_FORMAT @"MMM dd"
+//        #define DATE_TIME_FORMAT @"dd-MMM-yyyy HH:mm:ss"
+//        #define SQL_DATE_FORMAT @"yy-MM-dd"
+//        #define SQL_DATE_TIME_FORMAT @"yy-MM-dd HH:mm:ss"
+//        #define TIME_FORMAT @"HH:mm:ss"
+//        #define TIME_FORMAT_HOURS_MINUTES @"HH:mm"
+    }
+    
+    
     struct LocalPaths {
         static var DocumentsDirectory: String {
             return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]

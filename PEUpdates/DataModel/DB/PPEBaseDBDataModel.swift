@@ -26,7 +26,19 @@ import CocoaLumberjack
             let fieldDescription = PPEConfigurationManager.sharedInstance.fieldDesctiption(name: name,
                                                                                            table: tableName)
             if let fd = fieldDescription {
-                let value = d[fd.type!]
+                var value = d[fd.type!]
+                
+                if value is NSNull {
+                    value = nil;
+                }
+                else if type is NSDate.Type {
+                    
+                    
+                    //TODO: Handle Dates
+                    
+                    
+                }
+                
                 self.setValue(value, forKey: name)
                 
                 DDLogDebug(String(format: "%@: SETTING PROPERTY: %@ TYPE: %@ VALUE: %@",

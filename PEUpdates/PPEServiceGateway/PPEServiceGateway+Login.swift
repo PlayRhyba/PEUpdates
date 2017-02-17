@@ -23,7 +23,7 @@ extension PPEServiceGateway {
                                                       success: { (response, data) in
                                                         let dataString = data as! String
                                                         
-                                                        if (dataString == Constants.Strings.LoggedIn) {
+                                                        if dataString == Constants.Strings.LoggedIn {
                                                             success?(response, dataString)
                                                         }
                                                         else {
@@ -70,7 +70,7 @@ extension PPEServiceGateway {
                     serviceManager.loadProfile(serverURL: url, success: { (response, data) in
                         dataStorage.updateProfile(withDictionary: data as? Dictionary,
                                                   completion: { (_, error) in
-                                                    if (error == nil) {
+                                                    if error == nil {
                                                         let profile = dataStorage.profile()
                                                         invokeSuccess(response, profile)
                                                     }

@@ -19,7 +19,7 @@ class PPEServiceResultsHandler: NSObject {
     
     
     class func process(error: Error) -> Error {
-        if ((error as NSError).isCanceledRequestOperationError()) {
+        if (error as NSError).isCanceledRequestOperationError() {
             return Errors.operationCanceledError()
         }
         
@@ -32,7 +32,7 @@ class PPEServiceResultsHandler: NSObject {
                        expectedResultType: ExpectedResultType,
                        success: PPEServiceManager.SuccessBlock?,
                        failure: PPEServiceManager.FailureBlock?) {
-        if (data != nil && data is Data) {
+        if data != nil && data is Data {
             switch expectedResultType {
             case .String:
                 let dataString = String(data: data as! Data, encoding: .utf8)

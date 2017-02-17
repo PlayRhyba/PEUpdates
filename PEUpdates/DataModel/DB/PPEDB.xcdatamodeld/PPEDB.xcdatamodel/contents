@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="PPELabourSpread" representedClassName="PPELabourSpread" syncable="YES">
+    <entity name="PPELabourSpread" representedClassName=".PPELabourSpread" syncable="YES">
         <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="labourSpreadUUID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,7 +20,7 @@
         <attribute name="roles" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="signatureData" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="PPESpread" representedClassName="PPESpread" syncable="YES">
+    <entity name="PPESpread" representedClassName=".PPESpread" syncable="YES">
         <attribute name="billingEmailList" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="centreOfRightOfWayWKT" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
@@ -61,8 +61,8 @@
         <attribute name="workOrderTaskCodeNo" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PPEProfile" positionX="-63" positionY="-18" width="128" height="193"/>
-        <element name="PPESpread" positionX="-236" positionY="54" width="128" height="613"/>
         <element name="PPELabourSpread" positionX="-153" positionY="135" width="128" height="135"/>
+        <element name="PPEProfile" positionX="-63" positionY="-18" width="128" height="193"/>
+        <element name="PPESpread" positionX="-236" positionY="54" width="128" height="615"/>
     </elements>
 </model>

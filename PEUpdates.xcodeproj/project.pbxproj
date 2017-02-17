@@ -40,6 +40,7 @@
 		C7E228D31E4374CB00EA9C83 /* PPEBaseDBDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E228CF1E4374CB00EA9C83 /* PPEBaseDBDataModel.swift */; };
 		C7E228D41E4374CB00EA9C83 /* PPEDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C7E228D01E4374CB00EA9C83 /* PPEDB.xcdatamodeld */; };
 		C7E228D51E4374CB00EA9C83 /* PPEProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E228D21E4374CB00EA9C83 /* PPEProfile.swift */; };
+		C7EEF82A1E5726E5001A5EBD /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EEF8291E5726E4001A5EBD /* Date+Utilities.swift */; };
 		C7FB91F31E56076F0044C9F2 /* PPEDataStorage+JobsSpreads.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB91F21E56076F0044C9F2 /* PPEDataStorage+JobsSpreads.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		C7E228CF1E4374CB00EA9C83 /* PPEBaseDBDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEBaseDBDataModel.swift; sourceTree = "<group>"; };
 		C7E228D11E4374CB00EA9C83 /* PPEDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PPEDB.xcdatamodel; sourceTree = "<group>"; };
 		C7E228D21E4374CB00EA9C83 /* PPEProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEProfile.swift; sourceTree = "<group>"; };
+		C7EEF8291E5726E4001A5EBD /* Date+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utilities.swift"; sourceTree = "<group>"; };
 		C7FB91F21E56076F0044C9F2 /* PPEDataStorage+JobsSpreads.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEDataStorage+JobsSpreads.swift"; sourceTree = "<group>"; };
 		F43861A042FE1A485806A191 /* Pods-PEUpdates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEUpdates.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PEUpdates/Pods-PEUpdates.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,8 +124,8 @@
 				11728D381E22E8A1000FC4DB /* Extensions */,
 				11728D2E1E22CCF1000FC4DB /* PPEServiceGateway */,
 				116771D91E21636800ACBD76 /* PPEServiceManager */,
-				C76176DA1E51FD3D00CFFC40 /* PPEConfigurationManager */,
 				11BB1FCE1E2BFD54006A7C16 /* PPEDataStorage */,
+				C76176DA1E51FD3D00CFFC40 /* PPEConfigurationManager */,
 				116771C71E215DCC00ACBD76 /* AppDelegate.swift */,
 				116771C91E215DCC00ACBD76 /* ViewController.swift */,
 				116771CB1E215DCC00ACBD76 /* Main.storyboard */,
@@ -172,6 +174,7 @@
 				C78D3DE61E40D53000D62EC7 /* DispatchQueue+Utitities.swift */,
 				C727CDA81E4220640070C0B2 /* String+Utilities.swift */,
 				C736ACDC1E5334D900062485 /* NSObject+Reflection.swift */,
+				C7EEF8291E5726E4001A5EBD /* Date+Utilities.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				11728D3A1E22E8A1000FC4DB /* Errors.swift in Sources */,
 				C76176DC1E51FD5B00CFFC40 /* PPEConfigurationManager.swift in Sources */,
 				C76176DF1E52026800CFFC40 /* PPEAuthorizationInfo.swift in Sources */,
+				C7EEF82A1E5726E5001A5EBD /* Date+Utilities.swift in Sources */,
 				C78D3DE71E40D53000D62EC7 /* DispatchQueue+Utitities.swift in Sources */,
 				C7FB91F31E56076F0044C9F2 /* PPEDataStorage+JobsSpreads.swift in Sources */,
 				C7BBD3FD1E44B5B80074AB56 /* PPEServiceGateway+Data.swift in Sources */,

@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func loadConfiguration() {
         let configurationManager = PPEConfigurationManager.sharedInstance
         
-        if (configurationManager.isLoaded() == false) {
+        if configurationManager.isLoaded() == false {
             SVProgressHUD.show(withStatus: "Configuration loading...")
             
             configurationManager.load { (_, error) in

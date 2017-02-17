@@ -60,7 +60,7 @@ class PPEConfigurationManager: NSObject {
                         for dictionary in dictionaries {
                             let fieldDescription = PPEFieldDescription(withDictionary: dictionary)
                             
-                            if (fieldDescription.tableName == nil) {
+                            if fieldDescription.tableName == nil {
                                 fieldDescription.tableName = tableName
                             }
                             
@@ -98,7 +98,7 @@ class PPEConfigurationManager: NSObject {
         var key = keyName(fieldName: pName, tableName: table)
         var field = fields[key]
         
-        if (field == nil) {
+        if field == nil {
             key = keyName(fieldName: pName.capitalizingFirstLetter(), tableName: table)
             field = fields[key]
         }
@@ -114,7 +114,7 @@ class PPEConfigurationManager: NSObject {
         let name = (fileName as NSString).deletingPathExtension
         let nameComponents = name.components(separatedBy: LocalConstants.Separator)
         
-        if (nameComponents.count == 2) {
+        if nameComponents.count == 2 {
             return nameComponents[1]
         }
         
