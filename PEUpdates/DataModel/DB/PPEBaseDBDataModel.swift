@@ -31,8 +31,10 @@ import CocoaLumberjack
                 if value is NSNull {
                     value = nil;
                 }
-                else if type is NSDate.Type && value is String {
-                    value = Constants.DateFormats.date(fromString:value as! String)
+                else if type is NSDate.Type {
+                    if value is String {
+                        value = Constants.DateFormats.date(fromString:value as! String)
+                    }
                 }
                 
                 self.setValue(value, forKey: name)
