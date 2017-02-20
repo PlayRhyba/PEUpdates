@@ -30,4 +30,26 @@ extension PPEServiceManager {
                                                          failure: failure)
         }, progress: progress, failure: failure)
     }
+    
+    
+    @discardableResult func loadWeldData(spreadID: NSNumber,
+                                         serverURL: URL?,
+                                         success: SuccessBlock?,
+                                         failure: FailureBlock?,
+                                         progress: ProgressBlock?) -> URLSessionDataTask? {
+        let parameters = [Constants.Keys.spreadId: spreadID,
+                          Constants.Keys.From: Constants.Strings.iPad] as [String: Any]
+        
+        return sendPOST(path: Constants.ServerPaths.WeldData,
+                        baseURL: serverURL,
+                        parameters: parameters,
+                        sessionManagerConfigurationBlock: nil,
+                        success: { (response, data) in
+                            PPEServiceResultsHandler.process(response: response,
+                                                             data: data,
+                                                             expectedResultType: .JSON,
+                                                             success: success,
+                                                             failure: failure)
+        }, progress: progress, failure: failure)
+    }
 }

@@ -96,6 +96,13 @@ struct Errors {
     }
     
     
+    static func weldDataUnavailableError() -> Error {
+        return NSError(domain: Domains.ResponseObjectErrorDomain.rawValue,
+                       code: Codes.ResponseObjectErrorCode.rawValue,
+                       userInfo: [NSLocalizedDescriptionKey: "Weld data is unavailable"])
+    }
+    
+    
     static func configurationDataFormatError() -> Error {
         return NSError(domain: Domains.ConfigurationManagerErrorDomain.rawValue,
                        code: Codes.ConfigurationDataFormatErrorCode.rawValue,

@@ -65,10 +65,113 @@
         <attribute name="workOrderNo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="workOrderTaskCodeNo" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="PPEWeld" representedClassName=".PPEWeld" parentEntity="PPEBaseDBDataModel" syncable="YES">
+        <attribute name="amountOvalityID" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="angleSMAWBevelPrep1" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="angleSMAWBevelPrep2" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="asBuilt" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="backBevelAngle" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="bellAndCrimp1" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="bellAndCrimp2" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="contractorCompanyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="counted" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="counterBoreLength" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="crewPrefix" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cutout" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="defectAndQuadrant" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="foremanName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="heatNumber1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="heatNumber2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="highLowDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="highLowInspectorName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="highLowInspectorUsername" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hiLow0Location" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="hiLow90Location" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="hiLow180Location" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="hiLow270Location" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="inspectorName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="installLength1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="installLength2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="internalSeamGrind1" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="internalSeamGrind2" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="jobID" optional="YES" attributeType="Integer 16" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="jointNumber1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="jointNumber2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="landSMAWBevelPrep1" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="landSMAWBevelPrep2" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lengthCut1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lengthCut2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lineUpClampType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lineUpComment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lineUpDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lineUpInspectorName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lineUpInspectorUsername" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="noseGMAWBevelPrep1" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="noseGMAWBevelPrep2" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="offsetGMAWBevelPrep1" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="offsetGMAWBevelPrep2" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="outsideDiameter1" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="outsideDiameter2" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pieceNumber1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pieceNumber2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pieceUUID1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pieceUUID2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="previousWeldUUID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="q1Q3OvalityID" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="q1WallThickness" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="q2Q4OvalityID" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="q2WallThickness" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="q3WallThickness" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="q4WallThickness" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="repair" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="repairCutoutDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="spreadID" optional="YES" attributeType="Integer 16" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="spreadPrefix" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="station" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taperAngle" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="transitionAcceptable" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="transitionComments" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transitionDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="transitionInspectorName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transitionInspectorUsername" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transitionNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transitionPieceNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transitionType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transitionWallThickness" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="wallThickness1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wallThickness2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weldAuditAccRej" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weldAuditBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weldAuditComment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weldAuditDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="weldBevelAngle" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="weldComments" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weldDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="weldElevation" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="weldHistory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weldIndex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weldingCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weldingProcess" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weldingUnitNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weldLat" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="weldLong" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="weldNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weldStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weldType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weldUUID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wPSNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="xAxisOvality1" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="xAxisOvality2" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="xYOvalityVariance1" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="yAxisOvality1" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="yAxisOvality2" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="yYOvalityVariance2" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
     <elements>
+        <element name="PPEBaseDBDataModel" positionX="-153" positionY="135" width="128" height="90"/>
         <element name="PPELabourSpread" positionX="-153" positionY="135" width="128" height="135"/>
         <element name="PPEProfile" positionX="-63" positionY="-18" width="128" height="195"/>
         <element name="PPESpread" positionX="-236" positionY="54" width="128" height="615"/>
-        <element name="PPEBaseDBDataModel" positionX="-153" positionY="135" width="128" height="90"/>
+        <element name="PPEWeld" positionX="-153" positionY="135" width="128" height="1545"/>
     </elements>
 </model>

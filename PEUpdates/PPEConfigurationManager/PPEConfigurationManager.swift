@@ -50,13 +50,10 @@ class PPEConfigurationManager: NSObject {
                 for file in fieldsFilePaths {
                     let path = URL(fileURLWithPath: fieldsFolderPath!).appendingPathComponent(file)
                     let data = try Data(contentsOf: path)
-                    
-                    let objects = try JSONSerialization.jsonObject(with: data,
-                                                                   options: JSONSerialization.ReadingOptions.mutableContainers) as? [[String: Any]]
-                    
                     let tableName = self.extractTableName(fileName: file)
                     
-                    if let dictionaries = objects {
+                    if let dictionaries = try JSONSerialization.jsonObject(with: data,
+                                                                           options: JSONSerialization.ReadingOptions.mutableContainers) as? [[String: Any]] {
                         for dictionary in dictionaries {
                             let fieldDescription = PPEFieldDescription(withDictionary: dictionary)
                             

@@ -35,10 +35,8 @@ class PPEServiceResultsHandler: NSObject {
         if data != nil && data is Data {
             switch expectedResultType {
             case .String:
-                let dataString = String(data: data as! Data, encoding: .utf8)
-                
-                if let value = dataString {
-                    success?(response, value)
+                if let dataString = String(data: data as! Data, encoding: .utf8) {
+                    success?(response, dataString)
                 }
                 else {
                     failure?(response, Errors.unexpectedResponseDataStructureError())
@@ -46,10 +44,9 @@ class PPEServiceResultsHandler: NSObject {
                 
             case .JSON:
                 do {
-                    let dictionary = try JSONSerialization.jsonObject(with: data as! Data,
-                                                                      options: []) as? [String: Any]
-                    if let value = dictionary {
-                        success?(response, value)
+                    if let dictionary = try JSONSerialization.jsonObject(with: data as! Data,
+                                                                         options: []) as? [String: Any] {
+                        success?(response, dictionary)
                     }
                     else {
                         failure?(response, Errors.unexpectedResponseDataStructureError())

@@ -23,6 +23,7 @@ struct Constants {
         static let Profile = "Profile"
         static let Spread = "Spread"
         static let LabourSpread = "LabourSpread"
+        static let Weld = "Weld"
     }
     
     
@@ -34,6 +35,7 @@ struct Constants {
         static let Version = "Version"
         static let Build = "Build"
         static let FromIPad = "FromiPad"
+        static let spreadId = "spreadid"
     }
     
     
@@ -42,6 +44,7 @@ struct Constants {
         static let Authorize = "authorize.aspx"
         static let Profile = "profile.aspx"
         static let JobsSpreadsData = "JobSpreadData.aspx"
+        static let WeldData = "WeldData.aspx"
     }
     
     

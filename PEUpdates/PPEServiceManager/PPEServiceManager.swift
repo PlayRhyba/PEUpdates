@@ -41,16 +41,12 @@ class PPEServiceManager: NSObject {
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AFNetworkingTaskDidComplete,
                                                object: nil,
                                                queue: OperationQueue.main) { (notification) in
-                                                let error = notification.userInfo?[AFNetworkingTaskDidCompleteErrorKey] as? NSError
-                                                
-                                                if let e = error {
-                                                    let data = e.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as? Data
-                                                    
-                                                    if let d = data {
-                                                        let response = String(data: d, encoding: .utf8)
+                                                if let error = notification.userInfo?[AFNetworkingTaskDidCompleteErrorKey] as? NSError {
+                                                    if let data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as? Data {
+                                                        let response = String(data: data, encoding: .utf8)
                                                         
                                                         DDLogError(String(format: "%@: AFNETWORKING TASK HAS BEEN COMPLETED WITH ERROR: %@. RESPONSE: %@",
-                                                                          "\(PPEServiceManager.self)", e, response!))
+                                                                          "\(PPEServiceManager.self)", error, response!))
                                                     }
                                                     
                                                 }

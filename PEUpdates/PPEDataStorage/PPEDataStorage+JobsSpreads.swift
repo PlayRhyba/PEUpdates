@@ -13,6 +13,11 @@ import MagicalRecord
 
 extension (PPEDataStorage) {
     
+    func spreads() -> [PPESpread]? {
+        return PPESpread.mr_findAll() as? [PPESpread]
+    }
+    
+    
     func saveJobsSpreadsData(withDictionary dictionary: [String: Any]?,
                              completion: ((Bool, Error?) -> Void)?) {
         MagicalRecord.save({ (localContext) in
