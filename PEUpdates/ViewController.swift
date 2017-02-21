@@ -57,9 +57,7 @@ class ViewController: UIViewController {
                                     SVProgressHUD.showSuccess(withStatus: "Data have been loaded")
         }, failure: { (response, error) in
             SVProgressHUD.showError(withStatus: error.localizedDescription)
-        }) { (progress: Progress) in
-            SVProgressHUD.showProgress(Float(progress.fractionCompleted))
-        }
+        }, progress: nil)
     }
 }
 

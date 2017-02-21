@@ -13,6 +13,6 @@ import Foundation
 extension (NSPredicate) {
     
     class func predicate(spreadID: NSNumber) -> NSPredicate {
-        return NSPredicate.init(format: "spreadID == %@", spreadID)
+        return NSPredicate.init(format: "%K == %@", #keyPath(PPEWeld.spreadID), spreadID)
     }
 }
