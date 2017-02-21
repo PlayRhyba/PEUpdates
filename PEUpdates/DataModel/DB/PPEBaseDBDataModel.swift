@@ -49,8 +49,8 @@ import CocoaLumberjack
                 
                 self.setValue(value, forKey: name)
                 
-                DDLogDebug(String(format: "%@: SETTING PROPERTY: %@ TYPE: %@ VALUE: %@",
-                                  "\(classForCoder)", name, "\(type)", "\(value)"))
+                DDLogVerbose(String(format: "%@: SETTING PROPERTY: %@ TYPE: %@ VALUE: %@",
+                                    "\(classForCoder)", name, "\(type)", "\(value)"))
             }
         }
     }

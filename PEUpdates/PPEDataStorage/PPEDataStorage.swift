@@ -12,6 +12,9 @@ import MagicalRecord
 
 
 class PPEDataStorage: NSObject {
+
+    typealias CompletionBlock = (Bool, Error?) -> Void
+    
     
     static let sharedInstance = PPEDataStorage()
     

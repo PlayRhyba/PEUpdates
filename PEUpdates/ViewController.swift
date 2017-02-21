@@ -37,9 +37,9 @@ class ViewController: UIViewController {
         PPEServiceGateway.authenticate(email: email,
                                        password: password,
                                        server: server,
-                                       success: { (response, data) in
+                                       success: { (profile) in
                                         SVProgressHUD.showSuccess(withStatus: String(format: "Logged in. User: %@",
-                                                                                     (data as? PPEProfile)?.name ?? "Unknown"))
+                                                                                     profile.name ?? "Unknown"))
         },
                                        failure: { (response, error) in
                                         SVProgressHUD.showError(withStatus: error.localizedDescription)
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         PPEServiceGateway.loadData(email: email,
                                    password: password,
                                    server: server,
-                                   success: { (response, data) in
+                                   success: {
                                     SVProgressHUD.showSuccess(withStatus: "Data have been loaded")
         }, failure: { (response, error) in
             SVProgressHUD.showError(withStatus: error.localizedDescription)

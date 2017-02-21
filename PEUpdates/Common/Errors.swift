@@ -96,10 +96,10 @@ struct Errors {
     }
     
     
-    static func weldDataUnavailableError() -> Error {
+    static func spreadsDataUnavailableError() -> Error {
         return NSError(domain: Domains.ResponseObjectErrorDomain.rawValue,
-                       code: Codes.ResponseObjectErrorCode.rawValue,
-                       userInfo: [NSLocalizedDescriptionKey: "Weld data is unavailable"])
+                       code:Codes.ResponseObjectErrorCode.rawValue,
+                       userInfo: [NSLocalizedDescriptionKey: "Spreads data is unavailable"])
     }
     
     

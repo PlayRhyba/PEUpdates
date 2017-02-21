@@ -19,7 +19,7 @@ extension (PPEDataStorage) {
     
     
     func updateProfile(withDictionary dictionary: [String: Any]?,
-                       completion: ((Bool, Error?) -> Void)?) {
+                       completion: CompletionBlock?) {
         MagicalRecord.save({ (localContext) in
             if let p = self.profile() {
                 p.fill(withDictionary: dictionary)

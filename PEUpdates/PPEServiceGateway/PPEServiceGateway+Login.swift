@@ -36,12 +36,12 @@ extension PPEServiceGateway {
     class func authenticate(email: String,
                             password: String,
                             server: String,
-                            success: PPEServiceManager.SuccessBlock?,
+                            success: ((PPEProfile) -> Void)?,
                             failure: PPEServiceManager.FailureBlock?) {
-        let invokeSuccess: PPEServiceManager.SuccessBlock = { (response, data) in
+        let invokeSuccess: (PPEProfile) -> Void = { (profile) in
             if let block = success {
                 DispatchQueue.main.async {
-                    block(response, data)
+                    block(profile)
                 }
             }
         }
@@ -71,11 +71,15 @@ extension PPEServiceGateway {
                         dataStorage.updateProfile(withDictionary: data as? Dictionary,
                                                   completion: { (_, error) in
                                                     if error == nil {
-                                                        let profile = dataStorage.profile()
-                                                        invokeSuccess(response, profile)
+                                                        if let profile = dataStorage.profile() {
+                                                            invokeSuccess(profile)
+                                                        }
+                                                        else {
+                                                            invokeFailure(nil, Errors.internalError())
+                                                        }
                                                     }
                                                     else {
-                                                        invokeFailure(response, error!)
+                                                        invokeFailure(nil, error!)
                                                     }
                         })
                     }, failure: invokeFailure)

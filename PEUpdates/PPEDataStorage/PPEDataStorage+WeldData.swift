@@ -19,16 +19,20 @@ extension (PPEDataStorage) {
     }
     
     
-    func saveWeldData(withDictionary dictionary: [String: Any]?,
-                      spreadID: NSNumber,
-                      completion:((Bool, Error?) -> Void)?) {
+    func saveWeldData(dictionaries: Array<[String: Any]>?, completion: CompletionBlock?) {
         MagicalRecord.save({ (localContext) in
-            self.saveWelds(withDictionary: dictionary, spreadID: spreadID, localContext: localContext)
-            
-            
-            //TODO: Handle other models
-            
-            
+            if let objects = dictionaries {
+                self.clearWeldData(localContext: localContext)
+                
+                for dictionary in objects {
+                    self.saveWelds(withDictionary: dictionary, localContext: localContext)
+                    
+                    
+                    //TODO: Handle other models
+                    
+                    
+                }
+            }
         }, completion: completion)
     }
     
@@ -37,17 +41,24 @@ extension (PPEDataStorage) {
     
     
     private func saveWelds(withDictionary dictionary: [String: Any]?,
-                           spreadID: NSNumber,
                            localContext: NSManagedObjectContext) {
         if let weldsData = dictionary?[Constants.Tables.Weld] {
             if weldsData is Array<Dictionary<String, Any>> {
-                PPEWeld.mr_deleteAll(matching: NSPredicate.predicate(spreadID: spreadID), in: localContext)
-                
                 for data in (weldsData as! Array<Dictionary<String, Any>>) {
                     let weld = PPEWeld.mr_createEntity(in: localContext)
                     weld?.fill(withDictionary: data)
                 }
             }
         }
+    }
+    
+    
+    private func clearWeldData(localContext: NSManagedObjectContext) {
+        PPEWeld.mr_truncateAll(in: localContext)
+        
+        
+        //TODO: Clear other models
+        
+        
     }
 }

@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func configureLoggers() {
         #if DEBUG
-            let defaultLogLevel: DDLogLevel = DDLogLevel.all
+            let defaultLogLevel: DDLogLevel = DDLogLevel.debug
         #else
             let defaultLogLevel: DDLogLevel = DDLogLevel.warning
             
