@@ -38,10 +38,10 @@ extension (PPEDataStorage) {
     private func saveSpreads(withDictionary dictionary: [String: Any]?,
                              localContext: NSManagedObjectContext) {
         if let spreadsData = dictionary?[Constants.Tables.Spread] {
-            if spreadsData is Array<Dictionary<String, Any>> {
+            if spreadsData is [[String: Any]] {
                 PPESpread.mr_truncateAll(in: localContext)
                 
-                for data in (spreadsData as! Array<Dictionary<String, Any>>) {
+                for data in spreadsData as! [[String: Any]] {
                     let spread = PPESpread.mr_createEntity(in: localContext)
                     spread?.fill(withDictionary: data)
                 }
@@ -53,10 +53,10 @@ extension (PPEDataStorage) {
     private func saveLabourSpreads(withDictionary dictionary: [String: Any]?,
                                    localContext: NSManagedObjectContext) {
         if let labourSpreadsData = dictionary?[Constants.Tables.LabourSpread] {
-            if labourSpreadsData is Array<Dictionary<String, Any>> {
+            if labourSpreadsData is [[String: Any]] {
                 PPELabourSpread.mr_truncateAll(in: localContext)
                 
-                for data in (labourSpreadsData as! Array<Dictionary<String, Any>>) {
+                for data in labourSpreadsData as! [[String: Any]] {
                     let labourSpread = PPELabourSpread.mr_createEntity(in: localContext)
                     labourSpread?.fill(withDictionary: data)
                 }

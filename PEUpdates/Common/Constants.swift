@@ -24,6 +24,7 @@ struct Constants {
         static let Spread = "Spread"
         static let LabourSpread = "LabourSpread"
         static let Weld = "Weld"
+        static let Piece = "Piece"
     }
     
     

@@ -13,6 +13,52 @@
         <attribute name="spreadID" optional="YES" attributeType="Integer 16" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="PPEPiece" representedClassName=".PPEPiece" parentEntity="PPEBaseDBDataModel" syncable="YES">
+        <attribute name="barcodeA1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="barcodeA2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="barcodeA3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="barcodeB1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="barcodeB2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="barcodeB3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bendAngleDegrees" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="bendRadius" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coating" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="heatNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="innerDiameter_mm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="innerDiameter2_mm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="jointNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="length_meters" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="manufacturer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="material" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="materialGrade" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mTRNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nPSDN" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nPSDN2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="outsideDiameter_mm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="outsideDiameter2_mm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="p_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pieceLat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pieceLong" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pieceNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pieceType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pieceTypeGroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pieceUUID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pup1Coil" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pup1HeatNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pup1Number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pup2Coil" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pup2HeatNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pup2Number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pup3Coil" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pup3HeatNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pup3Number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="schedule" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="schedule2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shawNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="spreadID" optional="YES" attributeType="Integer 16" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="wallThickness_mm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wallThickness2_mm" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="PPEProfile" representedClassName=".PPEProfile" parentEntity="PPEBaseDBDataModel" syncable="YES">
         <attribute name="companyID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastJobUUID" optional="YES" attributeType="String" syncable="YES"/>
@@ -173,5 +219,6 @@
         <element name="PPEProfile" positionX="-63" positionY="-18" width="128" height="195"/>
         <element name="PPESpread" positionX="-236" positionY="54" width="128" height="615"/>
         <element name="PPEWeld" positionX="-153" positionY="135" width="128" height="1545"/>
+        <element name="PPEPiece" positionX="-153" positionY="135" width="128" height="705"/>
     </elements>
 </model>

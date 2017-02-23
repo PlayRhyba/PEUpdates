@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         configureLoggers()
+        configureHUD()
         PPEDataStorage.sharedInstance.setup()
         
         return true
@@ -44,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func configureLoggers() {
         #if DEBUG
-            let defaultLogLevel: DDLogLevel = DDLogLevel.debug
+            let defaultLogLevel: DDLogLevel = DDLogLevel.info
         #else
             let defaultLogLevel: DDLogLevel = DDLogLevel.warning
             
@@ -61,6 +62,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         DDLog.add(DDTTYLogger.sharedInstance(), with: defaultLogLevel)
         DDLog.add(DDASLLogger.sharedInstance(), with: defaultLogLevel)
+    }
+    
+    
+    private func configureHUD() {
+        SVProgressHUD.setDefaultMaskType(.black)
     }
     
     

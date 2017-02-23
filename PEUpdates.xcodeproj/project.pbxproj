@@ -40,6 +40,7 @@
 		C7CA3C781E5B3BDF00504F58 /* PPEWeld.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA3C771E5B3BDF00504F58 /* PPEWeld.swift */; };
 		C7CA3C7A1E5B45B100504F58 /* PPEDataStorage+WeldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA3C791E5B45B100504F58 /* PPEDataStorage+WeldData.swift */; };
 		C7CA3C7C1E5B497E00504F58 /* NSPredicate+Predicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA3C7B1E5B497E00504F58 /* NSPredicate+Predicates.swift */; };
+		C7CC396F1E5F159200F2796F /* PPEPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CC396E1E5F159200F2796F /* PPEPiece.swift */; };
 		C7E228D31E4374CB00EA9C83 /* PPEBaseDBDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E228CF1E4374CB00EA9C83 /* PPEBaseDBDataModel.swift */; };
 		C7E228D41E4374CB00EA9C83 /* PPEDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C7E228D01E4374CB00EA9C83 /* PPEDB.xcdatamodeld */; };
 		C7E228D51E4374CB00EA9C83 /* PPEProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E228D21E4374CB00EA9C83 /* PPEProfile.swift */; };
@@ -84,6 +85,7 @@
 		C7CA3C771E5B3BDF00504F58 /* PPEWeld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEWeld.swift; sourceTree = "<group>"; };
 		C7CA3C791E5B45B100504F58 /* PPEDataStorage+WeldData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEDataStorage+WeldData.swift"; sourceTree = "<group>"; };
 		C7CA3C7B1E5B497E00504F58 /* NSPredicate+Predicates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Predicates.swift"; sourceTree = "<group>"; };
+		C7CC396E1E5F159200F2796F /* PPEPiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEPiece.swift; sourceTree = "<group>"; };
 		C7E228CF1E4374CB00EA9C83 /* PPEBaseDBDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEBaseDBDataModel.swift; sourceTree = "<group>"; };
 		C7E228D11E4374CB00EA9C83 /* PPEDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PPEDB.xcdatamodel; sourceTree = "<group>"; };
 		C7E228D21E4374CB00EA9C83 /* PPEProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEProfile.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				C77F734E1E5495A4001A0F54 /* PPESpread.swift */,
 				C75E799E1E560B8C00FCCB6B /* PPELabourSpread.swift */,
 				C7CA3C771E5B3BDF00504F58 /* PPEWeld.swift */,
+				C7CC396E1E5F159200F2796F /* PPEPiece.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -291,7 +294,8 @@
 				TargetAttributes = {
 					116771C31E215DCC00ACBD76 = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 6P279T7467;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -406,6 +410,7 @@
 				C7EEF82A1E5726E5001A5EBD /* Date+Utilities.swift in Sources */,
 				C78D3DE71E40D53000D62EC7 /* DispatchQueue+Utitities.swift in Sources */,
 				C7FB91F31E56076F0044C9F2 /* PPEDataStorage+JobsSpreads.swift in Sources */,
+				C7CC396F1E5F159200F2796F /* PPEPiece.swift in Sources */,
 				C7BBD3FD1E44B5B80074AB56 /* PPEServiceGateway+Data.swift in Sources */,
 				11B9C5051E29646D000D8B30 /* PPEServiceManager+Profile.swift in Sources */,
 				C77F73501E5495A4001A0F54 /* PPESpread.swift in Sources */,
@@ -478,7 +483,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -521,7 +526,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -535,11 +540,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6P279T7467;
 				INFOPLIST_FILE = PEUpdates/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.private.PEUpdates;
+				PRODUCT_BUNDLE_IDENTIFIER = com.metegrity.PEUpdates;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6814e8e3-706e-4bba-a745-f2759657866d";
+				PROVISIONING_PROFILE_SPECIFIER = PEUpdatesDevelopment;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -549,11 +558,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PEUpdates/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.private.PEUpdates;
+				PRODUCT_BUNDLE_IDENTIFIER = com.metegrity.PEUpdates;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

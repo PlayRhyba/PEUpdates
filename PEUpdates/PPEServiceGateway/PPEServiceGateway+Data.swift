@@ -53,7 +53,7 @@ extension PPEServiceGateway {
                     if error == nil {
                         if let spreads = dataStorage.spreads() {
                             DispatchQueue.global().async {
-                                var dictionaries = Array<[String: Any]>()
+                                var dictionaries = [[String: Any]]()
                                 var lastResponse: HTTPURLResponse?
                                 var lastError: Error?
                                 

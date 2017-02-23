@@ -22,35 +22,34 @@ import CocoaLumberjack
     
     
     func fill(withDictionary dictionary: [String: Any]?) {
-        guard let d = dictionary else { return }
-        
-        let baseModelSubclass = self.superclass === PPEBaseDBDataModel.self
-        let propertiesInfo = self.propertiesInfo(includeSuperclass: baseModelSubclass)
-        
-        for (name, type) in propertiesInfo {
-            let configurationManager = PPEConfigurationManager.sharedInstance
-            var fieldDescription = configurationManager.fieldDesctiption(name: name, table: self.tableName)
+        autoreleasepool {
+            guard let d = dictionary else { return }
             
-            if fieldDescription == nil && baseModelSubclass {
-                fieldDescription = configurationManager.fieldDesctiption(name: name, table: Constants.Tables.Base)
-            }
+            let baseModelSubclass = self.superclass === PPEBaseDBDataModel.self
+            let propertiesInfo = self.propertiesInfo(includeSuperclass: baseModelSubclass)
             
-            if let fd = fieldDescription {
-                var value: Any? = d[fd.type!]
+            for (name, type) in propertiesInfo {
+                let configurationManager = PPEConfigurationManager.sharedInstance
+                var fieldDescription = configurationManager.fieldDesctiption(name: name, table: self.tableName)
                 
-                if value is NSNull {
-                    value = nil;
+                if fieldDescription == nil && baseModelSubclass {
+                    fieldDescription = configurationManager.fieldDesctiption(name: name, table: Constants.Tables.Base)
                 }
-                else if type is NSDate.Type {
-                    if value is String {
-                        value = Constants.DateFormats.date(fromString:value as! String)
+                
+                if let fd = fieldDescription {
+                    var value: Any? = d[fd.type!]
+                    
+                    if value is NSNull {
+                        value = nil;
                     }
+                    else if type is NSDate.Type {
+                        if value is String {
+                            value = Constants.DateFormats.date(fromString:value as! String)
+                        }
+                    }
+                    
+                    self.setValue(value, forKey: name)
                 }
-                
-                self.setValue(value, forKey: name)
-                
-                DDLogVerbose(String(format: "%@: SETTING PROPERTY: %@ TYPE: %@ VALUE: %@",
-                                    "\(classForCoder)", name, "\(type)", "\(value)"))
             }
         }
     }

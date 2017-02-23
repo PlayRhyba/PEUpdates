@@ -108,7 +108,7 @@ class PPEServiceManager: NSObject {
                                handler: failure)
         }
         
-        logSentData(data: task?.originalRequest?.httpBody, type: .POST)
+        logSentResponse(body: task?.originalRequest?.httpBody, type: .POST)
         
         tasks.add(task)
         
@@ -142,6 +142,8 @@ class PPEServiceManager: NSObject {
                                error: error,
                                handler: failure)
         }
+        
+        logSentResponse(body: task?.originalRequest?.httpBody, type: .GET)
         
         tasks.add(task)
         
@@ -212,8 +214,8 @@ class PPEServiceManager: NSObject {
     }
     
     
-    private func logSentData(data: Data?, type: RequestType) {
-        let str = String(data: data ?? Data(), encoding: .utf8)
-        DDLogDebug(String(format: "%@: %@ DATA: %@", "\(classForCoder)", type.rawValue, str ?? ""))
+    private func logSentResponse(body: Data?, type: RequestType) {
+        let str = String(data: body ?? Data(), encoding: .utf8)
+        DDLogInfo(String(format: "%@: %@ BODY: %@", "\(classForCoder)", type.rawValue, str ?? "<empty>"))
     }
 }
