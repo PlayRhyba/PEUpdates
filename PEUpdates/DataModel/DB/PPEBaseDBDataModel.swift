@@ -13,6 +13,13 @@ import CocoaLumberjack
 
 @objc class PPEBaseDBDataModel: NSManagedObject, PPEDataModel {
     
+    enum ValueType {
+        case String
+        case Number
+        case Date
+    }
+    
+    
     @NSManaged public var created: NSNumber?
     @NSManaged public var modified: NSNumber?
     @NSManaged public var p_deleted: NSNumber?
@@ -55,6 +62,15 @@ import CocoaLumberjack
     }
     
     
+    func value(fromDictionary dictionary: [String: Any]?, propertyName: String, type: ValueType = .String) -> Any? {
+        guard let d = dictionary, let fd = fieldDescription(propertyName: propertyName) else {
+            return nil
+        }
+        
+        return process(value: d[fd.type!], type: type)
+    }
+    
+    
     //MARK: PPEDataModel
     
     
@@ -65,5 +81,31 @@ import CocoaLumberjack
     
     func postDictionary() -> [String: Any] {
         return Dictionary()
+    }
+    
+    
+    //MARK: Internal Logic
+    
+    
+    private func process(value: Any?, type: ValueType) -> Any? {
+        if value == nil || value is NSNull {
+            return nil
+        }
+        
+        switch type {
+        case .String, .Number: break
+        case .Date:
+            if value is String {
+                return Constants.DateFormats.date(fromString:value as! String)
+            }
+        }
+        
+        return value
+    }
+    
+    
+    private func fieldDescription(propertyName: String) -> PPEFieldDescription? {
+        let configurationManager = PPEConfigurationManager.sharedInstance
+        return configurationManager.fieldDesctiption(name: propertyName, table: self.tableName)
     }
 }

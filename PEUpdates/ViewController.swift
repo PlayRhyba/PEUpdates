@@ -12,8 +12,6 @@ import SVProgressHUD
 
 
 class ViewController: UIViewController {
-    @IBOutlet weak var loginButton: UIButton?
-    @IBOutlet weak var loadDataButton: UIButton?
     
     let server = "https://enbridge.pipelineenterprise.com/mobile"
     let email = "peinspector@metegrity.com"

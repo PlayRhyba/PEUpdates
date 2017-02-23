@@ -52,9 +52,6 @@
                             <constraint firstItem="CLg-vc-TNv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sgC-5D-DCG"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="loginButton" destination="cek-nh-J6x" id="tXL-ZE-80v"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
