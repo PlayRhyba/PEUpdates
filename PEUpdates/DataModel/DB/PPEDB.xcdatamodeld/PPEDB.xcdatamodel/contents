@@ -20,14 +20,14 @@
         <attribute name="barcodeB1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="barcodeB2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="barcodeB3" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="bendAngleDegrees" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="bendAngleDegrees" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="bendRadius" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="coating" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="heatNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="innerDiameter_mm" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="innerDiameter2_mm" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="jointNumber" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="length_meters" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="length_meters" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="manufacturer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="material" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="materialGrade" optional="YES" attributeType="String" syncable="YES"/>
@@ -216,9 +216,9 @@
     <elements>
         <element name="PPEBaseDBDataModel" positionX="-153" positionY="135" width="128" height="90"/>
         <element name="PPELabourSpread" positionX="-153" positionY="135" width="128" height="135"/>
+        <element name="PPEPiece" positionX="-153" positionY="135" width="128" height="705"/>
         <element name="PPEProfile" positionX="-63" positionY="-18" width="128" height="195"/>
         <element name="PPESpread" positionX="-236" positionY="54" width="128" height="615"/>
         <element name="PPEWeld" positionX="-153" positionY="135" width="128" height="1545"/>
-        <element name="PPEPiece" positionX="-153" positionY="135" width="128" height="705"/>
     </elements>
 </model>

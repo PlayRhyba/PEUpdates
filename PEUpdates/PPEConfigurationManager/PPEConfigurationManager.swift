@@ -120,6 +120,6 @@ class PPEConfigurationManager: NSObject {
     
     
     func keyName(fieldName: String, tableName: String) -> String {
-        return String(format: "%@%@%@", fieldName, LocalConstants.Separator, tableName)
+        return fieldName + LocalConstants.Separator + tableName
     }
 }

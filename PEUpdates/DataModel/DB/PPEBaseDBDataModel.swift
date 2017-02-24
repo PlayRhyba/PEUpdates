@@ -13,9 +13,8 @@ import CocoaLumberjack
 
 @objc class PPEBaseDBDataModel: NSManagedObject, PPEDataModel {
     
-    enum ValueType {
-        case String
-        case Number
+    enum ValueProcessingMode {
+        case Default
         case Date
     }
     
@@ -29,45 +28,20 @@ import CocoaLumberjack
     
     
     func fill(withDictionary dictionary: [String: Any]?) {
-        autoreleasepool {
-            guard let d = dictionary else { return }
-            
-            let baseModelSubclass = self.superclass === PPEBaseDBDataModel.self
-            let propertiesInfo = self.propertiesInfo(includeSuperclass: baseModelSubclass)
-            
-            for (name, type) in propertiesInfo {
-                let configurationManager = PPEConfigurationManager.sharedInstance
-                var fieldDescription = configurationManager.fieldDesctiption(name: name, table: self.tableName)
-                
-                if fieldDescription == nil && baseModelSubclass {
-                    fieldDescription = configurationManager.fieldDesctiption(name: name, table: Constants.Tables.Base)
-                }
-                
-                if let fd = fieldDescription {
-                    var value: Any? = d[fd.type!]
-                    
-                    if value is NSNull {
-                        value = nil;
-                    }
-                    else if type is NSDate.Type {
-                        if value is String {
-                            value = Constants.DateFormats.date(fromString:value as! String)
-                        }
-                    }
-                    
-                    self.setValue(value, forKey: name)
-                }
-            }
+        if let d = dictionary {
+            created = value(fromDictionary: d, propertyName: #keyPath(created)) as? NSNumber
+            modified = value(fromDictionary: d, propertyName: #keyPath(modified)) as? NSNumber
+            p_deleted = value(fromDictionary: d, propertyName: #keyPath(p_deleted)) as? NSNumber
         }
     }
     
     
-    func value(fromDictionary dictionary: [String: Any]?, propertyName: String, type: ValueType = .String) -> Any? {
+    func value(fromDictionary dictionary: [String: Any]?, propertyName: String, processingMode: ValueProcessingMode = .Default) -> Any? {
         guard let d = dictionary, let fd = fieldDescription(propertyName: propertyName) else {
             return nil
         }
         
-        return process(value: d[fd.type!], type: type)
+        return process(value: d[fd.type!], mode: processingMode)
     }
     
     
@@ -87,17 +61,18 @@ import CocoaLumberjack
     //MARK: Internal Logic
     
     
-    private func process(value: Any?, type: ValueType) -> Any? {
+    private func process(value: Any?, mode: ValueProcessingMode) -> Any? {
         if value == nil || value is NSNull {
             return nil
         }
         
-        switch type {
-        case .String, .Number: break
+        switch mode {
         case .Date:
             if value is String {
                 return Constants.DateFormats.date(fromString:value as! String)
             }
+            
+        case .Default: break
         }
         
         return value
@@ -106,6 +81,6 @@ import CocoaLumberjack
     
     private func fieldDescription(propertyName: String) -> PPEFieldDescription? {
         let configurationManager = PPEConfigurationManager.sharedInstance
-        return configurationManager.fieldDesctiption(name: propertyName, table: self.tableName)
+        return configurationManager.fieldDesctiption(name: propertyName, table: tableName)
     }
 }
