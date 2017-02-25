@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		11028D771E52676900DA056D /* Configuration in Resources */ = {isa = PBXBuildFile; fileRef = 11028D761E52676900DA056D /* Configuration */; };
 		116771C81E215DCC00ACBD76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116771C71E215DCC00ACBD76 /* AppDelegate.swift */; };
-		116771CA1E215DCC00ACBD76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116771C91E215DCC00ACBD76 /* ViewController.swift */; };
 		116771CD1E215DCC00ACBD76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116771CB1E215DCC00ACBD76 /* Main.storyboard */; };
 		116771CF1E215DCC00ACBD76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 116771CE1E215DCC00ACBD76 /* Assets.xcassets */; };
 		116771D21E215DCC00ACBD76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116771D01E215DCC00ACBD76 /* LaunchScreen.storyboard */; };
@@ -21,6 +20,9 @@
 		11728D3A1E22E8A1000FC4DB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D371E22E8A1000FC4DB /* Errors.swift */; };
 		11728D3C1E22E955000FC4DB /* NSError+Utitities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D3B1E22E955000FC4DB /* NSError+Utitities.swift */; };
 		11728D3E1E22EB25000FC4DB /* PPEServiceResultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D3D1E22EB25000FC4DB /* PPEServiceResultsHandler.swift */; };
+		11B008251E61D111007A1468 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B008221E61D111007A1468 /* MainViewController.swift */; };
+		11B008261E61D111007A1468 /* PiecesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B008241E61D111007A1468 /* PiecesViewController.swift */; };
+		11B008281E61D149007A1468 /* PieceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B008271E61D149007A1468 /* PieceCell.swift */; };
 		11B9C5051E29646D000D8B30 /* PPEServiceManager+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B9C5041E29646D000D8B30 /* PPEServiceManager+Profile.swift */; };
 		11BB1FD01E2BFDA2006A7C16 /* PPEDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB1FCF1E2BFDA2006A7C16 /* PPEDataStorage.swift */; };
 		6B670172A6A6155755BA4CCD /* Pods_PEUpdates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6D64D427903D017356C701 /* Pods_PEUpdates.framework */; };
@@ -52,7 +54,6 @@
 		11028D761E52676900DA056D /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		116771C41E215DCC00ACBD76 /* PEUpdates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PEUpdates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		116771C71E215DCC00ACBD76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		116771C91E215DCC00ACBD76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		116771CC1E215DCC00ACBD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		116771CE1E215DCC00ACBD76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		116771D11E215DCC00ACBD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,6 +66,9 @@
 		11728D371E22E8A1000FC4DB /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		11728D3B1E22E955000FC4DB /* NSError+Utitities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Utitities.swift"; sourceTree = "<group>"; };
 		11728D3D1E22EB25000FC4DB /* PPEServiceResultsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEServiceResultsHandler.swift; sourceTree = "<group>"; };
+		11B008221E61D111007A1468 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		11B008241E61D111007A1468 /* PiecesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiecesViewController.swift; sourceTree = "<group>"; };
+		11B008271E61D149007A1468 /* PieceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieceCell.swift; sourceTree = "<group>"; };
 		11B9C5041E29646D000D8B30 /* PPEServiceManager+Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEServiceManager+Profile.swift"; sourceTree = "<group>"; };
 		11BB1FCF1E2BFDA2006A7C16 /* PPEDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEDataStorage.swift; sourceTree = "<group>"; };
 		4993C27132A9CC99C0117B74 /* Pods-PEUpdates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEUpdates.release.xcconfig"; path = "Pods/Target Support Files/Pods-PEUpdates/Pods-PEUpdates.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,8 +138,8 @@
 				116771D91E21636800ACBD76 /* PPEServiceManager */,
 				11BB1FCE1E2BFD54006A7C16 /* PPEDataStorage */,
 				C76176DA1E51FD3D00CFFC40 /* PPEConfigurationManager */,
+				11B008201E61D111007A1468 /* UI */,
 				116771C71E215DCC00ACBD76 /* AppDelegate.swift */,
-				116771C91E215DCC00ACBD76 /* ViewController.swift */,
 				116771CB1E215DCC00ACBD76 /* Main.storyboard */,
 				116771CE1E215DCC00ACBD76 /* Assets.xcassets */,
 				116771D01E215DCC00ACBD76 /* LaunchScreen.storyboard */,
@@ -186,6 +190,32 @@
 				C7CA3C7B1E5B497E00504F58 /* NSPredicate+Predicates.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		11B008201E61D111007A1468 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				11B008211E61D111007A1468 /* ViewControllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		11B008211E61D111007A1468 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				11B008221E61D111007A1468 /* MainViewController.swift */,
+				11B008231E61D111007A1468 /* PiecesViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		11B008231E61D111007A1468 /* PiecesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				11B008241E61D111007A1468 /* PiecesViewController.swift */,
+				11B008271E61D149007A1468 /* PieceCell.swift */,
+			);
+			path = PiecesViewController;
 			sourceTree = "<group>";
 		};
 		11BB1FCE1E2BFD54006A7C16 /* PPEDataStorage */ = {
@@ -391,7 +421,6 @@
 				C7CA3C781E5B3BDF00504F58 /* PPEWeld.swift in Sources */,
 				C7E228D31E4374CB00EA9C83 /* PPEBaseDBDataModel.swift in Sources */,
 				11728D3C1E22E955000FC4DB /* NSError+Utitities.swift in Sources */,
-				116771CA1E215DCC00ACBD76 /* ViewController.swift in Sources */,
 				11728D291E22C6D2000FC4DB /* PPEServiceManager+Login.swift in Sources */,
 				C727CDA91E4220640070C0B2 /* String+Utilities.swift in Sources */,
 				11BB1FD01E2BFDA2006A7C16 /* PPEDataStorage.swift in Sources */,
@@ -399,6 +428,7 @@
 				C736ACDD1E5334D900062485 /* NSObject+Reflection.swift in Sources */,
 				C76176E11E52028F00CFFC40 /* PPEBaseMemoryDataModel.swift in Sources */,
 				116771DB1E21638500ACBD76 /* PPEServiceManager.swift in Sources */,
+				11B008251E61D111007A1468 /* MainViewController.swift in Sources */,
 				116771C81E215DCC00ACBD76 /* AppDelegate.swift in Sources */,
 				11728D3E1E22EB25000FC4DB /* PPEServiceResultsHandler.swift in Sources */,
 				C76176E51E52053800CFFC40 /* PPEDataModel.swift in Sources */,
@@ -408,6 +438,8 @@
 				C7CA3C7C1E5B497E00504F58 /* NSPredicate+Predicates.swift in Sources */,
 				C76176DF1E52026800CFFC40 /* PPEAuthorizationInfo.swift in Sources */,
 				C7EEF82A1E5726E5001A5EBD /* Date+Utilities.swift in Sources */,
+				11B008281E61D149007A1468 /* PieceCell.swift in Sources */,
+				11B008261E61D111007A1468 /* PiecesViewController.swift in Sources */,
 				C78D3DE71E40D53000D62EC7 /* DispatchQueue+Utitities.swift in Sources */,
 				C7FB91F31E56076F0044C9F2 /* PPEDataStorage+JobsSpreads.swift in Sources */,
 				C7CC396F1E5F159200F2796F /* PPEPiece.swift in Sources */,

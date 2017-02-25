@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  PEUpdates
 //
 //  Created by Alexander Snegursky on 1/7/17.
@@ -11,9 +11,9 @@ import UIKit
 import SVProgressHUD
 
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
-    let server = "https://enbridge.pipelineenterprise.com/mobile"
+    let server = "https://dev.pipelineenterprise.com/mobile"
     let email = "peinspector@metegrity.com"
     let password = "Default29)"
     
@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Main"
     }
     
     

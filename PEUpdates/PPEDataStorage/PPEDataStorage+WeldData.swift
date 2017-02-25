@@ -19,6 +19,11 @@ extension (PPEDataStorage) {
     }
     
     
+    func pieces() -> [PPEPiece]? {
+        return PPEPiece.mr_findAll() as? [PPEPiece]
+    }
+    
+    
     func saveWeldData(dictionaries: [[String: Any]]?, completion: CompletionBlock?) {
         MagicalRecord.save({ (localContext) in
             if let objects = dictionaries {

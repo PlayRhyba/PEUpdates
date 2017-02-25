@@ -81,6 +81,12 @@ import CocoaLumberjack
     
     private func fieldDescription(propertyName: String) -> PPEFieldDescription? {
         let configurationManager = PPEConfigurationManager.sharedInstance
-        return configurationManager.fieldDesctiption(name: propertyName, table: tableName)
+        var fd = configurationManager.fieldDesctiption(name: propertyName, table: tableName)
+        
+        if fd == nil {
+            fd = configurationManager.fieldDesctiption(name: propertyName, table: Constants.Tables.Base)
+        }
+        
+        return fd
     }
 }

@@ -92,11 +92,11 @@ class PPEConfigurationManager: NSObject {
     func fieldDesctiption(name: String, table: String) -> PPEFieldDescription? {
         let pName = name.fixedPropertyName()
         
-        var key = keyName(fieldName: pName, tableName: table)
+        var key = keyName(fieldName: pName.capitalizingFirstLetter(), tableName: table)
         var field = fields[key]
         
         if field == nil {
-            key = keyName(fieldName: pName.capitalizingFirstLetter(), tableName: table)
+            key = keyName(fieldName: pName, tableName: table)
             field = fields[key]
         }
         
