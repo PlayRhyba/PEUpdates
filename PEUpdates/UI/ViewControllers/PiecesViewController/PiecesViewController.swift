@@ -14,33 +14,35 @@ import SVProgressHUD
 class PiecesViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    
     var pieces: [PPEPiece]?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Pieces"
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save",
                                                             style: .done,
                                                             target: self,
-                                                            action: #selector(save))
+                                                            action: #selector(saveButtonClicked))
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         SVProgressHUD.show()
         
-        DispatchQueue.global().async {
-            self.pieces = PPEDataStorage.sharedInstance.pieces()
+        PPEDataStorage.sharedInstance.pieces(completion: { (pieces, error) in
+            self.pieces = pieces
             
-            DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
-                self.tableView.reloadData()
+            if error != nil {
+                SVProgressHUD.showError(withStatus: error?.localizedDescription)
             }
-        }
+            else {
+                SVProgressHUD.dismiss()
+            }
+            
+            self.title = String(format: "Pieces (%d)", self.pieces?.count ?? 0)
+            self.tableView.reloadData()
+        })
     }
     
     
@@ -62,11 +64,16 @@ class PiecesViewController: UIViewController, UITableViewDataSource {
     //MARK: Internal Logic
     
     
-    func save() {
-
+    func saveButtonClicked() {
+        SVProgressHUD.show()
         
-        //TODO: Save model
-        
-        
+        PPEDataStorage.sharedInstance.save { (_, error) in
+            if error == nil {
+                SVProgressHUD.dismiss()
+            }
+            else {
+                SVProgressHUD.showError(withStatus: error!.localizedDescription)
+            }
+        }
     }
 }

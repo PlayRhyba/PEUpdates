@@ -13,7 +13,7 @@ import SVProgressHUD
 
 class MainViewController: UIViewController {
     
-    let server = "https://dev.pipelineenterprise.com/mobile"
+    let server = "https://enbridge.pipelineenterprise.com/mobile"
     let email = "peinspector@metegrity.com"
     let password = "Default29)"
     

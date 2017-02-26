@@ -12,7 +12,7 @@ import MagicalRecord
 
 
 class PPEDataStorage: NSObject {
-
+    
     typealias CompletionBlock = (Bool, Error?) -> Void
     
     
@@ -28,7 +28,7 @@ class PPEDataStorage: NSObject {
     //MARK: Public Methods
     
     
-    func setup () {
+    func setup() {
         MagicalRecord.setupCoreDataStack(withStoreNamed: Constants.Configuration.DataModelName)
         
         #if (arch(i386) || arch(x86_64)) && os(iOS)
@@ -38,7 +38,12 @@ class PPEDataStorage: NSObject {
     }
     
     
-    func cleanUp () {
+    func cleanUp() {
         MagicalRecord.cleanUp()
+    }
+    
+    
+    func save(completion: CompletionBlock?) {
+        NSManagedObjectContext.mr_default().mr_saveToPersistentStore(completion: completion)
     }
 }

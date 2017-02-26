@@ -19,8 +19,19 @@ extension (PPEDataStorage) {
     }
     
     
-    func pieces() -> [PPEPiece]? {
-        return PPEPiece.mr_findAll() as? [PPEPiece]
+    func pieces(completion: (([PPEPiece]?, Error?) -> Void)?) -> Void {
+        let fetchRequest = NSFetchRequest<PPEPiece>(entityName: "PPEPiece")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(PPEPiece.pieceNumber), ascending: true)]
+        
+        let asyncFetchRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result) in
+            if let block = completion {
+                DispatchQueue.main.async {
+                    block((result.finalResult, result.operationError))
+                }
+            }
+        }
+        
+        _ = try? NSManagedObjectContext.mr_default().execute(asyncFetchRequest)
     }
     
     

@@ -13,7 +13,7 @@ import MagicalRecord
 
 extension (PPEDataStorage) {
     
-    func profile () -> PPEProfile? {
+    func profile() -> PPEProfile? {
         return PPEProfile.mr_findAll()?.first as? PPEProfile
     }
     
