@@ -1,5 +1,5 @@
 //
-//  PPEServiceManager+Profile.swift
+//  ServiceManager+Profile.swift
 //  PEUpdates
 //
 //  Created by Alexander Snegursky on 1/13/17.
@@ -11,7 +11,7 @@ import Foundation
 import AFNetworking
 
 
-extension PPEServiceManager {
+extension ServiceManager {
     
     @discardableResult func loadProfile(serverURL: URL?,
                                         success: SuccessBlock?,
@@ -21,11 +21,11 @@ extension PPEServiceManager {
                        parameters: nil,
                        sessionManagerConfigurationBlock: nil,
                        success: { (response, data) in
-                        PPEServiceResultsHandler.process(response: response,
-                                                         data: data,
-                                                         expectedResultType: .JSON,
-                                                         success: success,
-                                                         failure: failure)
+                        ServiceResultsHandler.process(response: response,
+                                                      data: data,
+                                                      expectedResultType: .JSON,
+                                                      success: success,
+                                                      failure: failure)
         }, progress: nil, failure: failure)
     }
     
@@ -46,11 +46,11 @@ extension PPEServiceManager {
                         parameters: parameters,
                         sessionManagerConfigurationBlock: nil,
                         success: { (response, data) in
-                            PPEServiceResultsHandler.process(response: response,
-                                                             data: data,
-                                                             expectedResultType: .JSON,
-                                                             success: success,
-                                                             failure: failure)
+                            ServiceResultsHandler.process(response: response,
+                                                          data: data,
+                                                          expectedResultType: .JSON,
+                                                          success: success,
+                                                          failure: failure)
         }, progress: nil, failure: failure)
     }
 }

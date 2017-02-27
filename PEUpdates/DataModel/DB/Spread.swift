@@ -1,16 +1,16 @@
 //
-//  PPESpread+CoreDataClass.swift
+//  Spread.swift
+//  PEUpdates
 //
-//
-//  Created by Alexander Snigurskyi on 2017-02-15.
-//
+//  Created by Alexander Snigurskyi on 2017-02-16.
+//  Copyright © 2017 Alexander Snegursky. All rights reserved.
 //
 
 
 import CoreData
 
 
-@objc class PPESpread: PPEBaseDBDataModel {
+@objc class Spread: BaseDBDataModel {
     
     @NSManaged public var spreadID: NSNumber?
     @NSManaged public var jobID: NSNumber?
@@ -52,7 +52,7 @@ import CoreData
     @NSManaged public var ditchLineWKT: String?
     
     
-    //MARK: PPEBaseDBDataModel
+    //MARK: BaseDBDataModel
     
     
     override func fill(withDictionary dictionary: [String: Any]?) {
@@ -103,7 +103,7 @@ import CoreData
     }
     
     
-    //MARK: PPEDataModel
+    //MARK: DataModel
     
     
     override var tableName: String {

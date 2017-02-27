@@ -7,100 +7,100 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11028D771E52676900DA056D /* Configuration in Resources */ = {isa = PBXBuildFile; fileRef = 11028D761E52676900DA056D /* Configuration */; };
 		116771C81E215DCC00ACBD76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116771C71E215DCC00ACBD76 /* AppDelegate.swift */; };
 		116771CD1E215DCC00ACBD76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116771CB1E215DCC00ACBD76 /* Main.storyboard */; };
 		116771CF1E215DCC00ACBD76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 116771CE1E215DCC00ACBD76 /* Assets.xcassets */; };
 		116771D21E215DCC00ACBD76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116771D01E215DCC00ACBD76 /* LaunchScreen.storyboard */; };
-		116771DB1E21638500ACBD76 /* PPEServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116771DA1E21638500ACBD76 /* PPEServiceManager.swift */; };
-		11728D291E22C6D2000FC4DB /* PPEServiceManager+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D281E22C6D2000FC4DB /* PPEServiceManager+Login.swift */; };
-		11728D301E22CD06000FC4DB /* PPEServiceGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D2F1E22CD06000FC4DB /* PPEServiceGateway.swift */; };
-		11728D321E22CEBD000FC4DB /* PPEServiceGateway+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D311E22CEBD000FC4DB /* PPEServiceGateway+Login.swift */; };
 		11728D391E22E8A1000FC4DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D361E22E8A1000FC4DB /* Constants.swift */; };
 		11728D3A1E22E8A1000FC4DB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D371E22E8A1000FC4DB /* Errors.swift */; };
 		11728D3C1E22E955000FC4DB /* NSError+Utitities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D3B1E22E955000FC4DB /* NSError+Utitities.swift */; };
-		11728D3E1E22EB25000FC4DB /* PPEServiceResultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D3D1E22EB25000FC4DB /* PPEServiceResultsHandler.swift */; };
 		11B008251E61D111007A1468 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B008221E61D111007A1468 /* MainViewController.swift */; };
 		11B008261E61D111007A1468 /* PiecesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B008241E61D111007A1468 /* PiecesViewController.swift */; };
 		11B008281E61D149007A1468 /* PieceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B008271E61D149007A1468 /* PieceCell.swift */; };
-		11B9C5051E29646D000D8B30 /* PPEServiceManager+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B9C5041E29646D000D8B30 /* PPEServiceManager+Profile.swift */; };
-		11BB1FD01E2BFDA2006A7C16 /* PPEDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB1FCF1E2BFDA2006A7C16 /* PPEDataStorage.swift */; };
 		6B670172A6A6155755BA4CCD /* Pods_PEUpdates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6D64D427903D017356C701 /* Pods_PEUpdates.framework */; };
-		C727CDA71E4218830070C0B2 /* PPEDataStorage+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C727CDA61E4218830070C0B2 /* PPEDataStorage+Profile.swift */; };
 		C727CDA91E4220640070C0B2 /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C727CDA81E4220640070C0B2 /* String+Utilities.swift */; };
 		C736ACDD1E5334D900062485 /* NSObject+Reflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C736ACDC1E5334D900062485 /* NSObject+Reflection.swift */; };
-		C75E799F1E560B8C00FCCB6B /* PPELabourSpread.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E799E1E560B8C00FCCB6B /* PPELabourSpread.swift */; };
-		C76176DC1E51FD5B00CFFC40 /* PPEConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76176DB1E51FD5B00CFFC40 /* PPEConfigurationManager.swift */; };
-		C76176DF1E52026800CFFC40 /* PPEAuthorizationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76176DE1E52026800CFFC40 /* PPEAuthorizationInfo.swift */; };
-		C76176E11E52028F00CFFC40 /* PPEBaseMemoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76176E01E52028F00CFFC40 /* PPEBaseMemoryDataModel.swift */; };
-		C76176E31E5203CD00CFFC40 /* PPEFieldDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76176E21E5203CD00CFFC40 /* PPEFieldDescription.swift */; };
-		C76176E51E52053800CFFC40 /* PPEDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76176E41E52053800CFFC40 /* PPEDataModel.swift */; };
-		C77F73501E5495A4001A0F54 /* PPESpread.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77F734E1E5495A4001A0F54 /* PPESpread.swift */; };
+		C75E799F1E560B8C00FCCB6B /* LabourSpread.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E799E1E560B8C00FCCB6B /* LabourSpread.swift */; };
+		C76176DF1E52026800CFFC40 /* AuthorizationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76176DE1E52026800CFFC40 /* AuthorizationInfo.swift */; };
+		C76176E11E52028F00CFFC40 /* BaseMemoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76176E01E52028F00CFFC40 /* BaseMemoryDataModel.swift */; };
+		C76176E31E5203CD00CFFC40 /* FieldDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76176E21E5203CD00CFFC40 /* FieldDescription.swift */; };
+		C76176E51E52053800CFFC40 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76176E41E52053800CFFC40 /* DataModel.swift */; };
+		C77F73501E5495A4001A0F54 /* Spread.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77F734E1E5495A4001A0F54 /* Spread.swift */; };
 		C788138C1E644E650008F7FA /* WeldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788138B1E644E650008F7FA /* WeldsViewController.swift */; };
 		C788138E1E644EE20008F7FA /* WeldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788138D1E644EE20008F7FA /* WeldCell.swift */; };
+		C788139F1E648FE80008F7FA /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813981E648FE80008F7FA /* ConfigurationManager.swift */; };
+		C78813A51E6490000008F7FA /* DataStorage+JobsSpreads.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813A11E6490000008F7FA /* DataStorage+JobsSpreads.swift */; };
+		C78813A61E6490000008F7FA /* DataStorage+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813A21E6490000008F7FA /* DataStorage+Profile.swift */; };
+		C78813A71E6490000008F7FA /* DataStorage+WeldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813A31E6490000008F7FA /* DataStorage+WeldData.swift */; };
+		C78813A81E6490000008F7FA /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813A41E6490000008F7FA /* DataStorage.swift */; };
+		C78813AD1E6490140008F7FA /* PPEServiceGateway+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813AA1E6490140008F7FA /* PPEServiceGateway+Data.swift */; };
+		C78813AE1E6490140008F7FA /* ServiceGateway+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813AB1E6490140008F7FA /* ServiceGateway+Login.swift */; };
+		C78813AF1E6490140008F7FA /* ServiceGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813AC1E6490140008F7FA /* ServiceGateway.swift */; };
+		C78813B61E64902B0008F7FA /* ServiceManager+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813B11E64902B0008F7FA /* ServiceManager+Data.swift */; };
+		C78813B71E64902B0008F7FA /* ServiceManager+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813B21E64902B0008F7FA /* ServiceManager+Login.swift */; };
+		C78813B81E64902B0008F7FA /* ServiceManager+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813B31E64902B0008F7FA /* ServiceManager+Profile.swift */; };
+		C78813B91E64902B0008F7FA /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813B41E64902B0008F7FA /* ServiceManager.swift */; };
+		C78813BA1E64902B0008F7FA /* ServiceResultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813B51E64902B0008F7FA /* ServiceResultsHandler.swift */; };
+		C78813BC1E6490580008F7FA /* Configuration in Resources */ = {isa = PBXBuildFile; fileRef = C78813BB1E6490580008F7FA /* Configuration */; };
 		C78D3DE71E40D53000D62EC7 /* DispatchQueue+Utitities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78D3DE61E40D53000D62EC7 /* DispatchQueue+Utitities.swift */; };
 		C7B98A111E643EAE00F1CE7F /* NSManagedObject+DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B98A101E643EAE00F1CE7F /* NSManagedObject+DataStorage.swift */; };
-		C7BBD3FB1E44AEC80074AB56 /* PPEServiceManager+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BBD3FA1E44AEC80074AB56 /* PPEServiceManager+Data.swift */; };
-		C7BBD3FD1E44B5B80074AB56 /* PPEServiceGateway+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BBD3FC1E44B5B80074AB56 /* PPEServiceGateway+Data.swift */; };
-		C7CA3C781E5B3BDF00504F58 /* PPEWeld.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA3C771E5B3BDF00504F58 /* PPEWeld.swift */; };
-		C7CA3C7A1E5B45B100504F58 /* PPEDataStorage+WeldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA3C791E5B45B100504F58 /* PPEDataStorage+WeldData.swift */; };
+		C7CA3C781E5B3BDF00504F58 /* Weld.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA3C771E5B3BDF00504F58 /* Weld.swift */; };
 		C7CA3C7C1E5B497E00504F58 /* NSPredicate+Predicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA3C7B1E5B497E00504F58 /* NSPredicate+Predicates.swift */; };
-		C7CC396F1E5F159200F2796F /* PPEPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CC396E1E5F159200F2796F /* PPEPiece.swift */; };
-		C7E228D31E4374CB00EA9C83 /* PPEBaseDBDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E228CF1E4374CB00EA9C83 /* PPEBaseDBDataModel.swift */; };
+		C7CC396F1E5F159200F2796F /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CC396E1E5F159200F2796F /* Piece.swift */; };
+		C7E228D31E4374CB00EA9C83 /* BaseDBDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E228CF1E4374CB00EA9C83 /* BaseDBDataModel.swift */; };
 		C7E228D41E4374CB00EA9C83 /* PPEDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C7E228D01E4374CB00EA9C83 /* PPEDB.xcdatamodeld */; };
-		C7E228D51E4374CB00EA9C83 /* PPEProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E228D21E4374CB00EA9C83 /* PPEProfile.swift */; };
+		C7E228D51E4374CB00EA9C83 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E228D21E4374CB00EA9C83 /* Profile.swift */; };
 		C7EEF82A1E5726E5001A5EBD /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EEF8291E5726E4001A5EBD /* Date+Utilities.swift */; };
-		C7FB91F31E56076F0044C9F2 /* PPEDataStorage+JobsSpreads.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FB91F21E56076F0044C9F2 /* PPEDataStorage+JobsSpreads.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		11028D761E52676900DA056D /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		116771C41E215DCC00ACBD76 /* PEUpdates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PEUpdates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		116771C71E215DCC00ACBD76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		116771CC1E215DCC00ACBD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		116771CE1E215DCC00ACBD76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		116771D11E215DCC00ACBD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		116771D31E215DCC00ACBD76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		116771DA1E21638500ACBD76 /* PPEServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEServiceManager.swift; sourceTree = "<group>"; };
-		11728D281E22C6D2000FC4DB /* PPEServiceManager+Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEServiceManager+Login.swift"; sourceTree = "<group>"; };
-		11728D2F1E22CD06000FC4DB /* PPEServiceGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEServiceGateway.swift; sourceTree = "<group>"; };
-		11728D311E22CEBD000FC4DB /* PPEServiceGateway+Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEServiceGateway+Login.swift"; sourceTree = "<group>"; };
 		11728D361E22E8A1000FC4DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		11728D371E22E8A1000FC4DB /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		11728D3B1E22E955000FC4DB /* NSError+Utitities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Utitities.swift"; sourceTree = "<group>"; };
-		11728D3D1E22EB25000FC4DB /* PPEServiceResultsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEServiceResultsHandler.swift; sourceTree = "<group>"; };
 		11B008221E61D111007A1468 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		11B008241E61D111007A1468 /* PiecesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiecesViewController.swift; sourceTree = "<group>"; };
 		11B008271E61D149007A1468 /* PieceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieceCell.swift; sourceTree = "<group>"; };
-		11B9C5041E29646D000D8B30 /* PPEServiceManager+Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEServiceManager+Profile.swift"; sourceTree = "<group>"; };
-		11BB1FCF1E2BFDA2006A7C16 /* PPEDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEDataStorage.swift; sourceTree = "<group>"; };
 		4993C27132A9CC99C0117B74 /* Pods-PEUpdates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEUpdates.release.xcconfig"; path = "Pods/Target Support Files/Pods-PEUpdates/Pods-PEUpdates.release.xcconfig"; sourceTree = "<group>"; };
 		AB6D64D427903D017356C701 /* Pods_PEUpdates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PEUpdates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C727CDA61E4218830070C0B2 /* PPEDataStorage+Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEDataStorage+Profile.swift"; sourceTree = "<group>"; };
 		C727CDA81E4220640070C0B2 /* String+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
 		C736ACDC1E5334D900062485 /* NSObject+Reflection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Reflection.swift"; sourceTree = "<group>"; };
-		C75E799E1E560B8C00FCCB6B /* PPELabourSpread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPELabourSpread.swift; sourceTree = "<group>"; };
-		C76176DB1E51FD5B00CFFC40 /* PPEConfigurationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEConfigurationManager.swift; sourceTree = "<group>"; };
-		C76176DE1E52026800CFFC40 /* PPEAuthorizationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEAuthorizationInfo.swift; sourceTree = "<group>"; };
-		C76176E01E52028F00CFFC40 /* PPEBaseMemoryDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEBaseMemoryDataModel.swift; sourceTree = "<group>"; };
-		C76176E21E5203CD00CFFC40 /* PPEFieldDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEFieldDescription.swift; sourceTree = "<group>"; };
-		C76176E41E52053800CFFC40 /* PPEDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEDataModel.swift; sourceTree = "<group>"; };
-		C77F734E1E5495A4001A0F54 /* PPESpread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPESpread.swift; sourceTree = "<group>"; };
+		C75E799E1E560B8C00FCCB6B /* LabourSpread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabourSpread.swift; sourceTree = "<group>"; };
+		C76176DE1E52026800CFFC40 /* AuthorizationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationInfo.swift; sourceTree = "<group>"; };
+		C76176E01E52028F00CFFC40 /* BaseMemoryDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMemoryDataModel.swift; sourceTree = "<group>"; };
+		C76176E21E5203CD00CFFC40 /* FieldDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldDescription.swift; sourceTree = "<group>"; };
+		C76176E41E52053800CFFC40 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		C77F734E1E5495A4001A0F54 /* Spread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spread.swift; sourceTree = "<group>"; };
 		C788138B1E644E650008F7FA /* WeldsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeldsViewController.swift; sourceTree = "<group>"; };
 		C788138D1E644EE20008F7FA /* WeldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeldCell.swift; sourceTree = "<group>"; };
+		C78813981E648FE80008F7FA /* ConfigurationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
+		C78813A11E6490000008F7FA /* DataStorage+JobsSpreads.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataStorage+JobsSpreads.swift"; sourceTree = "<group>"; };
+		C78813A21E6490000008F7FA /* DataStorage+Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataStorage+Profile.swift"; sourceTree = "<group>"; };
+		C78813A31E6490000008F7FA /* DataStorage+WeldData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataStorage+WeldData.swift"; sourceTree = "<group>"; };
+		C78813A41E6490000008F7FA /* DataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
+		C78813AA1E6490140008F7FA /* PPEServiceGateway+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEServiceGateway+Data.swift"; sourceTree = "<group>"; };
+		C78813AB1E6490140008F7FA /* ServiceGateway+Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceGateway+Login.swift"; sourceTree = "<group>"; };
+		C78813AC1E6490140008F7FA /* ServiceGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceGateway.swift; sourceTree = "<group>"; };
+		C78813B11E64902B0008F7FA /* ServiceManager+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceManager+Data.swift"; sourceTree = "<group>"; };
+		C78813B21E64902B0008F7FA /* ServiceManager+Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceManager+Login.swift"; sourceTree = "<group>"; };
+		C78813B31E64902B0008F7FA /* ServiceManager+Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceManager+Profile.swift"; sourceTree = "<group>"; };
+		C78813B41E64902B0008F7FA /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		C78813B51E64902B0008F7FA /* ServiceResultsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceResultsHandler.swift; sourceTree = "<group>"; };
+		C78813BB1E6490580008F7FA /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		C78D3DE61E40D53000D62EC7 /* DispatchQueue+Utitities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Utitities.swift"; sourceTree = "<group>"; };
 		C7B98A101E643EAE00F1CE7F /* NSManagedObject+DataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+DataStorage.swift"; sourceTree = "<group>"; };
-		C7BBD3FA1E44AEC80074AB56 /* PPEServiceManager+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEServiceManager+Data.swift"; sourceTree = "<group>"; };
-		C7BBD3FC1E44B5B80074AB56 /* PPEServiceGateway+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEServiceGateway+Data.swift"; sourceTree = "<group>"; };
-		C7CA3C771E5B3BDF00504F58 /* PPEWeld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEWeld.swift; sourceTree = "<group>"; };
-		C7CA3C791E5B45B100504F58 /* PPEDataStorage+WeldData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEDataStorage+WeldData.swift"; sourceTree = "<group>"; };
+		C7CA3C771E5B3BDF00504F58 /* Weld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weld.swift; sourceTree = "<group>"; };
 		C7CA3C7B1E5B497E00504F58 /* NSPredicate+Predicates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Predicates.swift"; sourceTree = "<group>"; };
-		C7CC396E1E5F159200F2796F /* PPEPiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEPiece.swift; sourceTree = "<group>"; };
-		C7E228CF1E4374CB00EA9C83 /* PPEBaseDBDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEBaseDBDataModel.swift; sourceTree = "<group>"; };
+		C7CC396E1E5F159200F2796F /* Piece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		C7E228CF1E4374CB00EA9C83 /* BaseDBDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDBDataModel.swift; sourceTree = "<group>"; };
 		C7E228D11E4374CB00EA9C83 /* PPEDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PPEDB.xcdatamodel; sourceTree = "<group>"; };
-		C7E228D21E4374CB00EA9C83 /* PPEProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEProfile.swift; sourceTree = "<group>"; };
+		C7E228D21E4374CB00EA9C83 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		C7EEF8291E5726E4001A5EBD /* Date+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utilities.swift"; sourceTree = "<group>"; };
-		C7FB91F21E56076F0044C9F2 /* PPEDataStorage+JobsSpreads.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEDataStorage+JobsSpreads.swift"; sourceTree = "<group>"; };
 		F43861A042FE1A485806A191 /* Pods-PEUpdates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEUpdates.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PEUpdates/Pods-PEUpdates.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,10 +140,10 @@
 				11BB1FD11E2C0340006A7C16 /* DataModel */,
 				11728D351E22E8A1000FC4DB /* Common */,
 				11728D381E22E8A1000FC4DB /* Extensions */,
-				11728D2E1E22CCF1000FC4DB /* PPEServiceGateway */,
-				116771D91E21636800ACBD76 /* PPEServiceManager */,
-				11BB1FCE1E2BFD54006A7C16 /* PPEDataStorage */,
-				C76176DA1E51FD3D00CFFC40 /* PPEConfigurationManager */,
+				C78813A91E6490140008F7FA /* ServiceGateway */,
+				C78813B01E64902B0008F7FA /* ServiceManager */,
+				C78813A01E6490000008F7FA /* DataStorage */,
+				C788138F1E648FE80008F7FA /* ConfigurationManager */,
 				11B008201E61D111007A1468 /* UI */,
 				116771C71E215DCC00ACBD76 /* AppDelegate.swift */,
 				116771CB1E215DCC00ACBD76 /* Main.storyboard */,
@@ -152,28 +152,6 @@
 				116771D31E215DCC00ACBD76 /* Info.plist */,
 			);
 			path = PEUpdates;
-			sourceTree = "<group>";
-		};
-		116771D91E21636800ACBD76 /* PPEServiceManager */ = {
-			isa = PBXGroup;
-			children = (
-				11728D3D1E22EB25000FC4DB /* PPEServiceResultsHandler.swift */,
-				116771DA1E21638500ACBD76 /* PPEServiceManager.swift */,
-				11728D281E22C6D2000FC4DB /* PPEServiceManager+Login.swift */,
-				11B9C5041E29646D000D8B30 /* PPEServiceManager+Profile.swift */,
-				C7BBD3FA1E44AEC80074AB56 /* PPEServiceManager+Data.swift */,
-			);
-			path = PPEServiceManager;
-			sourceTree = "<group>";
-		};
-		11728D2E1E22CCF1000FC4DB /* PPEServiceGateway */ = {
-			isa = PBXGroup;
-			children = (
-				11728D2F1E22CD06000FC4DB /* PPEServiceGateway.swift */,
-				11728D311E22CEBD000FC4DB /* PPEServiceGateway+Login.swift */,
-				C7BBD3FC1E44B5B80074AB56 /* PPEServiceGateway+Data.swift */,
-			);
-			path = PPEServiceGateway;
 			sourceTree = "<group>";
 		};
 		11728D351E22E8A1000FC4DB /* Common */ = {
@@ -226,21 +204,10 @@
 			path = PiecesViewController;
 			sourceTree = "<group>";
 		};
-		11BB1FCE1E2BFD54006A7C16 /* PPEDataStorage */ = {
-			isa = PBXGroup;
-			children = (
-				11BB1FCF1E2BFDA2006A7C16 /* PPEDataStorage.swift */,
-				C727CDA61E4218830070C0B2 /* PPEDataStorage+Profile.swift */,
-				C7FB91F21E56076F0044C9F2 /* PPEDataStorage+JobsSpreads.swift */,
-				C7CA3C791E5B45B100504F58 /* PPEDataStorage+WeldData.swift */,
-			);
-			path = PPEDataStorage;
-			sourceTree = "<group>";
-		};
 		11BB1FD11E2C0340006A7C16 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				C76176E41E52053800CFFC40 /* PPEDataModel.swift */,
+				C76176E41E52053800CFFC40 /* DataModel.swift */,
 				C7E228CE1E4374CB00EA9C83 /* DB */,
 				C76176DD1E52025A00CFFC40 /* Memory */,
 			);
@@ -264,21 +231,12 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C76176DA1E51FD3D00CFFC40 /* PPEConfigurationManager */ = {
-			isa = PBXGroup;
-			children = (
-				C76176DB1E51FD5B00CFFC40 /* PPEConfigurationManager.swift */,
-				11028D761E52676900DA056D /* Configuration */,
-			);
-			path = PPEConfigurationManager;
-			sourceTree = "<group>";
-		};
 		C76176DD1E52025A00CFFC40 /* Memory */ = {
 			isa = PBXGroup;
 			children = (
-				C76176E01E52028F00CFFC40 /* PPEBaseMemoryDataModel.swift */,
-				C76176DE1E52026800CFFC40 /* PPEAuthorizationInfo.swift */,
-				C76176E21E5203CD00CFFC40 /* PPEFieldDescription.swift */,
+				C76176E01E52028F00CFFC40 /* BaseMemoryDataModel.swift */,
+				C76176DE1E52026800CFFC40 /* AuthorizationInfo.swift */,
+				C76176E21E5203CD00CFFC40 /* FieldDescription.swift */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
@@ -293,16 +251,58 @@
 			path = PEUpdates/UI/ViewControllers/WeldsViewController;
 			sourceTree = SOURCE_ROOT;
 		};
+		C788138F1E648FE80008F7FA /* ConfigurationManager */ = {
+			isa = PBXGroup;
+			children = (
+				C78813981E648FE80008F7FA /* ConfigurationManager.swift */,
+				C78813BB1E6490580008F7FA /* Configuration */,
+			);
+			path = ConfigurationManager;
+			sourceTree = "<group>";
+		};
+		C78813A01E6490000008F7FA /* DataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				C78813A11E6490000008F7FA /* DataStorage+JobsSpreads.swift */,
+				C78813A21E6490000008F7FA /* DataStorage+Profile.swift */,
+				C78813A31E6490000008F7FA /* DataStorage+WeldData.swift */,
+				C78813A41E6490000008F7FA /* DataStorage.swift */,
+			);
+			path = DataStorage;
+			sourceTree = "<group>";
+		};
+		C78813A91E6490140008F7FA /* ServiceGateway */ = {
+			isa = PBXGroup;
+			children = (
+				C78813AA1E6490140008F7FA /* PPEServiceGateway+Data.swift */,
+				C78813AB1E6490140008F7FA /* ServiceGateway+Login.swift */,
+				C78813AC1E6490140008F7FA /* ServiceGateway.swift */,
+			);
+			path = ServiceGateway;
+			sourceTree = "<group>";
+		};
+		C78813B01E64902B0008F7FA /* ServiceManager */ = {
+			isa = PBXGroup;
+			children = (
+				C78813B11E64902B0008F7FA /* ServiceManager+Data.swift */,
+				C78813B21E64902B0008F7FA /* ServiceManager+Login.swift */,
+				C78813B31E64902B0008F7FA /* ServiceManager+Profile.swift */,
+				C78813B41E64902B0008F7FA /* ServiceManager.swift */,
+				C78813B51E64902B0008F7FA /* ServiceResultsHandler.swift */,
+			);
+			path = ServiceManager;
+			sourceTree = "<group>";
+		};
 		C7E228CE1E4374CB00EA9C83 /* DB */ = {
 			isa = PBXGroup;
 			children = (
 				C7E228D01E4374CB00EA9C83 /* PPEDB.xcdatamodeld */,
-				C7E228CF1E4374CB00EA9C83 /* PPEBaseDBDataModel.swift */,
-				C7E228D21E4374CB00EA9C83 /* PPEProfile.swift */,
-				C77F734E1E5495A4001A0F54 /* PPESpread.swift */,
-				C75E799E1E560B8C00FCCB6B /* PPELabourSpread.swift */,
-				C7CA3C771E5B3BDF00504F58 /* PPEWeld.swift */,
-				C7CC396E1E5F159200F2796F /* PPEPiece.swift */,
+				C7E228CF1E4374CB00EA9C83 /* BaseDBDataModel.swift */,
+				C7E228D21E4374CB00EA9C83 /* Profile.swift */,
+				C77F734E1E5495A4001A0F54 /* Spread.swift */,
+				C75E799E1E560B8C00FCCB6B /* LabourSpread.swift */,
+				C7CA3C771E5B3BDF00504F58 /* Weld.swift */,
+				C7CC396E1E5F159200F2796F /* Piece.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -371,7 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				116771D21E215DCC00ACBD76 /* LaunchScreen.storyboard in Resources */,
-				11028D771E52676900DA056D /* Configuration in Resources */,
+				C78813BC1E6490580008F7FA /* Configuration in Resources */,
 				116771CF1E215DCC00ACBD76 /* Assets.xcassets in Resources */,
 				116771CD1E215DCC00ACBD76 /* Main.storyboard in Resources */,
 			);
@@ -432,45 +432,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7E228D51E4374CB00EA9C83 /* PPEProfile.swift in Sources */,
+				C7E228D51E4374CB00EA9C83 /* Profile.swift in Sources */,
 				C788138E1E644EE20008F7FA /* WeldCell.swift in Sources */,
-				C7BBD3FB1E44AEC80074AB56 /* PPEServiceManager+Data.swift in Sources */,
-				C727CDA71E4218830070C0B2 /* PPEDataStorage+Profile.swift in Sources */,
-				C75E799F1E560B8C00FCCB6B /* PPELabourSpread.swift in Sources */,
-				C7CA3C781E5B3BDF00504F58 /* PPEWeld.swift in Sources */,
-				C7E228D31E4374CB00EA9C83 /* PPEBaseDBDataModel.swift in Sources */,
+				C75E799F1E560B8C00FCCB6B /* LabourSpread.swift in Sources */,
+				C7CA3C781E5B3BDF00504F58 /* Weld.swift in Sources */,
+				C7E228D31E4374CB00EA9C83 /* BaseDBDataModel.swift in Sources */,
+				C78813A71E6490000008F7FA /* DataStorage+WeldData.swift in Sources */,
 				11728D3C1E22E955000FC4DB /* NSError+Utitities.swift in Sources */,
-				11728D291E22C6D2000FC4DB /* PPEServiceManager+Login.swift in Sources */,
+				C78813B71E64902B0008F7FA /* ServiceManager+Login.swift in Sources */,
+				C78813B81E64902B0008F7FA /* ServiceManager+Profile.swift in Sources */,
+				C78813A81E6490000008F7FA /* DataStorage.swift in Sources */,
 				C727CDA91E4220640070C0B2 /* String+Utilities.swift in Sources */,
-				11BB1FD01E2BFDA2006A7C16 /* PPEDataStorage.swift in Sources */,
-				C76176E31E5203CD00CFFC40 /* PPEFieldDescription.swift in Sources */,
+				C76176E31E5203CD00CFFC40 /* FieldDescription.swift in Sources */,
+				C78813AD1E6490140008F7FA /* PPEServiceGateway+Data.swift in Sources */,
 				C736ACDD1E5334D900062485 /* NSObject+Reflection.swift in Sources */,
-				C76176E11E52028F00CFFC40 /* PPEBaseMemoryDataModel.swift in Sources */,
-				116771DB1E21638500ACBD76 /* PPEServiceManager.swift in Sources */,
+				C76176E11E52028F00CFFC40 /* BaseMemoryDataModel.swift in Sources */,
+				C78813AE1E6490140008F7FA /* ServiceGateway+Login.swift in Sources */,
 				11B008251E61D111007A1468 /* MainViewController.swift in Sources */,
 				116771C81E215DCC00ACBD76 /* AppDelegate.swift in Sources */,
-				11728D3E1E22EB25000FC4DB /* PPEServiceResultsHandler.swift in Sources */,
 				C7B98A111E643EAE00F1CE7F /* NSManagedObject+DataStorage.swift in Sources */,
-				C76176E51E52053800CFFC40 /* PPEDataModel.swift in Sources */,
-				11728D321E22CEBD000FC4DB /* PPEServiceGateway+Login.swift in Sources */,
+				C78813A61E6490000008F7FA /* DataStorage+Profile.swift in Sources */,
+				C78813B91E64902B0008F7FA /* ServiceManager.swift in Sources */,
+				C76176E51E52053800CFFC40 /* DataModel.swift in Sources */,
 				11728D3A1E22E8A1000FC4DB /* Errors.swift in Sources */,
-				C76176DC1E51FD5B00CFFC40 /* PPEConfigurationManager.swift in Sources */,
 				C788138C1E644E650008F7FA /* WeldsViewController.swift in Sources */,
+				C788139F1E648FE80008F7FA /* ConfigurationManager.swift in Sources */,
 				C7CA3C7C1E5B497E00504F58 /* NSPredicate+Predicates.swift in Sources */,
-				C76176DF1E52026800CFFC40 /* PPEAuthorizationInfo.swift in Sources */,
+				C78813AF1E6490140008F7FA /* ServiceGateway.swift in Sources */,
+				C76176DF1E52026800CFFC40 /* AuthorizationInfo.swift in Sources */,
+				C78813B61E64902B0008F7FA /* ServiceManager+Data.swift in Sources */,
 				C7EEF82A1E5726E5001A5EBD /* Date+Utilities.swift in Sources */,
 				11B008281E61D149007A1468 /* PieceCell.swift in Sources */,
 				11B008261E61D111007A1468 /* PiecesViewController.swift in Sources */,
 				C78D3DE71E40D53000D62EC7 /* DispatchQueue+Utitities.swift in Sources */,
-				C7FB91F31E56076F0044C9F2 /* PPEDataStorage+JobsSpreads.swift in Sources */,
-				C7CC396F1E5F159200F2796F /* PPEPiece.swift in Sources */,
-				C7BBD3FD1E44B5B80074AB56 /* PPEServiceGateway+Data.swift in Sources */,
-				11B9C5051E29646D000D8B30 /* PPEServiceManager+Profile.swift in Sources */,
-				C77F73501E5495A4001A0F54 /* PPESpread.swift in Sources */,
+				C7CC396F1E5F159200F2796F /* Piece.swift in Sources */,
+				C78813A51E6490000008F7FA /* DataStorage+JobsSpreads.swift in Sources */,
+				C77F73501E5495A4001A0F54 /* Spread.swift in Sources */,
 				C7E228D41E4374CB00EA9C83 /* PPEDB.xcdatamodeld in Sources */,
-				C7CA3C7A1E5B45B100504F58 /* PPEDataStorage+WeldData.swift in Sources */,
-				11728D301E22CD06000FC4DB /* PPEServiceGateway.swift in Sources */,
 				11728D391E22E8A1000FC4DB /* Constants.swift in Sources */,
+				C78813BA1E64902B0008F7FA /* ServiceResultsHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

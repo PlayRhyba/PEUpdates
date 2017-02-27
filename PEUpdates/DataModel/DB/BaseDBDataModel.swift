@@ -1,5 +1,5 @@
 //
-//  BaseDataModel.swift
+//  BaseDBDataModel.swift
 //  PEUpdates
 //
 //  Created by Alexander Snigurskyi on 2017-01-31.
@@ -11,7 +11,7 @@ import CoreData
 import CocoaLumberjack
 
 
-@objc class PPEBaseDBDataModel: NSManagedObject, PPEDataModel {
+@objc class BaseDBDataModel: NSManagedObject, DataModel {
     
     enum ValueProcessingMode {
         case Default
@@ -47,7 +47,7 @@ import CocoaLumberjack
     }
     
     
-    //MARK: PPEDataModel
+    //MARK: DataModel
     
     
     var tableName: String {
@@ -81,8 +81,8 @@ import CocoaLumberjack
     }
     
     
-    private func fieldDescription(propertyName: String) -> PPEFieldDescription? {
-        let configurationManager = PPEConfigurationManager.sharedInstance
+    private func fieldDescription(propertyName: String) -> FieldDescription? {
+        let configurationManager = ConfigurationManager.sharedInstance
         var fd = configurationManager.fieldDesctiption(name: propertyName, table: tableName)
         
         if fd == nil {

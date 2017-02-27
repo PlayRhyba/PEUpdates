@@ -12,7 +12,7 @@ import UIKit
 
 class WeldCell: UITableViewCell {
     
-    weak var weld: PPEWeld? {
+    weak var weld: Weld? {
         didSet {
             self.textLabel?.text = weld?.weldNumber
             self.detailTextLabel?.text = weld?.weldStatus

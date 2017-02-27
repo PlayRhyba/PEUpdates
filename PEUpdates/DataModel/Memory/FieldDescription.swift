@@ -1,5 +1,5 @@
 //
-//  PPEFieldDescription.swift
+//  FieldDescription.swift
 //  PEUpdates
 //
 //  Created by Alexander Snigurskyi on 2017-02-13.
@@ -10,11 +10,14 @@
 import Foundation
 
 
-class PPEFieldDescription: PPEBaseMemoryDataModel {
+class FieldDescription: BaseMemoryDataModel {
     
     var type: String?
     var name: String?
     var tableName: String?
+    
+    
+    //MARK: BaseMemoryDataModel
     
     
     override init(withDictionary dictionary: [String: Any]?) {

@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         configureLoggers()
         configureHUD()
-        PPEDataStorage.sharedInstance.setup()
+        DataStorage.sharedInstance.setup()
         
         return true
     }
@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func applicationWillTerminate(_ application: UIApplication) {
-        PPEDataStorage.sharedInstance.cleanUp()
+        DataStorage.sharedInstance.cleanUp()
     }
     
     
@@ -71,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     private func loadConfiguration() {
-        let configurationManager = PPEConfigurationManager.sharedInstance
+        let configurationManager = ConfigurationManager.sharedInstance
         
         if configurationManager.isLoaded() == false {
             SVProgressHUD.show(withStatus: "Configuration loading...")

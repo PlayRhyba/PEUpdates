@@ -10,10 +10,10 @@
 import MagicalRecord
 
 
-extension (NSManagedObject) {
+extension NSManagedObject {
     
     class func performAsynchroniuosFetch(withRequestConfiguration configuration:(((NSFetchRequest<NSManagedObject>) -> Void)?),
-                                         completion: PPEDataStorage.FetchCompletionBlock?) {
+                                         completion: DataStorage.FetchCompletionBlock?) {
         var fetchRequest: NSFetchRequest<NSManagedObject>!
         
         if #available(iOS 10.0, *) {

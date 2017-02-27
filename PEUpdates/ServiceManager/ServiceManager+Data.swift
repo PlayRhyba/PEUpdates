@@ -1,5 +1,5 @@
 //
-//  PPEServiceManager+Data.swift
+//  ServiceManager+Data.swift
 //  PEUpdates
 //
 //  Created by Alexander Snigurskyi on 2017-02-03.
@@ -10,7 +10,7 @@
 import Foundation
 
 
-extension PPEServiceManager {
+extension ServiceManager {
     
     @discardableResult func loadJobsSpreads(serverURL: URL?,
                                             success: SuccessBlock?,
@@ -23,11 +23,11 @@ extension PPEServiceManager {
                        parameters: parameters,
                        sessionManagerConfigurationBlock: nil,
                        success: { (response, data) in
-                        PPEServiceResultsHandler.process(response: response,
-                                                         data: data,
-                                                         expectedResultType: .JSON_H,
-                                                         success: success,
-                                                         failure: failure)
+                        ServiceResultsHandler.process(response: response,
+                                                      data: data,
+                                                      expectedResultType: .JSON_H,
+                                                      success: success,
+                                                      failure: failure)
         }, progress: progress, failure: failure)
     }
     
@@ -45,11 +45,11 @@ extension PPEServiceManager {
                         parameters: parameters,
                         sessionManagerConfigurationBlock: nil,
                         success: { (response, data) in
-                            PPEServiceResultsHandler.process(response: response,
-                                                             data: data,
-                                                             expectedResultType: .JSON,
-                                                             success: success,
-                                                             failure: failure)
+                            ServiceResultsHandler.process(response: response,
+                                                          data: data,
+                                                          expectedResultType: .JSON,
+                                                          success: success,
+                                                          failure: failure)
         }, progress: progress, failure: failure)
     }
 }

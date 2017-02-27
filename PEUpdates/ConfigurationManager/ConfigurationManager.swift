@@ -1,5 +1,5 @@
 //
-//  PPEConfigurationManager.swift
+//  ConfigurationManager.swift
 //  PEUpdates
 //
 //  Created by Alexander Snigurskyi on 2017-02-13.
@@ -10,15 +10,15 @@
 import Foundation
 
 
-class PPEConfigurationManager: NSObject {
+class ConfigurationManager: NSObject {
     
     struct LocalConstants {
         static let Separator = "__"
     }
     
     
-    static let sharedInstance = PPEConfigurationManager()
-    private lazy var fields = [String: PPEFieldDescription]()
+    static let sharedInstance = ConfigurationManager()
+    private lazy var fields = [String: FieldDescription]()
     
     
     //MARK: NSObject
@@ -55,7 +55,7 @@ class PPEConfigurationManager: NSObject {
                     if let dictionaries = try JSONSerialization.jsonObject(with: data,
                                                                            options: JSONSerialization.ReadingOptions.mutableContainers) as? [[String: Any]] {
                         for dictionary in dictionaries {
-                            let fieldDescription = PPEFieldDescription(withDictionary: dictionary)
+                            let fieldDescription = FieldDescription(withDictionary: dictionary)
                             
                             if fieldDescription.tableName == nil {
                                 fieldDescription.tableName = tableName
@@ -89,7 +89,7 @@ class PPEConfigurationManager: NSObject {
     }
     
     
-    func fieldDesctiption(name: String, table: String) -> PPEFieldDescription? {
+    func fieldDesctiption(name: String, table: String) -> FieldDescription? {
         let pName = name.fixedPropertyName()
         
         var key = keyName(fieldName: pName.capitalizingFirstLetter(), tableName: table)

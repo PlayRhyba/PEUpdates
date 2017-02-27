@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="PPEBaseDBDataModel" representedClassName=".PPEBaseDBDataModel" syncable="YES">
+    <entity name="BaseDBDataModel" representedClassName=".BaseDBDataModel" syncable="YES">
         <attribute name="created" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="modified" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="p_deleted" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
     </entity>
-    <entity name="PPELabourSpread" representedClassName=".PPELabourSpread" parentEntity="PPEBaseDBDataModel" syncable="YES">
+    <entity name="LabourSpread" representedClassName=".LabourSpread" parentEntity="BaseDBDataModel" syncable="YES">
         <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="labourSpreadUUID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
@@ -13,7 +13,7 @@
         <attribute name="spreadID" optional="YES" attributeType="Integer 16" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="PPEPiece" representedClassName=".PPEPiece" parentEntity="PPEBaseDBDataModel" syncable="YES">
+    <entity name="Piece" representedClassName=".Piece" parentEntity="BaseDBDataModel" syncable="YES">
         <attribute name="barcodeA1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="barcodeA2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="barcodeA3" optional="YES" attributeType="String" syncable="YES"/>
@@ -59,7 +59,7 @@
         <attribute name="wallThickness_mm" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wallThickness2_mm" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="PPEProfile" representedClassName=".PPEProfile" parentEntity="PPEBaseDBDataModel" syncable="YES">
+    <entity name="Profile" representedClassName=".Profile" parentEntity="BaseDBDataModel" syncable="YES">
         <attribute name="companyID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastJobUUID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastSpreadUUID" optional="YES" attributeType="String" syncable="YES"/>
@@ -71,7 +71,7 @@
         <attribute name="roles" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="signatureData" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="PPESpread" representedClassName=".PPESpread" parentEntity="PPEBaseDBDataModel" syncable="YES">
+    <entity name="Spread" representedClassName=".Spread" parentEntity="BaseDBDataModel" syncable="YES">
         <attribute name="billingEmailList" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="centreOfRightOfWayWKT" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
@@ -111,7 +111,7 @@
         <attribute name="workOrderNo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="workOrderTaskCodeNo" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="PPEWeld" representedClassName=".PPEWeld" parentEntity="PPEBaseDBDataModel" syncable="YES">
+    <entity name="Weld" representedClassName=".Weld" parentEntity="BaseDBDataModel" syncable="YES">
         <attribute name="amountOvalityID" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="angleSMAWBevelPrep1" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="angleSMAWBevelPrep2" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
@@ -214,11 +214,11 @@
         <attribute name="yYOvalityVariance2" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PPEBaseDBDataModel" positionX="-153" positionY="135" width="128" height="90"/>
-        <element name="PPELabourSpread" positionX="-153" positionY="135" width="128" height="135"/>
-        <element name="PPEPiece" positionX="-153" positionY="135" width="128" height="705"/>
-        <element name="PPEProfile" positionX="-63" positionY="-18" width="128" height="195"/>
-        <element name="PPESpread" positionX="-236" positionY="54" width="128" height="615"/>
-        <element name="PPEWeld" positionX="-153" positionY="135" width="128" height="1545"/>
+        <element name="BaseDBDataModel" positionX="-153" positionY="135" width="128" height="90"/>
+        <element name="LabourSpread" positionX="-153" positionY="135" width="128" height="135"/>
+        <element name="Piece" positionX="-153" positionY="135" width="128" height="705"/>
+        <element name="Profile" positionX="-63" positionY="-18" width="128" height="195"/>
+        <element name="Spread" positionX="-236" positionY="54" width="128" height="615"/>
+        <element name="Weld" positionX="-153" positionY="135" width="128" height="1545"/>
     </elements>
 </model>

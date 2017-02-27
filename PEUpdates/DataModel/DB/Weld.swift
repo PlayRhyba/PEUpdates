@@ -1,5 +1,5 @@
 //
-//  PPEWeld.swift
+//  Weld.swift
 //  PEUpdates
 //
 //  Created by Alexander Snigurskyi on 2017-02-20.
@@ -10,7 +10,7 @@
 import CoreData
 
 
-@objc class PPEWeld: PPEBaseDBDataModel {
+@objc class Weld: BaseDBDataModel {
     
     @NSManaged public var weldUUID: String?
     @NSManaged public var jobID: NSNumber?
@@ -114,7 +114,7 @@ import CoreData
     @NSManaged public var lengthCut2: String?
     
     
-    //MARK: PPEBaseDBDataModel
+    //MARK: BaseDBDataModel
     
     
     override func fill(withDictionary dictionary: [String: Any]?) {
@@ -227,7 +227,7 @@ import CoreData
     }
     
     
-    //MARK: PPEDataModel
+    //MARK: DataModel
     
     
     override var tableName: String {

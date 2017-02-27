@@ -1,5 +1,5 @@
 //
-//  PPEDataStorage+WeldData.swift
+//  DataStorage+WeldData.swift
 //  PEUpdates
 //
 //  Created by Alexander Snigurskyi on 2017-02-20.
@@ -11,23 +11,23 @@ import Foundation
 import MagicalRecord
 
 
-extension (PPEDataStorage) {
+extension DataStorage {
     
-    func welds(spreadID: NSNumber) -> [PPEWeld]? {
-        return PPEWeld.mr_findAll(with: NSPredicate.predicate(spreadID: spreadID)) as? [PPEWeld]
+    func welds(spreadID: NSNumber) -> [Weld]? {
+        return Weld.mr_findAll(with: NSPredicate.predicate(spreadID: spreadID)) as? [Weld]
     }
     
     
     func welds(completion: FetchCompletionBlock?) {
-        PPEWeld.performAsynchroniuosFetch(withRequestConfiguration: { (fetchRequest) in
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(PPEWeld.weldNumber), ascending: true)]
+        Weld.performAsynchroniuosFetch(withRequestConfiguration: { (fetchRequest) in
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Weld.weldNumber), ascending: true)]
         }, completion: completion)
     }
     
     
     func pieces(completion: FetchCompletionBlock?) {
-        PPEPiece.performAsynchroniuosFetch(withRequestConfiguration: { (fetchRequest) in
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(PPEPiece.pieceNumber), ascending: true)]
+        Piece.performAsynchroniuosFetch(withRequestConfiguration: { (fetchRequest) in
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Piece.pieceNumber), ascending: true)]
         }, completion: completion)
     }
     
@@ -59,7 +59,7 @@ extension (PPEDataStorage) {
         if let weldsData = dictionary?[Constants.Tables.Weld] {
             if weldsData is [[String: Any]] {
                 for data in (weldsData as! [[String: Any]]) {
-                    let weld = PPEWeld.mr_createEntity(in: localContext)
+                    let weld = Weld.mr_createEntity(in: localContext)
                     weld?.fill(withDictionary: data)
                 }
             }
@@ -72,7 +72,7 @@ extension (PPEDataStorage) {
         if let piecesData = dictionary?[Constants.Tables.Piece] {
             if piecesData is [[String: Any]] {
                 for data in piecesData as! [[String: Any]] {
-                    let piece = PPEPiece.mr_createEntity(in: localContext)
+                    let piece = Piece.mr_createEntity(in: localContext)
                     piece?.fill(withDictionary: data)
                 }
             }
@@ -81,8 +81,8 @@ extension (PPEDataStorage) {
     
     
     private func clearWeldData(localContext: NSManagedObjectContext) {
-        PPEWeld.mr_truncateAll(in: localContext)
-        PPEPiece.mr_truncateAll(in: localContext)
+        Weld.mr_truncateAll(in: localContext)
+        Piece.mr_truncateAll(in: localContext)
         
         
         //TODO: Clear other models

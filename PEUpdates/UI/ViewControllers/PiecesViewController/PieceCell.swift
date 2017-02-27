@@ -15,7 +15,7 @@ class PieceCell: UITableViewCell {
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var manufacturerLabel: UILabel!
     
-    weak var piece: PPEPiece? {
+    weak var piece: Piece? {
         didSet {
             update()
         }

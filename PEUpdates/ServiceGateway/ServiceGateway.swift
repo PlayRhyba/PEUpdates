@@ -1,5 +1,5 @@
 //
-//  PPEServiceGateway.swift
+//  ServiceGateway.swift
 //  PEUpdates
 //
 //  Created by Alexander Snegursky on 1/8/17.
@@ -10,4 +10,4 @@
 import Foundation
 
 
-class PPEServiceGateway: NSObject {}
+class ServiceGateway: NSObject {}

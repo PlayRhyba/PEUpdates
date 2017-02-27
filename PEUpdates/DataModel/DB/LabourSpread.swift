@@ -1,5 +1,5 @@
 //
-//  PPELabourSpread.swift
+//  LabourSpread.swift
 //  PEUpdates
 //
 //  Created by Alexander Snigurskyi on 2017-02-16.
@@ -10,7 +10,7 @@
 import CoreData
 
 
-@objc class PPELabourSpread: PPEBaseDBDataModel {
+@objc class LabourSpread: BaseDBDataModel {
     
     @NSManaged public var labourSpreadUUID: String?
     @NSManaged public var spreadID: NSNumber?
@@ -20,7 +20,7 @@ import CoreData
     @NSManaged public var note: String?
     
     
-    //MARK: PPEBaseDBDataModel
+    //MARK: BaseDBDataModel
     
     
     override func fill(withDictionary dictionary: [String: Any]?) {
@@ -39,7 +39,7 @@ import CoreData
     }
     
     
-    //MARK: PPEDataModel
+    //MARK: DataModel
     
     
     override var tableName: String {

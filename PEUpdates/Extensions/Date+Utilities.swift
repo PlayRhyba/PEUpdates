@@ -10,7 +10,7 @@
 import Foundation
 
 
-extension (Date) {
+extension Date {
     
     static func formatter() -> DateFormatter {
         let formatter = DateFormatter.init()
@@ -26,7 +26,7 @@ extension (Date) {
 }
 
 
-extension (DateFormatter) {
+extension DateFormatter {
     
     func date(fromString string: String, format: String) -> Date? {
         self.dateFormat = format
@@ -41,7 +41,7 @@ extension (DateFormatter) {
 }
 
 
-extension (String) {
+extension String {
     
     func date(withFormat format: String) -> Date? {
         return Date.formatter().date(fromString: self, format: format)

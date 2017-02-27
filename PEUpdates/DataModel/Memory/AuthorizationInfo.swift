@@ -1,5 +1,5 @@
 //
-//  PPEAuthorizationInfo.swift
+//  AuthorizationInfo.swift
 //  PEUpdates
 //
 //  Created by Alexander Snigurskyi on 2017-02-02.
@@ -10,13 +10,16 @@
 import Foundation
 
 
-class PPEAuthorizationInfo: PPEBaseMemoryDataModel {
+class AuthorizationInfo: BaseMemoryDataModel {
     
     var serverVersion: String?
     var appAuthorizedForUser: Bool?
     var rolesAuthorizedForApp: String?
     var appVersionAuthorized: Bool?
     var isUserActive: Bool?
+    
+    
+    //MARK: BaseMemoryDataModel
     
     
     override init(withDictionary dictionary: [String: Any]?) {
@@ -28,6 +31,9 @@ class PPEAuthorizationInfo: PPEBaseMemoryDataModel {
         appVersionAuthorized = (dictionary?["AppVersionAuthorized"] as? NSNumber)?.boolValue
         isUserActive = (dictionary?["IsUserActive"] as? NSNumber)?.boolValue
     }
+    
+    
+    //MARK: Public Methods
     
     
     func isAuthorized() -> Bool {

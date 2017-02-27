@@ -1,5 +1,5 @@
 //
-//  PPEPiece.swift
+//  Piece.swift
 //  PEUpdates
 //
 //  Created by Alexander Snigurskyi on 2017-02-23.
@@ -10,7 +10,7 @@
 import CoreData
 
 
-@objc class PPEPiece: PPEBaseDBDataModel {
+@objc class Piece: BaseDBDataModel {
     
     @NSManaged public var pieceUUID: String?
     @NSManaged public var spreadID: NSNumber?
@@ -58,7 +58,7 @@ import CoreData
     @NSManaged public var pup3Coil: String?
     
     
-    //MARK: PPEBaseDBDataModel
+    //MARK: BaseDBDataModel
     
     
     override func fill(withDictionary dictionary: [String: Any]?) {
@@ -115,7 +115,7 @@ import CoreData
     }
     
     
-    //MARK: PPEDataModel
+    //MARK: DataModel
     
     
     override var tableName: String {

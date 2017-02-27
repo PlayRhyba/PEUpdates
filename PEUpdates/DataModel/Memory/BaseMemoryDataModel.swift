@@ -1,5 +1,5 @@
 //
-//  PPEBaseMemoryDataModel.swift
+//  BaseMemoryDataModel.swift
 //  PEUpdates
 //
 //  Created by Alexander Snigurskyi on 2017-02-13.
@@ -11,7 +11,7 @@
 import Foundation
 
 
-class PPEBaseMemoryDataModel: NSObject {
+class BaseMemoryDataModel: NSObject {
 
     
     //MARK: Public Methods

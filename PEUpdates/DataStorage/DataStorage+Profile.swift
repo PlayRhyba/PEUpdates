@@ -1,5 +1,5 @@
 //
-//  PPEDataStorage+Profile.swift
+//  DataStorage+Profile.swift
 //  PEUpdates
 //
 //  Created by Alexander Snigurskyi on 2017-02-01.
@@ -11,10 +11,10 @@ import Foundation
 import MagicalRecord
 
 
-extension (PPEDataStorage) {
+extension DataStorage {
     
-    func profile() -> PPEProfile? {
-        return PPEProfile.mr_findAll()?.first as? PPEProfile
+    func profile() -> Profile? {
+        return Profile.mr_findAll()?.first as? Profile
     }
     
     
@@ -25,7 +25,7 @@ extension (PPEDataStorage) {
                 p.fill(withDictionary: dictionary)
             }
             else {
-                let profile = PPEProfile.mr_createEntity(in: localContext)
+                let profile = Profile.mr_createEntity(in: localContext)
                 profile?.fill(withDictionary: dictionary)
             }
         }, completion: completion)

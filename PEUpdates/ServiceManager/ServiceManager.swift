@@ -1,5 +1,5 @@
 //
-//  PPEServiceManager.swift
+//  ServiceManager.swift
 //  PEUpdates
 //
 //  Created by Alexander Snegursky on 1/7/17.
@@ -12,7 +12,7 @@ import AFNetworking
 import CocoaLumberjack
 
 
-class PPEServiceManager: NSObject {
+class ServiceManager: NSObject {
     
     typealias SuccessBlock = (HTTPURLResponse, Any?) -> Void
     typealias FailureBlock = (HTTPURLResponse?, Error) -> Void
@@ -26,7 +26,7 @@ class PPEServiceManager: NSObject {
     }
     
     
-    static let sharedInstance = PPEServiceManager()
+    static let sharedInstance = ServiceManager()
     
     
     private(set) lazy var tasks: NSHashTable<URLSessionDataTask> = {
@@ -46,7 +46,7 @@ class PPEServiceManager: NSObject {
                                                         let response = String(data: data, encoding: .utf8)
                                                         
                                                         DDLogError(String(format: "%@: AFNETWORKING TASK HAS BEEN COMPLETED WITH ERROR: %@. RESPONSE: %@",
-                                                                          "\(PPEServiceManager.self)", error, response!))
+                                                                          "\(ServiceManager.self)", error, response!))
                                                     }
                                                     
                                                 }
@@ -183,7 +183,7 @@ class PPEServiceManager: NSObject {
                                handler: FailureBlock?) {
         tasks.remove(task)
         
-        let processedError = PPEServiceResultsHandler.process(error: error)
+        let processedError = ServiceResultsHandler.process(error: error)
         handler?(task?.response as? HTTPURLResponse, processedError)
     }
     

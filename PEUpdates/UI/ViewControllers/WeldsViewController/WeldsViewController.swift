@@ -14,7 +14,7 @@ import SVProgressHUD
 class WeldsViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var welds: [PPEWeld]?
+    var welds: [Weld]?
     
     
     //MARK: UIViewController
@@ -25,8 +25,8 @@ class WeldsViewController: UIViewController, UITableViewDataSource {
         
         SVProgressHUD.show()
         
-        PPEDataStorage.sharedInstance.welds { (welds, error) in
-            self.welds = welds as? [PPEWeld]
+        DataStorage.sharedInstance.welds { (welds, error) in
+            self.welds = welds as? [Weld]
             
             if error != nil {
                 SVProgressHUD.showError(withStatus: error!.localizedDescription)

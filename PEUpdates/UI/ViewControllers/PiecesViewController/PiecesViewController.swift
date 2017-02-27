@@ -14,7 +14,7 @@ import SVProgressHUD
 class PiecesViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var pieces: [PPEPiece]?
+    var pieces: [Piece]?
     
     
     //MARK: UIViewController
@@ -35,8 +35,8 @@ class PiecesViewController: UIViewController, UITableViewDataSource {
         
         SVProgressHUD.show()
         
-        PPEDataStorage.sharedInstance.pieces(completion: { (pieces, error) in
-            self.pieces = pieces as? [PPEPiece]
+        DataStorage.sharedInstance.pieces(completion: { (pieces, error) in
+            self.pieces = pieces as? [Piece]
             
             if error != nil {
                 SVProgressHUD.showError(withStatus: error?.localizedDescription)
@@ -72,7 +72,7 @@ class PiecesViewController: UIViewController, UITableViewDataSource {
     func saveButtonClicked() {
         SVProgressHUD.show()
         
-        PPEDataStorage.sharedInstance.save { (_, error) in
+        DataStorage.sharedInstance.save { (_, error) in
             if error == nil {
                 SVProgressHUD.dismiss()
             }

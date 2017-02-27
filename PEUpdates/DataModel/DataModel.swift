@@ -1,5 +1,5 @@
 //
-//  PPEDataModel.swift
+//  DataModel.swift
 //  PEUpdates
 //
 //  Created by Alexander Snigurskyi on 2017-02-13.
@@ -10,7 +10,7 @@
 import Foundation
 
 
-@objc protocol PPEDataModel {
+@objc protocol DataModel {
     
     var tableName: String { get }
     

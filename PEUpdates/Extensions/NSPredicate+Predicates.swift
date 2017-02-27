@@ -10,9 +10,9 @@
 import Foundation
 
 
-extension (NSPredicate) {
+extension NSPredicate {
     
     class func predicate(spreadID: NSNumber) -> NSPredicate {
-        return NSPredicate.init(format: "%K == %@", #keyPath(PPEWeld.spreadID), spreadID)
+        return NSPredicate.init(format: "%K == %@", #keyPath(Weld.spreadID), spreadID)
     }
 }

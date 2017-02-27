@@ -65,7 +65,7 @@ struct Errors {
     }
     
     
-    static func authorizationError(authInfo: PPEAuthorizationInfo) -> Error {
+    static func authorizationError(authInfo: AuthorizationInfo) -> Error {
         var msg = ""
         
         func append(_ string: String) {

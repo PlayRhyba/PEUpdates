@@ -1,5 +1,5 @@
 //
-//  PPEDataStorage.swift
+//  DataStorage.swift
 //  PEUpdates
 //
 //  Created by Alexander Snegursky on 1/15/17.
@@ -11,13 +11,13 @@ import Foundation
 import MagicalRecord
 
 
-class PPEDataStorage: NSObject {
+class DataStorage: NSObject {
     
     typealias SaveCompletionBlock = (Bool, Error?) -> Void
     typealias FetchCompletionBlock = ([NSManagedObject]?, Error?) -> Void
     
     
-    static let sharedInstance = PPEDataStorage()
+    static let sharedInstance = DataStorage()
     
     
     //MARK: NSObject

@@ -1,5 +1,5 @@
 //
-//  PPEDataStorage+Data.swift
+//  DataStorage+Data.swift
 //  PEUpdates
 //
 //  Created by Alexander Snigurskyi on 2017-02-16.
@@ -11,10 +11,10 @@ import Foundation
 import MagicalRecord
 
 
-extension (PPEDataStorage) {
+extension DataStorage {
     
-    func spreads() -> [PPESpread]? {
-        return PPESpread.mr_findAll() as? [PPESpread]
+    func spreads() -> [Spread]? {
+        return Spread.mr_findAll() as? [Spread]
     }
     
     
@@ -39,10 +39,10 @@ extension (PPEDataStorage) {
                              localContext: NSManagedObjectContext) {
         if let spreadsData = dictionary?[Constants.Tables.Spread] {
             if spreadsData is [[String: Any]] {
-                PPESpread.mr_truncateAll(in: localContext)
+                Spread.mr_truncateAll(in: localContext)
                 
                 for data in spreadsData as! [[String: Any]] {
-                    let spread = PPESpread.mr_createEntity(in: localContext)
+                    let spread = Spread.mr_createEntity(in: localContext)
                     spread?.fill(withDictionary: data)
                 }
             }
@@ -54,10 +54,10 @@ extension (PPEDataStorage) {
                                    localContext: NSManagedObjectContext) {
         if let labourSpreadsData = dictionary?[Constants.Tables.LabourSpread] {
             if labourSpreadsData is [[String: Any]] {
-                PPELabourSpread.mr_truncateAll(in: localContext)
+                LabourSpread.mr_truncateAll(in: localContext)
                 
                 for data in labourSpreadsData as! [[String: Any]] {
-                    let labourSpread = PPELabourSpread.mr_createEntity(in: localContext)
+                    let labourSpread = LabourSpread.mr_createEntity(in: localContext)
                     labourSpread?.fill(withDictionary: data)
                 }
             }

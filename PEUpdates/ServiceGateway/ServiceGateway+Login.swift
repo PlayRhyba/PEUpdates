@@ -1,5 +1,5 @@
 //
-//  PPEServiceGateway+Login.swift
+//  ServiceGateway+Login.swift
 //  PEUpdates
 //
 //  Created by Alexander Snegursky on 1/8/17.
@@ -10,25 +10,25 @@
 import Foundation
 
 
-extension PPEServiceGateway {
+extension ServiceGateway {
     
     @discardableResult class func login(email: String,
                                         password: String,
                                         serverURL: URL?,
-                                        success: PPEServiceManager.SuccessBlock?,
-                                        failure: PPEServiceManager.FailureBlock?) -> URLSessionDataTask? {
-        return PPEServiceManager.sharedInstance.login(email: email,
-                                                      password: password,
-                                                      serverURL: serverURL,
-                                                      success: { (response, data) in
-                                                        let dataString = data as! String
-                                                        
-                                                        if dataString == Constants.Strings.LoggedIn {
-                                                            success?(response, dataString)
-                                                        }
-                                                        else {
-                                                            failure?(response, Errors.loginError(string: dataString))
-                                                        }
+                                        success: ServiceManager.SuccessBlock?,
+                                        failure: ServiceManager.FailureBlock?) -> URLSessionDataTask? {
+        return ServiceManager.sharedInstance.login(email: email,
+                                                   password: password,
+                                                   serverURL: serverURL,
+                                                   success: { (response, data) in
+                                                    let dataString = data as! String
+                                                    
+                                                    if dataString == Constants.Strings.LoggedIn {
+                                                        success?(response, dataString)
+                                                    }
+                                                    else {
+                                                        failure?(response, Errors.loginError(string: dataString))
+                                                    }
         }, failure: failure)
     }
     
@@ -36,9 +36,9 @@ extension PPEServiceGateway {
     class func authenticate(email: String,
                             password: String,
                             server: String,
-                            success: ((PPEProfile) -> Void)?,
-                            failure: PPEServiceManager.FailureBlock?) {
-        let invokeSuccess: (PPEProfile) -> Void = { (profile) in
+                            success: ((Profile) -> Void)?,
+                            failure: ServiceManager.FailureBlock?) {
+        let invokeSuccess: (Profile) -> Void = { (profile) in
             if let block = success {
                 DispatchQueue.main.async {
                     block(profile)
@@ -46,7 +46,7 @@ extension PPEServiceGateway {
             }
         }
         
-        let invokeFailure: PPEServiceManager.FailureBlock = { (response, error) in
+        let invokeFailure: ServiceManager.FailureBlock = { (response, error) in
             if let block = failure {
                 DispatchQueue.main.async {
                     block(response, error)
@@ -60,11 +60,11 @@ extension PPEServiceGateway {
             let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
             let build = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as! String
             
-            let serviceManager = PPEServiceManager.sharedInstance
-            let dataStorage = PPEDataStorage.sharedInstance
+            let serviceManager = ServiceManager.sharedInstance
+            let dataStorage = DataStorage.sharedInstance
             
             serviceManager.authorize(version: version, build: build, serverURL: url, success: { (response, data) in
-                let authInfo = PPEAuthorizationInfo.init(withDictionary: data as? [String: Any])
+                let authInfo = AuthorizationInfo.init(withDictionary: data as? [String: Any])
                 
                 if authInfo.isAuthorized() {
                     serviceManager.loadProfile(serverURL: url, success: { (response, data) in

@@ -1,5 +1,5 @@
 //
-//  PPEServiceGateway+Data.swift
+//  ServiceGateway+Data.swift
 //  PEUpdates
 //
 //  Created by Alexander Snigurskyi on 2017-02-03.
@@ -10,14 +10,14 @@
 import Foundation
 
 
-extension PPEServiceGateway {
+extension ServiceGateway {
     
     class func loadData(email: String,
                         password: String,
                         server: String,
                         success: (() -> Void)?,
-                        failure: PPEServiceManager.FailureBlock?,
-                        progress: PPEServiceManager.ProgressBlock?) {
+                        failure: ServiceManager.FailureBlock?,
+                        progress: ServiceManager.ProgressBlock?) {
         let invokeSuccess = {
             if let block = success {
                 DispatchQueue.main.async {
@@ -26,7 +26,7 @@ extension PPEServiceGateway {
             }
         }
         
-        let invokeFailure: PPEServiceManager.FailureBlock = { (response, error) in
+        let invokeFailure: ServiceManager.FailureBlock = { (response, error) in
             if let block = failure {
                 DispatchQueue.main.async {
                     block(response, error)
@@ -34,7 +34,7 @@ extension PPEServiceGateway {
             }
         }
         
-        let invokeProgress: PPEServiceManager.ProgressBlock = { (p) in
+        let invokeProgress: ServiceManager.ProgressBlock = { (p) in
             if let block = progress {
                 DispatchQueue.main.async {
                     block(p)
@@ -44,8 +44,8 @@ extension PPEServiceGateway {
         
         let url = URL(string: server)
         
-        let serviceManager = PPEServiceManager.sharedInstance
-        let dataStorage = PPEDataStorage.sharedInstance
+        let serviceManager = ServiceManager.sharedInstance
+        let dataStorage = DataStorage.sharedInstance
         
         login(email: email, password: password, serverURL: url, success: { (_, _) in
             serviceManager.loadJobsSpreads(serverURL: url, success: { (response, data) in

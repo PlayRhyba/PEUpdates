@@ -10,7 +10,7 @@
 import CoreData
 
 
-@objc class PPEProfile: PPEBaseDBDataModel {
+@objc class Profile: BaseDBDataModel {
     
     @NSManaged public var companyID: String?
     @NSManaged public var lastJobUUID: String?
@@ -24,7 +24,7 @@ import CoreData
     @NSManaged public var signatureData: String?
     
     
-    //MARK: PPEBaseDBDataModel
+    //MARK: BaseDBDataModel
     
     
     override func fill(withDictionary dictionary: [String: Any]?) {
@@ -47,7 +47,7 @@ import CoreData
     }
     
     
-    //MARK: PPEDataModel
+    //MARK: DataModel
     
     
     override var tableName: String {

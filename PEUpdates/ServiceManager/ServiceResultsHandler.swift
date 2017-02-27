@@ -1,5 +1,5 @@
 //
-//  PPEServiceErrorHandler.swift
+//  ServiceErrorHandler.swift
 //  PEUpdates
 //
 //  Created by Alexander Snegursky on 1/8/17.
@@ -10,7 +10,7 @@
 import Foundation
 
 
-class PPEServiceResultsHandler: NSObject {
+class ServiceResultsHandler: NSObject {
     enum ExpectedResultType {
         case String
         case JSON
@@ -30,8 +30,8 @@ class PPEServiceResultsHandler: NSObject {
     class func process(response: HTTPURLResponse,
                        data: Any?,
                        expectedResultType: ExpectedResultType,
-                       success: PPEServiceManager.SuccessBlock?,
-                       failure: PPEServiceManager.FailureBlock?) {
+                       success: ServiceManager.SuccessBlock?,
+                       failure: ServiceManager.FailureBlock?) {
         if data != nil && data is Data {
             switch expectedResultType {
             case .String:

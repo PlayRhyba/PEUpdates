@@ -11,7 +11,7 @@ import Foundation
 import CocoaLumberjack
 
 
-extension (NSObject) {
+extension NSObject {
     
     class var className: String {
         return NSStringFromClass(self).components(separatedBy: ".").last ?? ""
