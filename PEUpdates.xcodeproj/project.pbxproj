@@ -36,7 +36,10 @@
 		C76176E31E5203CD00CFFC40 /* PPEFieldDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76176E21E5203CD00CFFC40 /* PPEFieldDescription.swift */; };
 		C76176E51E52053800CFFC40 /* PPEDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76176E41E52053800CFFC40 /* PPEDataModel.swift */; };
 		C77F73501E5495A4001A0F54 /* PPESpread.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77F734E1E5495A4001A0F54 /* PPESpread.swift */; };
+		C788138C1E644E650008F7FA /* WeldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788138B1E644E650008F7FA /* WeldsViewController.swift */; };
+		C788138E1E644EE20008F7FA /* WeldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788138D1E644EE20008F7FA /* WeldCell.swift */; };
 		C78D3DE71E40D53000D62EC7 /* DispatchQueue+Utitities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78D3DE61E40D53000D62EC7 /* DispatchQueue+Utitities.swift */; };
+		C7B98A111E643EAE00F1CE7F /* NSManagedObject+DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B98A101E643EAE00F1CE7F /* NSManagedObject+DataStorage.swift */; };
 		C7BBD3FB1E44AEC80074AB56 /* PPEServiceManager+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BBD3FA1E44AEC80074AB56 /* PPEServiceManager+Data.swift */; };
 		C7BBD3FD1E44B5B80074AB56 /* PPEServiceGateway+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BBD3FC1E44B5B80074AB56 /* PPEServiceGateway+Data.swift */; };
 		C7CA3C781E5B3BDF00504F58 /* PPEWeld.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA3C771E5B3BDF00504F58 /* PPEWeld.swift */; };
@@ -83,7 +86,10 @@
 		C76176E21E5203CD00CFFC40 /* PPEFieldDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEFieldDescription.swift; sourceTree = "<group>"; };
 		C76176E41E52053800CFFC40 /* PPEDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEDataModel.swift; sourceTree = "<group>"; };
 		C77F734E1E5495A4001A0F54 /* PPESpread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPESpread.swift; sourceTree = "<group>"; };
+		C788138B1E644E650008F7FA /* WeldsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeldsViewController.swift; sourceTree = "<group>"; };
+		C788138D1E644EE20008F7FA /* WeldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeldCell.swift; sourceTree = "<group>"; };
 		C78D3DE61E40D53000D62EC7 /* DispatchQueue+Utitities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Utitities.swift"; sourceTree = "<group>"; };
+		C7B98A101E643EAE00F1CE7F /* NSManagedObject+DataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+DataStorage.swift"; sourceTree = "<group>"; };
 		C7BBD3FA1E44AEC80074AB56 /* PPEServiceManager+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEServiceManager+Data.swift"; sourceTree = "<group>"; };
 		C7BBD3FC1E44B5B80074AB56 /* PPEServiceGateway+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEServiceGateway+Data.swift"; sourceTree = "<group>"; };
 		C7CA3C771E5B3BDF00504F58 /* PPEWeld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPEWeld.swift; sourceTree = "<group>"; };
@@ -188,6 +194,7 @@
 				C736ACDC1E5334D900062485 /* NSObject+Reflection.swift */,
 				C7EEF8291E5726E4001A5EBD /* Date+Utilities.swift */,
 				C7CA3C7B1E5B497E00504F58 /* NSPredicate+Predicates.swift */,
+				C7B98A101E643EAE00F1CE7F /* NSManagedObject+DataStorage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -204,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				11B008221E61D111007A1468 /* MainViewController.swift */,
+				C788138A1E644E430008F7FA /* WeldsViewController */,
 				11B008231E61D111007A1468 /* PiecesViewController */,
 			);
 			path = ViewControllers;
@@ -274,6 +282,16 @@
 			);
 			path = Memory;
 			sourceTree = "<group>";
+		};
+		C788138A1E644E430008F7FA /* WeldsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C788138B1E644E650008F7FA /* WeldsViewController.swift */,
+				C788138D1E644EE20008F7FA /* WeldCell.swift */,
+			);
+			name = WeldsViewController;
+			path = PEUpdates/UI/ViewControllers/WeldsViewController;
+			sourceTree = SOURCE_ROOT;
 		};
 		C7E228CE1E4374CB00EA9C83 /* DB */ = {
 			isa = PBXGroup;
@@ -415,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7E228D51E4374CB00EA9C83 /* PPEProfile.swift in Sources */,
+				C788138E1E644EE20008F7FA /* WeldCell.swift in Sources */,
 				C7BBD3FB1E44AEC80074AB56 /* PPEServiceManager+Data.swift in Sources */,
 				C727CDA71E4218830070C0B2 /* PPEDataStorage+Profile.swift in Sources */,
 				C75E799F1E560B8C00FCCB6B /* PPELabourSpread.swift in Sources */,
@@ -431,10 +450,12 @@
 				11B008251E61D111007A1468 /* MainViewController.swift in Sources */,
 				116771C81E215DCC00ACBD76 /* AppDelegate.swift in Sources */,
 				11728D3E1E22EB25000FC4DB /* PPEServiceResultsHandler.swift in Sources */,
+				C7B98A111E643EAE00F1CE7F /* NSManagedObject+DataStorage.swift in Sources */,
 				C76176E51E52053800CFFC40 /* PPEDataModel.swift in Sources */,
 				11728D321E22CEBD000FC4DB /* PPEServiceGateway+Login.swift in Sources */,
 				11728D3A1E22E8A1000FC4DB /* Errors.swift in Sources */,
 				C76176DC1E51FD5B00CFFC40 /* PPEConfigurationManager.swift in Sources */,
+				C788138C1E644E650008F7FA /* WeldsViewController.swift in Sources */,
 				C7CA3C7C1E5B497E00504F58 /* NSPredicate+Predicates.swift in Sources */,
 				C76176DF1E52026800CFFC40 /* PPEAuthorizationInfo.swift in Sources */,
 				C7EEF82A1E5726E5001A5EBD /* Date+Utilities.swift in Sources */,

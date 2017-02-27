@@ -29,9 +29,11 @@ import CocoaLumberjack
     
     func fill(withDictionary dictionary: [String: Any]?) {
         if let d = dictionary {
-            created = value(fromDictionary: d, propertyName: #keyPath(created)) as? NSNumber
-            modified = value(fromDictionary: d, propertyName: #keyPath(modified)) as? NSNumber
-            p_deleted = value(fromDictionary: d, propertyName: #keyPath(p_deleted)) as? NSNumber
+            autoreleasepool {
+                created = value(fromDictionary: d, propertyName: #keyPath(created)) as? NSNumber
+                modified = value(fromDictionary: d, propertyName: #keyPath(modified)) as? NSNumber
+                p_deleted = value(fromDictionary: d, propertyName: #keyPath(p_deleted)) as? NSNumber
+            }
         }
     }
     

@@ -31,16 +31,18 @@ import CoreData
         super.fill(withDictionary: dictionary)
         
         if let d = dictionary {
-            companyID = value(fromDictionary: d, propertyName: #keyPath(companyID)) as? String
-            lastJobUUID = value(fromDictionary: d, propertyName: #keyPath(lastJobUUID)) as? String
-            lastSpreadUUID = value(fromDictionary: d, propertyName: #keyPath(lastSpreadUUID)) as? String
-            lastWeldUUID = value(fromDictionary: d, propertyName: #keyPath(lastWeldUUID)) as? String
-            measurementSystem = value(fromDictionary: d, propertyName: #keyPath(measurementSystem)) as? String
-            name = value(fromDictionary: d, propertyName: #keyPath(name)) as? String
-            readOnly = value(fromDictionary: d, propertyName: #keyPath(readOnly)) as? NSNumber
-            role = value(fromDictionary: d, propertyName: #keyPath(role)) as? String
-            roles = value(fromDictionary: d, propertyName: #keyPath(roles)) as? String
-            signatureData = value(fromDictionary: d, propertyName: #keyPath(signatureData)) as? String
+            autoreleasepool {
+                companyID = value(fromDictionary: d, propertyName: #keyPath(companyID)) as? String
+                lastJobUUID = value(fromDictionary: d, propertyName: #keyPath(lastJobUUID)) as? String
+                lastSpreadUUID = value(fromDictionary: d, propertyName: #keyPath(lastSpreadUUID)) as? String
+                lastWeldUUID = value(fromDictionary: d, propertyName: #keyPath(lastWeldUUID)) as? String
+                measurementSystem = value(fromDictionary: d, propertyName: #keyPath(measurementSystem)) as? String
+                name = value(fromDictionary: d, propertyName: #keyPath(name)) as? String
+                readOnly = value(fromDictionary: d, propertyName: #keyPath(readOnly)) as? NSNumber
+                role = value(fromDictionary: d, propertyName: #keyPath(role)) as? String
+                roles = value(fromDictionary: d, propertyName: #keyPath(roles)) as? String
+                signatureData = value(fromDictionary: d, propertyName: #keyPath(signatureData)) as? String
+            }
         }
     }
     

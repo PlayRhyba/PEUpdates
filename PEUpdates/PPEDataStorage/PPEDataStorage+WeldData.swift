@@ -13,29 +13,26 @@ import MagicalRecord
 
 extension (PPEDataStorage) {
     
-    
     func welds(spreadID: NSNumber) -> [PPEWeld]? {
         return PPEWeld.mr_findAll(with: NSPredicate.predicate(spreadID: spreadID)) as? [PPEWeld]
     }
     
     
-    func pieces(completion: (([PPEPiece]?, Error?) -> Void)?) -> Void {
-        let fetchRequest = NSFetchRequest<PPEPiece>(entityName: "PPEPiece")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(PPEPiece.pieceNumber), ascending: true)]
-        
-        let asyncFetchRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result) in
-            if let block = completion {
-                DispatchQueue.main.async {
-                    block((result.finalResult, result.operationError))
-                }
-            }
-        }
-        
-        _ = try? NSManagedObjectContext.mr_default().execute(asyncFetchRequest)
+    func welds(completion: FetchCompletionBlock?) {
+        PPEWeld.performAsynchroniuosFetch(withRequestConfiguration: { (fetchRequest) in
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(PPEWeld.weldNumber), ascending: true)]
+        }, completion: completion)
     }
     
     
-    func saveWeldData(dictionaries: [[String: Any]]?, completion: CompletionBlock?) {
+    func pieces(completion: FetchCompletionBlock?) {
+        PPEPiece.performAsynchroniuosFetch(withRequestConfiguration: { (fetchRequest) in
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(PPEPiece.pieceNumber), ascending: true)]
+        }, completion: completion)
+    }
+    
+    
+    func saveWeldData(dictionaries: [[String: Any]]?, completion: SaveCompletionBlock?) {
         MagicalRecord.save({ (localContext) in
             if let objects = dictionaries {
                 self.clearWeldData(localContext: localContext)

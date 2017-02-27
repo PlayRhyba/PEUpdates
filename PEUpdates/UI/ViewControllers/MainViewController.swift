@@ -13,9 +13,9 @@ import SVProgressHUD
 
 class MainViewController: UIViewController {
     
-    let server = "https://enbridge.pipelineenterprise.com/mobile"
-    let email = "peinspector@metegrity.com"
-    let password = "Default29)"
+    let server = "https://demo.pipelineenterprise.com/mobile"
+    let email = "bjmarsh@telus.net"
+    let password = "Metegrity3!"
     
     
     //MARK: Lifecycle Methods

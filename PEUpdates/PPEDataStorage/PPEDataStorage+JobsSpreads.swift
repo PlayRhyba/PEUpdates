@@ -19,7 +19,7 @@ extension (PPEDataStorage) {
     
     
     func saveJobsSpreadsData(withDictionary dictionary: [String: Any]?,
-                             completion: CompletionBlock?) {
+                             completion: SaveCompletionBlock?) {
         MagicalRecord.save({ (localContext) in
             self.saveSpreads(withDictionary: dictionary, localContext: localContext)
             self.saveLabourSpreads(withDictionary: dictionary, localContext: localContext)

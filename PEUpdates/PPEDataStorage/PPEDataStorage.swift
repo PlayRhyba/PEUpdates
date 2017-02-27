@@ -13,7 +13,8 @@ import MagicalRecord
 
 class PPEDataStorage: NSObject {
     
-    typealias CompletionBlock = (Bool, Error?) -> Void
+    typealias SaveCompletionBlock = (Bool, Error?) -> Void
+    typealias FetchCompletionBlock = ([NSManagedObject]?, Error?) -> Void
     
     
     static let sharedInstance = PPEDataStorage()
@@ -43,7 +44,7 @@ class PPEDataStorage: NSObject {
     }
     
     
-    func save(completion: CompletionBlock?) {
+    func save(completion: SaveCompletionBlock?) {
         NSManagedObjectContext.mr_default().mr_saveToPersistentStore(completion: completion)
     }
 }

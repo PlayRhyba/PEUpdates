@@ -17,6 +17,9 @@ class PiecesViewController: UIViewController, UITableViewDataSource {
     var pieces: [PPEPiece]?
     
     
+    //MARK: UIViewController
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,10 +31,12 @@ class PiecesViewController: UIViewController, UITableViewDataSource {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         SVProgressHUD.show()
         
         PPEDataStorage.sharedInstance.pieces(completion: { (pieces, error) in
-            self.pieces = pieces
+            self.pieces = pieces as? [PPEPiece]
             
             if error != nil {
                 SVProgressHUD.showError(withStatus: error?.localizedDescription)

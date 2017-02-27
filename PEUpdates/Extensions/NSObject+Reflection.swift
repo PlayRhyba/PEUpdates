@@ -13,6 +13,15 @@ import CocoaLumberjack
 
 extension (NSObject) {
     
+    class var className: String {
+        return NSStringFromClass(self).components(separatedBy: ".").last ?? ""
+    }
+    
+    
+    var className: String {
+        return NSStringFromClass(self as! AnyClass).components(separatedBy: ".").last ?? ""
+    }
+    
     
     //MARK: Public Methods
     
