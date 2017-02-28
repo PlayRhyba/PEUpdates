@@ -12,8 +12,9 @@ import Foundation
 
 class FieldDescription: BaseMemoryDataModel {
     
-    var type: String?
-    var name: String?
+    var type: String!
+    var propertyName: String!
+    var name: String!
     var tableName: String?
     
     
@@ -23,8 +24,11 @@ class FieldDescription: BaseMemoryDataModel {
     override init(withDictionary dictionary: [String: Any]?) {
         super.init(withDictionary: dictionary)
         
-        type = dictionary?["type"] as? String
-        name = dictionary?["name"] as? String ?? type
-        tableName = dictionary?["tableName"] as? String
+        if let d = dictionary {
+            type = d[(#keyPath(type))] as! String
+            propertyName = d[(#keyPath(propertyName))] as? String ?? type
+            name = d[(#keyPath(name))] as? String ?? type
+            tableName = d[(#keyPath(tableName))] as? String
+        }
     }
 }

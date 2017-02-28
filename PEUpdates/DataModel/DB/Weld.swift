@@ -61,7 +61,7 @@ import CoreData
     @NSManaged public var yAxisOvality1: NSNumber?
     @NSManaged public var yAxisOvality2: NSNumber?
     @NSManaged public var xYOvalityVariance1: NSNumber?
-    @NSManaged public var yYOvalityVariance2: NSNumber?
+    @NSManaged public var xYOvalityVariance2: NSNumber?
     @NSManaged public var bellAndCrimp1: NSNumber?
     @NSManaged public var bellAndCrimp2: NSNumber?
     @NSManaged public var internalSeamGrind1: NSNumber?
@@ -171,7 +171,7 @@ import CoreData
                 yAxisOvality1 = value(fromDictionary: d, propertyName: #keyPath(yAxisOvality1)) as? NSNumber
                 yAxisOvality2 = value(fromDictionary: d, propertyName: #keyPath(yAxisOvality2)) as? NSNumber
                 xYOvalityVariance1 = value(fromDictionary: d, propertyName: #keyPath(xYOvalityVariance1)) as? NSNumber
-                yYOvalityVariance2 = value(fromDictionary: d, propertyName: #keyPath(yYOvalityVariance2)) as? NSNumber
+                xYOvalityVariance2 = value(fromDictionary: d, propertyName: #keyPath(xYOvalityVariance2)) as? NSNumber
                 bellAndCrimp1 = value(fromDictionary: d, propertyName: #keyPath(bellAndCrimp1)) as? NSNumber
                 bellAndCrimp2 = value(fromDictionary: d, propertyName: #keyPath(bellAndCrimp2)) as? NSNumber
                 internalSeamGrind1 = value(fromDictionary: d, propertyName: #keyPath(internalSeamGrind1)) as? NSNumber

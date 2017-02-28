@@ -37,7 +37,7 @@ import CoreData
     @NSManaged public var length_meters: NSNumber?
     @NSManaged public var bendRadius: String?
     @NSManaged public var bendAngleDegrees: NSNumber?
-    @NSManaged public var p_description: String?
+    @NSManaged public var descriptionText: String?
     @NSManaged public var coating: String?
     @NSManaged public var pieceLat: String?
     @NSManaged public var pieceLong: String?
@@ -91,7 +91,7 @@ import CoreData
                 length_meters = value(fromDictionary: d, propertyName: #keyPath(length_meters)) as? NSNumber
                 bendRadius = value(fromDictionary: d, propertyName: #keyPath(bendRadius)) as? String
                 bendAngleDegrees = value(fromDictionary: d, propertyName: #keyPath(bendAngleDegrees)) as? NSNumber
-                p_description = value(fromDictionary: d, propertyName: #keyPath(p_description)) as? String
+                descriptionText = value(fromDictionary: d, propertyName: #keyPath(descriptionText)) as? String
                 coating = value(fromDictionary: d, propertyName: #keyPath(coating)) as? String
                 pieceLat = value(fromDictionary: d, propertyName: #keyPath(pieceLat)) as? String
                 pieceLong = value(fromDictionary: d, propertyName: #keyPath(pieceLong)) as? String

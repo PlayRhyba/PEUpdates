@@ -21,7 +21,7 @@ import CocoaLumberjack
     
     @NSManaged public var created: NSNumber?
     @NSManaged public var modified: NSNumber?
-    @NSManaged public var p_deleted: NSNumber?
+    @NSManaged public var objectDeleted: NSNumber?
     
     
     //MARK: Public Methods
@@ -32,7 +32,7 @@ import CocoaLumberjack
             autoreleasepool {
                 created = value(fromDictionary: d, propertyName: #keyPath(created)) as? NSNumber
                 modified = value(fromDictionary: d, propertyName: #keyPath(modified)) as? NSNumber
-                p_deleted = value(fromDictionary: d, propertyName: #keyPath(p_deleted)) as? NSNumber
+                objectDeleted = value(fromDictionary: d, propertyName: #keyPath(objectDeleted)) as? NSNumber
             }
         }
     }
@@ -83,10 +83,14 @@ import CocoaLumberjack
     
     private func fieldDescription(propertyName: String) -> FieldDescription? {
         let configurationManager = ConfigurationManager.sharedInstance
-        var fd = configurationManager.fieldDesctiption(name: propertyName, table: tableName)
+        var fd = configurationManager.fieldDesctiption(propertyName: propertyName, table: tableName)
         
         if fd == nil {
-            fd = configurationManager.fieldDesctiption(name: propertyName, table: Constants.Tables.Base)
+            fd = configurationManager.fieldDesctiption(propertyName: propertyName, table: Constants.Tables.Base)
+        }
+        
+        if fd == nil {
+            DDLogWarn("\(type(of: self)): FIELD FOR PROPERTY \(propertyName) NOT FOUND")
         }
         
         return fd

@@ -1,8 +1,8 @@
 [
-    { "type" : "LabourSpreadUUID" },
-    { "type" : "SpreadID" },
-    { "type" : "FullName" },
-    { "type" : "Title" },
-    { "type" : "Description" },
-    { "type" : "Note" },
+    { "type" : "LabourSpreadUUID", "propertyName" : "labourSpreadUUID" },
+    { "type" : "SpreadID", "propertyName" : "spreadID" },
+    { "type" : "FullName", "propertyName" : "fullName" },
+    { "type" : "Title", "propertyName" : "title" },
+    { "type" : "Description", "propertyName" : "descriptionText" },
+    { "type" : "Note", "propertyName" : "note" },
 ]

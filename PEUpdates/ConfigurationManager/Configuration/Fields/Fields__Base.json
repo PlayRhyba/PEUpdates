@@ -1,5 +1,5 @@
 [
     { "type" : "created" },
     { "type" : "modified" },
-    { "type" : "deleted" },
+    { "type" : "deleted", "propertyName" : "objectDeleted" },
 ]

@@ -61,7 +61,7 @@ class ConfigurationManager: NSObject {
                                 fieldDescription.tableName = tableName
                             }
                             
-                            let key = self.keyName(fieldName: fieldDescription.type!, tableName: fieldDescription.tableName!)
+                            let key = self.keyName(fieldName: fieldDescription.propertyName, tableName: fieldDescription.tableName!)
                             self.fields[key] = fieldDescription
                         }
                     }
@@ -89,18 +89,8 @@ class ConfigurationManager: NSObject {
     }
     
     
-    func fieldDesctiption(name: String, table: String) -> FieldDescription? {
-        let pName = name.fixedPropertyName()
-        
-        var key = keyName(fieldName: pName.capitalizingFirstLetter(), tableName: table)
-        var field = fields[key]
-        
-        if field == nil {
-            key = keyName(fieldName: pName, tableName: table)
-            field = fields[key]
-        }
-        
-        return field
+    func fieldDesctiption(propertyName: String, table: String) -> FieldDescription? {
+        return fields[keyName(fieldName: propertyName, tableName: table)]
     }
     
     

@@ -37,8 +37,7 @@ class MainViewController: UIViewController {
                                     password: password,
                                     server: server,
                                     success: { (profile) in
-                                        SVProgressHUD.showSuccess(withStatus: String(format: "Logged in. User: %@",
-                                                                                     profile.name ?? "Unknown"))
+                                        SVProgressHUD.showSuccess(withStatus: "Logged in. User: \(profile.name ?? "Unknown")")
         },
                                     failure: { (response, error) in
                                         SVProgressHUD.showError(withStatus: error.localizedDescription)

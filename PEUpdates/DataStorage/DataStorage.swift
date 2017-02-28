@@ -33,8 +33,7 @@ class DataStorage: NSObject {
         MagicalRecord.setupCoreDataStack(withStoreNamed: Constants.Configuration.DataModelName)
         
         #if (arch(i386) || arch(x86_64)) && os(iOS)
-            DDLogInfo(String(format: "%@: DOCUMENTS DIRECTORY PATH: %@",
-                             "\(classForCoder)", Constants.LocalPaths.DocumentsDirectory))
+            DDLogInfo("\(type(of: self)): DOCUMENTS DIRECTORY PATH: \(Constants.LocalPaths.DocumentsDirectory)")
         #endif
     }
     

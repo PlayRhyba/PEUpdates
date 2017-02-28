@@ -45,8 +45,7 @@ class ServiceManager: NSObject {
                                                     if let data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as? Data {
                                                         let response = String(data: data, encoding: .utf8)
                                                         
-                                                        DDLogError(String(format: "%@: AFNETWORKING TASK HAS BEEN COMPLETED WITH ERROR: %@. RESPONSE: %@",
-                                                                          "\(ServiceManager.self)", error, response!))
+                                                        DDLogError("\(ServiceManager.self): AFNETWORKING TASK HAS BEEN COMPLETED WITH ERROR: \(error). RESPONSE: \(response ?? "<empty>")")
                                                     }
                                                     
                                                 }
@@ -195,8 +194,7 @@ class ServiceManager: NSObject {
         if let d = data as? Data {
             let stringRepresentation = String(data: d, encoding: .utf8)
             
-            DDLogDebug(String(format: "%@: %@ PATH: %@. SUCCESS. RESPONSE: %@",
-                              "\(classForCoder)", type.rawValue, "\(url.appendingPathComponent(path))", stringRepresentation ?? ""))
+            DDLogDebug("\(type(of: self)): \(type.rawValue) PATH: \(url.appendingPathComponent(path)). SUCCESS. RESPONSE: \(stringRepresentation ?? "<empty>")")
         }
     }
     
@@ -209,13 +207,12 @@ class ServiceManager: NSObject {
         let data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as? Data
         let response = String(data: data ?? Data(), encoding: .utf8)
         
-        DDLogError(String(format: "%@: %@ PATH: %@. FAILURE. RESPONSE: %@. ERROR: %@",
-                          "\(classForCoder)", type.rawValue, "\(fullURL)", response ?? "", error.localizedDescription))
+        DDLogError("\(type(of: self)): \(type.rawValue) PATH: \(fullURL). FAILURE. RESPONSE: \(response ?? "<empty>"). ERROR: \(error.localizedDescription)")
     }
     
     
     private func logSentResponse(body: Data?, type: RequestType) {
         let str = String(data: body ?? Data(), encoding: .utf8)
-        DDLogInfo(String(format: "%@: %@ BODY: %@", "\(classForCoder)", type.rawValue, str ?? "<empty>"))
+        DDLogInfo("\(type(of: self)): \(type.rawValue) BODY: \(str != nil && !(str!.isEmpty) ? str! : "<empty>")")
     }
 }

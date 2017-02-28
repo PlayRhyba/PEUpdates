@@ -22,15 +22,4 @@ extension String {
     mutating func capitalizeFirstLetter() {
         self = self.capitalizingFirstLetter()
     }
-    
-    
-    func fixedPropertyName() -> String {
-        let prefix = "p_"
-        
-        if self.hasPrefix(prefix) {
-            return self.replacingOccurrences(of: prefix, with: "")
-        }
-        
-        return self
-    }
 }

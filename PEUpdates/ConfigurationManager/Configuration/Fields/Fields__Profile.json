@@ -3,10 +3,10 @@
     { "type" : "lastJobUUID" },
     { "type" : "lastSpreadUUID" },
     { "type" : "lastWeldUUID" },
-    { "type" : "MeasurementSystem" },
+    { "type" : "MeasurementSystem", "propertyName" : "measurementSystem" },
     { "type" : "name" },
-    { "type" : "ReadOnly" },
+    { "type" : "ReadOnly", "propertyName" : "readOnly" },
     { "type" : "role" },
     { "type" : "roles" },
-    { "type" : "SignatureData" },
+    { "type" : "SignatureData", "propertyName" : "signatureData" },
 ]

@@ -3,13 +3,13 @@
     <entity name="BaseDBDataModel" representedClassName=".BaseDBDataModel" syncable="YES">
         <attribute name="created" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="modified" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="p_deleted" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="objectDeleted" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <entity name="LabourSpread" representedClassName=".LabourSpread" parentEntity="BaseDBDataModel" syncable="YES">
+        <attribute name="descriptionText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="labourSpreadUUID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="p_description" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="spreadID" optional="YES" attributeType="Integer 16" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -23,6 +23,7 @@
         <attribute name="bendAngleDegrees" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="bendRadius" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="coating" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descriptionText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="heatNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="innerDiameter_mm" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="innerDiameter2_mm" optional="YES" attributeType="String" syncable="YES"/>
@@ -36,7 +37,6 @@
         <attribute name="nPSDN2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="outsideDiameter_mm" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="outsideDiameter2_mm" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="p_description" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pieceLat" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pieceLong" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pieceNumber" optional="YES" attributeType="String" syncable="YES"/>
@@ -209,9 +209,9 @@
         <attribute name="xAxisOvality1" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="xAxisOvality2" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="xYOvalityVariance1" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="xYOvalityVariance2" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="yAxisOvality1" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="yAxisOvality2" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="yYOvalityVariance2" optional="YES" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <elements>
         <element name="BaseDBDataModel" positionX="-153" positionY="135" width="128" height="90"/>

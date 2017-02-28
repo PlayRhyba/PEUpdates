@@ -16,7 +16,7 @@ import CoreData
     @NSManaged public var spreadID: NSNumber?
     @NSManaged public var fullName: String?
     @NSManaged public var title: String?
-    @NSManaged public var p_description: String?
+    @NSManaged public var descriptionText: String?
     @NSManaged public var note: String?
     
     
@@ -32,7 +32,7 @@ import CoreData
                 spreadID = value(fromDictionary: d, propertyName: #keyPath(spreadID)) as? NSNumber
                 fullName = value(fromDictionary: d, propertyName: #keyPath(fullName)) as? String
                 title = value(fromDictionary: d, propertyName: #keyPath(title)) as? String
-                p_description = value(fromDictionary: d, propertyName: #keyPath(p_description)) as? String
+                descriptionText = value(fromDictionary: d, propertyName: #keyPath(descriptionText)) as? String
                 note = value(fromDictionary: d, propertyName: #keyPath(note)) as? String
             }
         }

@@ -284,11 +284,11 @@
 		C78813B01E64902B0008F7FA /* ServiceManager */ = {
 			isa = PBXGroup;
 			children = (
+				C78813B51E64902B0008F7FA /* ServiceResultsHandler.swift */,
+				C78813B41E64902B0008F7FA /* ServiceManager.swift */,
 				C78813B11E64902B0008F7FA /* ServiceManager+Data.swift */,
 				C78813B21E64902B0008F7FA /* ServiceManager+Login.swift */,
 				C78813B31E64902B0008F7FA /* ServiceManager+Profile.swift */,
-				C78813B41E64902B0008F7FA /* ServiceManager.swift */,
-				C78813B51E64902B0008F7FA /* ServiceResultsHandler.swift */,
 			);
 			path = ServiceManager;
 			sourceTree = "<group>";
