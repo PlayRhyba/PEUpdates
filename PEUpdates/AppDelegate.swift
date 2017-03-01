@@ -9,7 +9,6 @@
 
 import UIKit
 import CocoaLumberjack
-import SVProgressHUD
 
 
 @UIApplicationMain
@@ -23,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         configureLoggers()
-        configureHUD()
+        HUD.configure()
         DataStorage.sharedInstance.setup()
         
         return true
@@ -65,22 +64,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    private func configureHUD() {
-        SVProgressHUD.setDefaultMaskType(.black)
-    }
-    
-    
     private func loadConfiguration() {
         let configurationManager = ConfigurationManager.sharedInstance
         
         if configurationManager.isLoaded() == false {
-            SVProgressHUD.show(withStatus: "Configuration loading...")
+            HUD.show(withStatus: "Configuration loading...")
             
             configurationManager.load { (_, error) in
-                SVProgressHUD.dismiss()
+                HUD.dismiss()
                 
                 if let e = error {
-                    SVProgressHUD.showError(withStatus: e.localizedDescription)
+                    HUD.showError(withStatus: e.localizedDescription)
                 }
             }
         }

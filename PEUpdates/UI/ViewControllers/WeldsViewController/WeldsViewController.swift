@@ -8,7 +8,6 @@
 
 
 import UIKit
-import SVProgressHUD
 
 
 class WeldsViewController: UIViewController, UITableViewDataSource {
@@ -23,16 +22,16 @@ class WeldsViewController: UIViewController, UITableViewDataSource {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        SVProgressHUD.show()
+        HUD.show()
         
         DataStorage.sharedInstance.welds { (welds, error) in
             self.welds = welds as? [Weld]
             
             if error != nil {
-                SVProgressHUD.showError(withStatus: error!.localizedDescription)
+                HUD.showError(withStatus: error!.localizedDescription)
             }
             else {
-                SVProgressHUD.dismiss()
+                HUD.dismiss()
             }
             
             self.title = String(format: "Welds (%d)", self.welds?.count ?? 0)

@@ -14,6 +14,7 @@
 		11728D391E22E8A1000FC4DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D361E22E8A1000FC4DB /* Constants.swift */; };
 		11728D3A1E22E8A1000FC4DB /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D371E22E8A1000FC4DB /* Errors.swift */; };
 		11728D3C1E22E955000FC4DB /* NSError+Utitities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11728D3B1E22E955000FC4DB /* NSError+Utitities.swift */; };
+		119FE8BB1E675371004FF4AA /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119FE8BA1E675371004FF4AA /* HUD.swift */; };
 		11B008251E61D111007A1468 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B008221E61D111007A1468 /* MainViewController.swift */; };
 		11B008261E61D111007A1468 /* PiecesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B008241E61D111007A1468 /* PiecesViewController.swift */; };
 		11B008281E61D149007A1468 /* PieceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B008271E61D149007A1468 /* PieceCell.swift */; };
@@ -63,6 +64,7 @@
 		11728D361E22E8A1000FC4DB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		11728D371E22E8A1000FC4DB /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		11728D3B1E22E955000FC4DB /* NSError+Utitities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Utitities.swift"; sourceTree = "<group>"; };
+		119FE8BA1E675371004FF4AA /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		11B008221E61D111007A1468 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		11B008241E61D111007A1468 /* PiecesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiecesViewController.swift; sourceTree = "<group>"; };
 		11B008271E61D149007A1468 /* PieceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieceCell.swift; sourceTree = "<group>"; };
@@ -177,9 +179,18 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		119FE8B91E675358004FF4AA /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				119FE8BA1E675371004FF4AA /* HUD.swift */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
 		11B008201E61D111007A1468 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				119FE8B91E675358004FF4AA /* HUD */,
 				11B008211E61D111007A1468 /* ViewControllers */,
 			);
 			path = UI;
@@ -453,6 +464,7 @@
 				C7B98A111E643EAE00F1CE7F /* NSManagedObject+DataStorage.swift in Sources */,
 				C78813A61E6490000008F7FA /* DataStorage+Profile.swift in Sources */,
 				C78813B91E64902B0008F7FA /* ServiceManager.swift in Sources */,
+				119FE8BB1E675371004FF4AA /* HUD.swift in Sources */,
 				C76176E51E52053800CFFC40 /* DataModel.swift in Sources */,
 				11728D3A1E22E8A1000FC4DB /* Errors.swift in Sources */,
 				C788138C1E644E650008F7FA /* WeldsViewController.swift in Sources */,

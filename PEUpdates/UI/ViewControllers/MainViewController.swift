@@ -8,7 +8,6 @@
 
 
 import UIKit
-import SVProgressHUD
 
 
 class MainViewController: UIViewController {
@@ -31,30 +30,30 @@ class MainViewController: UIViewController {
     
     
     @IBAction func loginButtonClicked(sender: UIButton) {
-        SVProgressHUD.show()
+        HUD.show()
         
         ServiceGateway.authenticate(email: email,
                                     password: password,
                                     server: server,
                                     success: { (profile) in
-                                        SVProgressHUD.showSuccess(withStatus: "Logged in. User: \(profile.name ?? "Unknown")")
+                                        HUD.showSuccess(withStatus: "Logged in. User: \(profile.name ?? "Unknown")")
         },
                                     failure: { (response, error) in
-                                        SVProgressHUD.showError(withStatus: error.localizedDescription)
+                                        HUD.showError(withStatus: error.localizedDescription)
         })
     }
     
     
     @IBAction func loadDataButtonClicked(sender: UIButton) {
-        SVProgressHUD.show()
+        HUD.show()
         
         ServiceGateway.loadData(email: email,
                                 password: password,
                                 server: server,
                                 success: {
-                                    SVProgressHUD.showSuccess(withStatus: "Data have been loaded")
+                                    HUD.showSuccess(withStatus: "Data have been loaded")
         }, failure: { (response, error) in
-            SVProgressHUD.showError(withStatus: error.localizedDescription)
+            HUD.showError(withStatus: error.localizedDescription)
         }, progress: nil)
     }
 }

@@ -8,7 +8,6 @@
 
 
 import UIKit
-import SVProgressHUD
 
 
 class PiecesViewController: UIViewController, UITableViewDataSource {
@@ -33,16 +32,16 @@ class PiecesViewController: UIViewController, UITableViewDataSource {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        SVProgressHUD.show()
+        HUD.show()
         
         DataStorage.sharedInstance.pieces(completion: { (pieces, error) in
             self.pieces = pieces as? [Piece]
             
             if error != nil {
-                SVProgressHUD.showError(withStatus: error?.localizedDescription)
+                HUD.showError(withStatus: error?.localizedDescription)
             }
             else {
-                SVProgressHUD.dismiss()
+                HUD.dismiss()
             }
             
             self.title = String(format: "Pieces (%d)", self.pieces?.count ?? 0)
@@ -70,14 +69,14 @@ class PiecesViewController: UIViewController, UITableViewDataSource {
     
     
     func saveButtonClicked() {
-        SVProgressHUD.show()
+        HUD.show()
         
         DataStorage.sharedInstance.save { (_, error) in
             if error == nil {
-                SVProgressHUD.dismiss()
+                HUD.dismiss()
             }
             else {
-                SVProgressHUD.showError(withStatus: error!.localizedDescription)
+                HUD.showError(withStatus: error!.localizedDescription)
             }
         }
     }

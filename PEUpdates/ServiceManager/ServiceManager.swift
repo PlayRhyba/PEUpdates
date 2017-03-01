@@ -34,6 +34,11 @@ class ServiceManager: NSObject {
     }()
     
     
+    var countOperations: Int {
+        return tasks.count
+    }
+    
+    
     //MARK: NSObject
     
     
