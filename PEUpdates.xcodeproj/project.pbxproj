@@ -285,9 +285,9 @@
 		C78813A91E6490140008F7FA /* ServiceGateway */ = {
 			isa = PBXGroup;
 			children = (
-				C78813AA1E6490140008F7FA /* PPEServiceGateway+Data.swift */,
-				C78813AB1E6490140008F7FA /* ServiceGateway+Login.swift */,
 				C78813AC1E6490140008F7FA /* ServiceGateway.swift */,
+				C78813AB1E6490140008F7FA /* ServiceGateway+Login.swift */,
+				C78813AA1E6490140008F7FA /* PPEServiceGateway+Data.swift */,
 			);
 			path = ServiceGateway;
 			sourceTree = "<group>";

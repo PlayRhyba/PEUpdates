@@ -13,15 +13,21 @@ import SVProgressHUD
 class HUD: SVProgressHUD {
     
     enum CancellationMode {
+        case No
         case Network
     }
+    
+    
+    private static var cancellationMode: CancellationMode = .No
     
     
     //MARK: SVProgressHUD
     
     
     override class func dismiss() {
+        cancellationMode = .No
         removeTouchObserver()
+        
         super.dismiss()
     }
     
@@ -40,8 +46,11 @@ class HUD: SVProgressHUD {
     
     
     class func show(cancellationMode: CancellationMode) {
-        switch cancellationMode {
-        case .Network: addTouchObserver(selector: #selector(cancelNetworkOperations))
+        self.cancellationMode = cancellationMode
+        
+        switch self.cancellationMode {
+        case .No: break
+        case .Network: addTouchObserver()
         }
         
         show()
@@ -51,15 +60,23 @@ class HUD: SVProgressHUD {
     //MARK: Internal Logic
     
     
-    @objc private class func cancelNetworkOperations() {
-        ServiceManager.sharedInstance.cancellAllOperations()
-        dismiss()
+    @objc private class func cancel() {
+        switch cancellationMode {
+        case .No: break
+        case .Network:
+            let serviceManager = ServiceManager.sharedInstance
+            
+            if serviceManager.countOperations > 0 {
+                ServiceManager.sharedInstance.cancellAllOperations()
+                dismiss()
+            }
+        }
     }
     
     
-    private class func addTouchObserver(selector: Selector) {
+    private class func addTouchObserver() {
         NotificationCenter.default.addObserver(self,
-                                               selector: selector,
+                                               selector: #selector(cancel),
                                                name: .SVProgressHUDDidTouchDownInside,
                                                object: nil)
     }

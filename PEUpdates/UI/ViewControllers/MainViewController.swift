@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
     
     
     @IBAction func loginButtonClicked(sender: UIButton) {
-        HUD.show()
+        HUD.show(cancellationMode: .Network)
         
         ServiceGateway.authenticate(email: email,
                                     password: password,
@@ -45,7 +45,7 @@ class MainViewController: UIViewController {
     
     
     @IBAction func loadDataButtonClicked(sender: UIButton) {
-        HUD.show()
+        HUD.show(cancellationMode: .Network)
         
         ServiceGateway.loadData(email: email,
                                 password: password,
