@@ -36,7 +36,7 @@ extension NSObject {
                     let property = properties![i]
                     
                     guard let name = nameOf(property: property!) else {
-                        DDLogWarn("NSOBJECT REFLECTION: COULDN'T UNWRAP PROPERTY NAME FOR \(property)")
+                        DDLogWarn("NSOBJECT REFLECTION: COULDN'T UNWRAP PROPERTY NAME FOR \(String(describing: property))")
                         continue
                     }
                     

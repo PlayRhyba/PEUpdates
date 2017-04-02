@@ -212,7 +212,7 @@ class ServiceManager: NSObject {
         let data = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] as? Data
         let response = String(data: data ?? Data(), encoding: .utf8)
         
-        DDLogError("\(type(of: self)): \(type.rawValue) PATH: \(fullURL). FAILURE. RESPONSE: \(response ?? "<empty>"). ERROR: \(error.localizedDescription)")
+        DDLogError("\(type(of: self)): \(type.rawValue) PATH: \(String(describing: fullURL)). FAILURE. RESPONSE: \(response ?? "<empty>"). ERROR: \(error.localizedDescription)")
     }
     
     
