@@ -12,9 +12,9 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    let server = "https://demo.pipelineenterprise.com/mobile"
-    let email = "bjmarsh@telus.net"
-    let password = "Metegrity3!"
+    let server = "https://dev.pipelineenterprise.com/mobile"
+    let email = "peinspector@metegrity.com"
+    let password = "Default29)"
     
     
     //MARK: Lifecycle Methods

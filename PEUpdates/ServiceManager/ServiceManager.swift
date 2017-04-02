@@ -112,8 +112,10 @@ class ServiceManager: NSObject {
                                handler: failure)
         }
         
-        logSentResponse(body: task?.originalRequest?.httpBody, type: .POST)
-        
+        logSentResponse(url: baseURL,
+                        path: path,
+                        body: task?.originalRequest?.httpBody,
+                        type: .POST)
         tasks.add(task)
         
         return task
@@ -147,8 +149,10 @@ class ServiceManager: NSObject {
                                handler: failure)
         }
         
-        logSentResponse(body: task?.originalRequest?.httpBody, type: .GET)
-        
+        logSentResponse(url: baseURL,
+                        path: path,
+                        body: task?.originalRequest?.httpBody,
+                        type: .GET)
         tasks.add(task)
         
         return task
@@ -216,8 +220,13 @@ class ServiceManager: NSObject {
     }
     
     
-    private func logSentResponse(body: Data?, type: RequestType) {
-        let str = String(data: body ?? Data(), encoding: .utf8)
-        DDLogInfo("\(type(of: self)): \(type.rawValue) BODY: \(str != nil && !(str!.isEmpty) ? str! : "<empty>")")
+    private func logSentResponse(url: URL?,
+                                 path: String,
+                                 body: Data?,
+                                 type: RequestType) {
+        let fullURL = url?.appendingPathComponent(path)
+        let bodyStr = String(data: body ?? Data(), encoding: .utf8)
+        
+        DDLogInfo("\(type(of: self)): PATH: \(String(describing: fullURL)) \(type.rawValue) BODY: \(bodyStr != nil && !(bodyStr!.isEmpty) ? bodyStr! : "<empty>")")
     }
 }
