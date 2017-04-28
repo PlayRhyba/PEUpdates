@@ -48,15 +48,9 @@ class DataStorage: NSObject {
     }
     
     
-    func save(completion: OperationCompletionBlock?) {
-        DispatchQueue.global().async {
-            do {
-                try self.persistentContainer.viewContext.save()
-                completion?(true, nil)
-            }
-            catch {
-                completion?(false, error)
-            }
+    func saveViewContext() throws {
+        if persistentContainer.viewContext.hasChanges {
+            try persistentContainer.viewContext.save()
         }
     }
 }

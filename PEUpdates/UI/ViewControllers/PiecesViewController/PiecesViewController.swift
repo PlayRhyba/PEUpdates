@@ -69,15 +69,11 @@ class PiecesViewController: UIViewController, UITableViewDataSource {
     
     
     func saveButtonClicked() {
-        HUD.show()
-        
-        DataStorage.sharedInstance.save { (_, error) in
-            if error == nil {
-                HUD.dismiss()
-            }
-            else {
-                HUD.showError(withStatus: error!.localizedDescription)
-            }
+        do {
+            try DataStorage.sharedInstance.saveViewContext()
+        }
+        catch {
+            HUD.showError(withStatus: error.localizedDescription)
         }
     }
 }
