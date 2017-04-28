@@ -21,23 +21,18 @@ PODS:
     - CocoaLumberjack/Default
   - CocoaLumberjack/Swift (3.0.0):
     - CocoaLumberjack/Extensions
-  - MagicalRecord (2.3.2):
-    - MagicalRecord/Core (= 2.3.2)
-  - MagicalRecord/Core (2.3.2)
   - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
   - AFNetworking
   - CocoaLumberjack/Swift
-  - MagicalRecord
   - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CocoaLumberjack: c823149bccc5519a9447aeb433be7b1212a7d6a5
-  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: b1b8fac8267c6d0c8d8d343148992236da4fa587
+PODFILE CHECKSUM: d986352441a1e0acdc3eef871a60e2167b9fba91
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0

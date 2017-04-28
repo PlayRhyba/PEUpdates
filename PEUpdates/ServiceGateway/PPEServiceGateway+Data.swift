@@ -49,8 +49,8 @@ extension ServiceGateway {
         
         login(email: email, password: password, serverURL: url, success: { (_, _) in
             serviceManager.loadJobsSpreads(serverURL: url, success: { (response, data) in
-                dataStorage.saveJobsSpreadsData(withDictionary: data as? Dictionary, completion: { (_, error) in
-                    if error == nil {
+                dataStorage.populateJobsSpreadsData(withDictionary: data as? Dictionary, completion: { (success, error) in
+                    if success {
                         if let spreads = dataStorage.spreads() {
                             DispatchQueue.global().async {
                                 var dictionaries = [[String: Any]]()
@@ -93,8 +93,8 @@ extension ServiceGateway {
                                     invokeFailure(lastResponse, e)
                                 }
                                 else {
-                                    dataStorage.saveWeldData(dictionaries: dictionaries, completion: { (_, error) in
-                                        if error == nil {
+                                    dataStorage.populateWeldData(dictionaries: dictionaries, completion: { (success, error) in
+                                        if success {
                                             invokeSuccess()
                                         }
                                         else {

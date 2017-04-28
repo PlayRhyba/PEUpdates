@@ -7,82 +7,85 @@
 //
 
 
-import Foundation
-import MagicalRecord
+import CoreData
 
 
 extension DataStorage {
     
-    func welds(spreadID: NSNumber) -> [Weld]? {
-        return Weld.mr_findAll(with: NSPredicate.predicate(spreadID: spreadID)) as? [Weld]
-    }
     
-    
-    func welds(completion: FetchCompletionBlock?) {
+    func welds(completion: @escaping FetchCompletionBlock) {
         Weld.performAsynchroniuosFetch(withRequestConfiguration: { (fetchRequest) in
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Weld.weldNumber), ascending: true)]
-        }, completion: completion)
+        }, inContext: persistentContainer.viewContext, completion: completion)
     }
     
     
-    func pieces(completion: FetchCompletionBlock?) {
+    func pieces(completion: @escaping FetchCompletionBlock) {
         Piece.performAsynchroniuosFetch(withRequestConfiguration: { (fetchRequest) in
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Piece.pieceNumber), ascending: true)]
-        }, completion: completion)
+        }, inContext: persistentContainer.viewContext, completion: completion)
     }
     
     
-    func saveWeldData(dictionaries: [[String: Any]]?, completion: SaveCompletionBlock?) {
-        MagicalRecord.save({ (localContext) in
+    func populateWeldData(dictionaries: [[String: Any]]?, completion: OperationCompletionBlock?) {
+        persistentContainer.performBackgroundTask { (context) in
             if let objects = dictionaries {
-                self.clearWeldData(localContext: localContext)
+                self.clearWeldData(inContext: context)
                 
                 for dictionary in objects {
-                    self.saveWelds(withDictionary: dictionary, localContext: localContext)
-                    self.savePieces(withDictionary: dictionary, localContext: localContext)
+                    self.populateWelds(withDictionary: dictionary, inContext: context)
+                    self.populatePieces(withDictionary: dictionary, inContext: context)
                     
                     
                     //TODO: Handle other models
                     
                     
                 }
+                
+                do {
+                    try context.save()
+                    completion?(true, nil)
+                }
+                catch {
+                    completion?(false, error)
+                }
             }
-        }, completion: completion)
+        }
     }
     
     
     //MARK: Internal Logic
     
     
-    private func saveWelds(withDictionary dictionary: [String: Any]?,
-                           localContext: NSManagedObjectContext) {
+    private func populateWelds(withDictionary dictionary: [String: Any]?,
+                               inContext context: NSManagedObjectContext) {
         if let weldsData = dictionary?[Constants.Tables.Weld] {
             if weldsData is [[String: Any]] {
                 for data in (weldsData as! [[String: Any]]) {
-                    let weld = Weld.mr_createEntity(in: localContext)
-                    weld?.fill(withDictionary: data)
+                    let weld = Weld(context: context)
+                    weld.fill(withDictionary: data)
                 }
             }
         }
     }
     
     
-    private func savePieces(withDictionary dictionary: [String: Any]?,
-                            localContext: NSManagedObjectContext) {
+    private func populatePieces(withDictionary dictionary: [String: Any]?,
+                                inContext context: NSManagedObjectContext) {
         if let piecesData = dictionary?[Constants.Tables.Piece] {
             if piecesData is [[String: Any]] {
                 for data in piecesData as! [[String: Any]] {
-                    let piece = Piece.mr_createEntity(in: localContext)
-                    piece?.fill(withDictionary: data)
+                    let piece = Piece(context: context)
+                    piece.fill(withDictionary: data)
                 }
             }
         }
     }
     
     
-    private func clearWeldData(localContext: NSManagedObjectContext) {
-        Weld.mr_truncateAll(in: localContext)
-        Piece.mr_truncateAll(in: localContext)
+    private func clearWeldData(inContext context: NSManagedObjectContext) {
+        Weld.deleteAll(inContext: context)
+        Piece.deleteAll(inContext: context)
         
         
         //TODO: Clear other models

@@ -48,7 +48,7 @@
 		C78813BA1E64902B0008F7FA /* ServiceResultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813B51E64902B0008F7FA /* ServiceResultsHandler.swift */; };
 		C78813BC1E6490580008F7FA /* Configuration in Resources */ = {isa = PBXBuildFile; fileRef = C78813BB1E6490580008F7FA /* Configuration */; };
 		C78D3DE71E40D53000D62EC7 /* DispatchQueue+Utitities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78D3DE61E40D53000D62EC7 /* DispatchQueue+Utitities.swift */; };
-		C7B98A111E643EAE00F1CE7F /* NSManagedObject+DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B98A101E643EAE00F1CE7F /* NSManagedObject+DataStorage.swift */; };
+		C7B98A111E643EAE00F1CE7F /* NSManagedObject+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B98A101E643EAE00F1CE7F /* NSManagedObject+Utilities.swift */; };
 		C7CA3C781E5B3BDF00504F58 /* Weld.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA3C771E5B3BDF00504F58 /* Weld.swift */; };
 		C7CA3C7C1E5B497E00504F58 /* NSPredicate+Predicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA3C7B1E5B497E00504F58 /* NSPredicate+Predicates.swift */; };
 		C7CC396F1E5F159200F2796F /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CC396E1E5F159200F2796F /* Piece.swift */; };
@@ -103,7 +103,7 @@
 		C78813B51E64902B0008F7FA /* ServiceResultsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceResultsHandler.swift; sourceTree = "<group>"; };
 		C78813BB1E6490580008F7FA /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		C78D3DE61E40D53000D62EC7 /* DispatchQueue+Utitities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Utitities.swift"; sourceTree = "<group>"; };
-		C7B98A101E643EAE00F1CE7F /* NSManagedObject+DataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+DataStorage.swift"; sourceTree = "<group>"; };
+		C7B98A101E643EAE00F1CE7F /* NSManagedObject+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Utilities.swift"; sourceTree = "<group>"; };
 		C7CA3C771E5B3BDF00504F58 /* Weld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weld.swift; sourceTree = "<group>"; };
 		C7CA3C7B1E5B497E00504F58 /* NSPredicate+Predicates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Predicates.swift"; sourceTree = "<group>"; };
 		C7CC396E1E5F159200F2796F /* Piece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 				C736ACDC1E5334D900062485 /* NSObject+Reflection.swift */,
 				C7EEF8291E5726E4001A5EBD /* Date+Utilities.swift */,
 				C7CA3C7B1E5B497E00504F58 /* NSPredicate+Predicates.swift */,
-				C7B98A101E643EAE00F1CE7F /* NSManagedObject+DataStorage.swift */,
+				C7B98A101E643EAE00F1CE7F /* NSManagedObject+Utilities.swift */,
 				1164B8781E913AEE001D6417 /* NSObject+NibLoading.swift */,
 			);
 			path = Extensions;
@@ -448,7 +448,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FDCACA2A871BFBA463CE4578 /* [CP] Embed Pods Frameworks */ = {
@@ -493,7 +493,7 @@
 				1164B8801E9153D6001D6417 /* TempViewController.swift in Sources */,
 				11B008251E61D111007A1468 /* MainViewController.swift in Sources */,
 				116771C81E215DCC00ACBD76 /* AppDelegate.swift in Sources */,
-				C7B98A111E643EAE00F1CE7F /* NSManagedObject+DataStorage.swift in Sources */,
+				C7B98A111E643EAE00F1CE7F /* NSManagedObject+Utilities.swift in Sources */,
 				C78813A61E6490000008F7FA /* DataStorage+Profile.swift in Sources */,
 				C78813B91E64902B0008F7FA /* ServiceManager.swift in Sources */,
 				C76176E51E52053800CFFC40 /* DataModel.swift in Sources */,
@@ -581,7 +581,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -624,7 +624,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

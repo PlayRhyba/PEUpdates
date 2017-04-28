@@ -7,27 +7,35 @@
 //
 
 
-import Foundation
-import MagicalRecord
+import CoreData
 
 
 extension DataStorage {
     
     func profile() -> Profile? {
-        return Profile.mr_findAll()?.first as? Profile
+        return Profile.performFetch(withRequestConfiguration: nil,
+                                    inContext: persistentContainer.viewContext)?.first as? Profile
     }
     
     
     func updateProfile(withDictionary dictionary: [String: Any]?,
-                       completion: SaveCompletionBlock?) {
-        MagicalRecord.save({ (localContext) in
+                       completion: OperationCompletionBlock?) {
+        persistentContainer.performBackgroundTask { (context) in
             if let p = self.profile() {
                 p.fill(withDictionary: dictionary)
             }
             else {
-                let profile = Profile.mr_createEntity(in: localContext)
-                profile?.fill(withDictionary: dictionary)
+                let profile = Profile(context: context)
+                profile.fill(withDictionary: dictionary)
             }
-        }, completion: completion)
+            
+            do {
+                try context.save()
+                completion?(true, nil)
+            }
+            catch {
+                completion?(false, error)
+            }
+        }
     }
 }

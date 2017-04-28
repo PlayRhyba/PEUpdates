@@ -7,30 +7,40 @@
 //
 
 
-import Foundation
-import MagicalRecord
+import CoreData
+import CocoaLumberjack
 
 
 class DataStorage: NSObject {
     
-    typealias SaveCompletionBlock = (Bool, Error?) -> Void
+    typealias OperationCompletionBlock = (Bool, Error?) -> Void
     typealias FetchCompletionBlock = ([NSManagedObject]?, Error?) -> Void
     
     
     static let sharedInstance = DataStorage()
+    let persistentContainer: NSPersistentContainer
     
     
     //MARK: NSObject
     
     
-    private override init() {}
+    private override init() {
+        persistentContainer = NSPersistentContainer(name: Constants.Configuration.DataModelName)
+    }
     
     
     //MARK: Public Methods
     
     
-    func setup() {
-        MagicalRecord.setupCoreDataStack(withStoreNamed: Constants.Configuration.DataModelName)
+    func setup(withCompletion completion: OperationCompletionBlock?) {
+        persistentContainer.loadPersistentStores { (_, error) in
+            if error == nil {
+                completion?(true, nil)
+            }
+            else {
+                completion?(false, error)
+            }
+        }
         
         #if (arch(i386) || arch(x86_64)) && os(iOS)
             DDLogInfo("\(type(of: self)): DOCUMENTS DIRECTORY PATH: \(Constants.LocalPaths.DocumentsDirectory)")
@@ -38,12 +48,15 @@ class DataStorage: NSObject {
     }
     
     
-    func cleanUp() {
-        MagicalRecord.cleanUp()
-    }
-    
-    
-    func save(completion: SaveCompletionBlock?) {
-        NSManagedObjectContext.mr_default().mr_saveToPersistentStore(completion: completion)
+    func save(completion: OperationCompletionBlock?) {
+        DispatchQueue.global().async {
+            do {
+                try self.persistentContainer.viewContext.save()
+                completion?(true, nil)
+            }
+            catch {
+                completion?(false, error)
+            }
+        }
     }
 }

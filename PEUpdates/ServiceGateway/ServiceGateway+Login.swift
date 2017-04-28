@@ -69,8 +69,8 @@ extension ServiceGateway {
                 if authInfo.isAuthorized() {
                     serviceManager.loadProfile(serverURL: url, success: { (response, data) in
                         dataStorage.updateProfile(withDictionary: data as? Dictionary,
-                                                  completion: { (_, error) in
-                                                    if error == nil {
+                                                  completion: { (success, error) in
+                                                    if success {
                                                         if let profile = dataStorage.profile() {
                                                             invokeSuccess(profile)
                                                         }

@@ -23,19 +23,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         configureLoggers()
         HUD.configure()
-        DataStorage.sharedInstance.setup()
+        
+        HUD.show(withStatus: "Data storage setup...")
+        
+        DataStorage.sharedInstance.setup { (success, error) in
+            HUD.dismiss()
+            
+            if success {
+                self.loadConfiguration()
+            }
+            else {
+                DDLogInfo("\(type(of: self)): CAN'T SETUP DATA STORAGE. ERROR : \(error!)")
+                abort()
+            }
+        }
         
         return true
-    }
-    
-    
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        loadConfiguration()
-    }
-    
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-        DataStorage.sharedInstance.cleanUp()
     }
     
     
