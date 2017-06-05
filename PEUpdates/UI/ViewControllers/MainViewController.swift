@@ -50,12 +50,14 @@ class MainViewController: UIViewController {
         
         ServiceGateway.loadData(email: email,
                                 password: password,
-                                server: server,
-                                success: {
-                                    HUD.showSuccess(withStatus: "Data have been loaded")
-        }, failure: { (response, error) in
-            HUD.showError(withStatus: error.localizedDescription)
-        }, progress: nil)
+                                server: server) { result in
+                                    if result.isSuccess {
+                                        HUD.showSuccess(withStatus: "Data have been loaded")
+                                    }
+                                    else {
+                                        HUD.showError(withStatus: result.error!.localizedDescription)
+                                    }
+        }
     }
 }
 

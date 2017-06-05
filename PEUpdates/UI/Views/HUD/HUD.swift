@@ -64,12 +64,8 @@ class HUD: SVProgressHUD {
         switch cancellationMode {
         case .No: break
         case .Network:
-            let serviceManager = ServiceManager.sharedInstance
-            
-            if serviceManager.countOperations > 0 {
-                ServiceManager.sharedInstance.cancellAllOperations()
-                dismiss()
-            }
+            RequestManager.sharedInstance.cancelAllOperations()
+            dismiss()
         }
     }
     

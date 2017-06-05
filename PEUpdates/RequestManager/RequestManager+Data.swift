@@ -27,7 +27,7 @@ extension RequestManager {
     
     @discardableResult
     func loadWeldData(spreadID: NSNumber,
-                      serverURL: URL,
+                      serverURL: URL?,
                       completionHandler: @escaping ((DataResponse<Any>) -> Void)) -> DataRequest? {
         let parameters = [Constants.Keys.spreadId: spreadID,
                           Constants.Keys.From: Constants.Strings.iPad] as [String: Any]

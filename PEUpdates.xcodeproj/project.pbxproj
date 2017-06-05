@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1164B8771E913A5D001D6417 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164B8761E913A5D001D6417 /* HUD.swift */; };
+		114561061EE5F93300A1E6E0 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114561021EE5F93300A1E6E0 /* HUD.swift */; };
 		1164B8791E913AEE001D6417 /* NSObject+NibLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164B8781E913AEE001D6417 /* NSObject+NibLoading.swift */; };
-		1164B87C1E9145CE001D6417 /* SearchPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164B87B1E9145CE001D6417 /* SearchPicker.swift */; };
-		1164B87E1E9146D5001D6417 /* SearchPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1164B87D1E9146D5001D6417 /* SearchPicker.xib */; };
-		1164B8801E9153D6001D6417 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1164B87F1E9153D6001D6417 /* TempViewController.swift */; };
 		116771C81E215DCC00ACBD76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116771C71E215DCC00ACBD76 /* AppDelegate.swift */; };
 		116771CD1E215DCC00ACBD76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116771CB1E215DCC00ACBD76 /* Main.storyboard */; };
 		116771CF1E215DCC00ACBD76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 116771CE1E215DCC00ACBD76 /* Assets.xcassets */; };
@@ -46,11 +43,6 @@
 		C78813AD1E6490140008F7FA /* ServiceGateway+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813AA1E6490140008F7FA /* ServiceGateway+Data.swift */; };
 		C78813AE1E6490140008F7FA /* ServiceGateway+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813AB1E6490140008F7FA /* ServiceGateway+Login.swift */; };
 		C78813AF1E6490140008F7FA /* ServiceGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813AC1E6490140008F7FA /* ServiceGateway.swift */; };
-		C78813B61E64902B0008F7FA /* ServiceManager+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813B11E64902B0008F7FA /* ServiceManager+Data.swift */; };
-		C78813B71E64902B0008F7FA /* ServiceManager+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813B21E64902B0008F7FA /* ServiceManager+Login.swift */; };
-		C78813B81E64902B0008F7FA /* ServiceManager+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813B31E64902B0008F7FA /* ServiceManager+Profile.swift */; };
-		C78813B91E64902B0008F7FA /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813B41E64902B0008F7FA /* ServiceManager.swift */; };
-		C78813BA1E64902B0008F7FA /* ServiceResultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813B51E64902B0008F7FA /* ServiceResultsHandler.swift */; };
 		C78813BC1E6490580008F7FA /* Configuration in Resources */ = {isa = PBXBuildFile; fileRef = C78813BB1E6490580008F7FA /* Configuration */; };
 		C78D3DE71E40D53000D62EC7 /* DispatchQueue+Utitities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78D3DE61E40D53000D62EC7 /* DispatchQueue+Utitities.swift */; };
 		C7B98A111E643EAE00F1CE7F /* NSManagedObject+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B98A101E643EAE00F1CE7F /* NSManagedObject+Utilities.swift */; };
@@ -64,11 +56,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1164B8761E913A5D001D6417 /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		114561021EE5F93300A1E6E0 /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		1164B8781E913AEE001D6417 /* NSObject+NibLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+NibLoading.swift"; sourceTree = "<group>"; };
-		1164B87B1E9145CE001D6417 /* SearchPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPicker.swift; sourceTree = "<group>"; };
-		1164B87D1E9146D5001D6417 /* SearchPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchPicker.xib; sourceTree = "<group>"; };
-		1164B87F1E9153D6001D6417 /* TempViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		116771C41E215DCC00ACBD76 /* PEUpdates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PEUpdates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		116771C71E215DCC00ACBD76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		116771CC1E215DCC00ACBD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,11 +95,6 @@
 		C78813AA1E6490140008F7FA /* ServiceGateway+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceGateway+Data.swift"; sourceTree = "<group>"; };
 		C78813AB1E6490140008F7FA /* ServiceGateway+Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceGateway+Login.swift"; sourceTree = "<group>"; };
 		C78813AC1E6490140008F7FA /* ServiceGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceGateway.swift; sourceTree = "<group>"; };
-		C78813B11E64902B0008F7FA /* ServiceManager+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceManager+Data.swift"; sourceTree = "<group>"; };
-		C78813B21E64902B0008F7FA /* ServiceManager+Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceManager+Login.swift"; sourceTree = "<group>"; };
-		C78813B31E64902B0008F7FA /* ServiceManager+Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceManager+Profile.swift"; sourceTree = "<group>"; };
-		C78813B41E64902B0008F7FA /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
-		C78813B51E64902B0008F7FA /* ServiceResultsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceResultsHandler.swift; sourceTree = "<group>"; };
 		C78813BB1E6490580008F7FA /* Configuration */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configuration; sourceTree = "<group>"; };
 		C78D3DE61E40D53000D62EC7 /* DispatchQueue+Utitities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Utitities.swift"; sourceTree = "<group>"; };
 		C7B98A101E643EAE00F1CE7F /* NSManagedObject+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Utilities.swift"; sourceTree = "<group>"; };
@@ -136,31 +120,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1164B8741E913A5D001D6417 /* Views */ = {
+		114561001EE5F93300A1E6E0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1164B87A1E9145B3001D6417 /* SearchPicker */,
-				1164B8751E913A5D001D6417 /* HUD */,
+				114561011EE5F93300A1E6E0 /* HUD */,
 			);
-			name = Views;
-			path = ../ConfigurationManager/Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		1164B8751E913A5D001D6417 /* HUD */ = {
+		114561011EE5F93300A1E6E0 /* HUD */ = {
 			isa = PBXGroup;
 			children = (
-				1164B8761E913A5D001D6417 /* HUD.swift */,
+				114561021EE5F93300A1E6E0 /* HUD.swift */,
 			);
 			path = HUD;
-			sourceTree = "<group>";
-		};
-		1164B87A1E9145B3001D6417 /* SearchPicker */ = {
-			isa = PBXGroup;
-			children = (
-				1164B87B1E9145CE001D6417 /* SearchPicker.swift */,
-				1164B87D1E9146D5001D6417 /* SearchPicker.xib */,
-			);
-			path = SearchPicker;
 			sourceTree = "<group>";
 		};
 		116771BB1E215DCC00ACBD76 = {
@@ -188,7 +161,6 @@
 				11728D351E22E8A1000FC4DB /* Common */,
 				11728D381E22E8A1000FC4DB /* Extensions */,
 				C78813A91E6490140008F7FA /* ServiceGateway */,
-				C78813B01E64902B0008F7FA /* ServiceManager */,
 				C7690F781EE55BEA00F7F105 /* RequestManager */,
 				C78813A01E6490000008F7FA /* DataStorage */,
 				C788138F1E648FE80008F7FA /* ConfigurationManager */,
@@ -229,7 +201,7 @@
 		11B008201E61D111007A1468 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				1164B8741E913A5D001D6417 /* Views */,
+				114561001EE5F93300A1E6E0 /* Views */,
 				11B008211E61D111007A1468 /* ViewControllers */,
 			);
 			path = UI;
@@ -239,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				11B008221E61D111007A1468 /* MainViewController.swift */,
-				1164B87F1E9153D6001D6417 /* TempViewController.swift */,
 				C788138A1E644E430008F7FA /* WeldsViewController */,
 				11B008231E61D111007A1468 /* PiecesViewController */,
 			);
@@ -344,18 +315,6 @@
 			path = ServiceGateway;
 			sourceTree = "<group>";
 		};
-		C78813B01E64902B0008F7FA /* ServiceManager */ = {
-			isa = PBXGroup;
-			children = (
-				C78813B51E64902B0008F7FA /* ServiceResultsHandler.swift */,
-				C78813B41E64902B0008F7FA /* ServiceManager.swift */,
-				C78813B11E64902B0008F7FA /* ServiceManager+Data.swift */,
-				C78813B21E64902B0008F7FA /* ServiceManager+Login.swift */,
-				C78813B31E64902B0008F7FA /* ServiceManager+Profile.swift */,
-			);
-			path = ServiceManager;
-			sourceTree = "<group>";
-		};
 		C7E228CE1E4374CB00EA9C83 /* DB */ = {
 			isa = PBXGroup;
 			children = (
@@ -437,7 +396,6 @@
 				C78813BC1E6490580008F7FA /* Configuration in Resources */,
 				116771CF1E215DCC00ACBD76 /* Assets.xcassets in Resources */,
 				116771CD1E215DCC00ACBD76 /* Main.storyboard in Resources */,
-				1164B87E1E9146D5001D6417 /* SearchPicker.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,23 +464,18 @@
 				C78813A71E6490000008F7FA /* DataStorage+WeldData.swift in Sources */,
 				11728D3C1E22E955000FC4DB /* NSError+Utitities.swift in Sources */,
 				C7690F7A1EE55C6200F7F105 /* RequestManager.swift in Sources */,
-				C78813B71E64902B0008F7FA /* ServiceManager+Login.swift in Sources */,
-				C78813B81E64902B0008F7FA /* ServiceManager+Profile.swift in Sources */,
 				C78813A81E6490000008F7FA /* DataStorage.swift in Sources */,
 				C727CDA91E4220640070C0B2 /* String+Utilities.swift in Sources */,
-				1164B87C1E9145CE001D6417 /* SearchPicker.swift in Sources */,
 				C76176E31E5203CD00CFFC40 /* FieldDescription.swift in Sources */,
 				C78813AD1E6490140008F7FA /* ServiceGateway+Data.swift in Sources */,
 				C736ACDD1E5334D900062485 /* NSObject+Reflection.swift in Sources */,
 				C73BDDEE1EE5693000D8B16C /* RequestManager+Authorization.swift in Sources */,
 				C76176E11E52028F00CFFC40 /* BaseMemoryDataModel.swift in Sources */,
 				C78813AE1E6490140008F7FA /* ServiceGateway+Login.swift in Sources */,
-				1164B8801E9153D6001D6417 /* TempViewController.swift in Sources */,
 				11B008251E61D111007A1468 /* MainViewController.swift in Sources */,
 				116771C81E215DCC00ACBD76 /* AppDelegate.swift in Sources */,
 				C7B98A111E643EAE00F1CE7F /* NSManagedObject+Utilities.swift in Sources */,
 				C78813A61E6490000008F7FA /* DataStorage+Profile.swift in Sources */,
-				C78813B91E64902B0008F7FA /* ServiceManager.swift in Sources */,
 				C76176E51E52053800CFFC40 /* DataModel.swift in Sources */,
 				11728D3A1E22E8A1000FC4DB /* Errors.swift in Sources */,
 				C788138C1E644E650008F7FA /* WeldsViewController.swift in Sources */,
@@ -531,19 +484,17 @@
 				C73BDDF21EE5B79300D8B16C /* RequestManager+Data.swift in Sources */,
 				C78813AF1E6490140008F7FA /* ServiceGateway.swift in Sources */,
 				C76176DF1E52026800CFFC40 /* AuthorizationInfo.swift in Sources */,
-				C78813B61E64902B0008F7FA /* ServiceManager+Data.swift in Sources */,
 				C7EEF82A1E5726E5001A5EBD /* Date+Utilities.swift in Sources */,
 				11B008281E61D149007A1468 /* PieceCell.swift in Sources */,
 				11B008261E61D111007A1468 /* PiecesViewController.swift in Sources */,
 				C78D3DE71E40D53000D62EC7 /* DispatchQueue+Utitities.swift in Sources */,
 				C7CC396F1E5F159200F2796F /* Piece.swift in Sources */,
 				C78813A51E6490000008F7FA /* DataStorage+JobsSpreads.swift in Sources */,
-				1164B8771E913A5D001D6417 /* HUD.swift in Sources */,
 				C77F73501E5495A4001A0F54 /* Spread.swift in Sources */,
 				C7E228D41E4374CB00EA9C83 /* PPEDB.xcdatamodeld in Sources */,
+				114561061EE5F93300A1E6E0 /* HUD.swift in Sources */,
 				11728D391E22E8A1000FC4DB /* Constants.swift in Sources */,
 				1164B8791E913AEE001D6417 /* NSObject+NibLoading.swift in Sources */,
-				C78813BA1E64902B0008F7FA /* ServiceResultsHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

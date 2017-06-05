@@ -27,20 +27,27 @@ class RequestManager: NSObject {
     //MARK: Public Methods
     
     
+    func cancelAllOperations() {
+        sessionManager.session.getAllTasks { tasks in
+            tasks.forEach({ task in
+                task.cancel()
+            })
+        }
+    }
+    
+    
     @discardableResult
     func post<T>(path: String,
               baseURL: URL?,
               parameters: [String: Any]?,
               responseSerializer: DataResponseSerializer<T>,
               completionHandler: @escaping ((DataResponse<T>) -> Void)) -> DataRequest? {
-        guard
-            let url = baseURL?.appendingPathComponent(path)
-            else {
-                completionHandler(DataResponse(request: nil,
-                                               response: nil,
-                                               data: nil,
-                                               result: Result.failure(Errors.internalError())))
-                return nil
+        guard let url = baseURL?.appendingPathComponent(path) else {
+            completionHandler(DataResponse(request: nil,
+                                           response: nil,
+                                           data: nil,
+                                           result: Result.failure(Errors.internalError())))
+            return nil
         }
         
         let queue = DispatchQueue.global()
@@ -50,11 +57,7 @@ class RequestManager: NSObject {
             .response(queue: queue,
                       responseSerializer: responseSerializer,
                       completionHandler: { response in
-                        
-                        
-                        //TODO: Possible additional logic
-                        
-                        
+                        print("\(type(of: self)): RESPONSE: \(response)")
                         completionHandler(response)
             })
     }
@@ -66,14 +69,12 @@ class RequestManager: NSObject {
              parameters: [String: Any]?,
              responseSerializer: DataResponseSerializer<T>,
              completionHandler: @escaping ((DataResponse<T>) -> Void)) -> DataRequest? {
-        guard
-            let url = baseURL?.appendingPathComponent(path)
-            else {
-                completionHandler(DataResponse(request: nil,
-                                               response: nil,
-                                               data: nil,
-                                               result: Result.failure(Errors.internalError())))
-                return nil
+        guard let url = baseURL?.appendingPathComponent(path) else {
+            completionHandler(DataResponse(request: nil,
+                                           response: nil,
+                                           data: nil,
+                                           result: Result.failure(Errors.internalError())))
+            return nil
         }
         
         let queue = DispatchQueue.global()
@@ -83,11 +84,7 @@ class RequestManager: NSObject {
             .response(queue: queue,
                       responseSerializer: responseSerializer,
                       completionHandler: { response in
-                        
-                        
-                        //TODO: Possible additional logic
-                        
-                        
+                        print("\(type(of: self)): RESPONSE: \(response)")
                         completionHandler(response)
             })
     }
