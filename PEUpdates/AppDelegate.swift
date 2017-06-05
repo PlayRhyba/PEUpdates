@@ -62,8 +62,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DDLog.add(fileLogger, with: defaultLogLevel)
         #endif
         
-        DDLog.add(DDTTYLogger.sharedInstance(), with: defaultLogLevel)
-        DDLog.add(DDASLLogger.sharedInstance(), with: defaultLogLevel)
+        DDLog.add(DDTTYLogger.sharedInstance, with: defaultLogLevel)
+        DDLog.add(DDASLLogger.sharedInstance, with: defaultLogLevel)
     }
     
     

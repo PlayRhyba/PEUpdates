@@ -34,13 +34,14 @@ class MainViewController: UIViewController {
         
         ServiceGateway.authenticate(email: email,
                                     password: password,
-                                    server: server,
-                                    success: { (profile) in
-                                        HUD.showSuccess(withStatus: "Logged in. User: \(profile.name ?? "Unknown")")
-        },
-                                    failure: { (response, error) in
-                                        HUD.showError(withStatus: error.localizedDescription)
-        })
+                                    server: server) { result in
+                                        if result.isSuccess {
+                                            HUD.showSuccess(withStatus: "Logged in. User: \(result.value?.name ?? "Unknown")")
+                                        }
+                                        else {
+                                            HUD.showError(withStatus: result.error!.localizedDescription)
+                                        }
+        }
     }
     
     

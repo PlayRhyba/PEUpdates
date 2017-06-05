@@ -23,34 +23,16 @@
 #import "DDLog.h"
 
 /**
- * This formatter can be used to chain different formatters together.
- * The log message will processed in the order of the formatters added.
+ * This class provides a logger for the Apple os_log facility.
  **/
-@interface DDMultiFormatter : NSObject <DDLogFormatter>
+API_AVAILABLE(ios(10.0), macos(10.12), tvos(10.0), watchos(3.0))
+@interface DDOSLogger : DDAbstractLogger <DDLogger>
 
 /**
- *  Array of chained formatters
+ *  Singleton method
+ *
+ *  @return the shared instance
  */
-@property (readonly) NSArray<id<DDLogFormatter>> *formatters;
-
-/**
- *  Add a new formatter
- */
-- (void)addFormatter:(id<DDLogFormatter>)formatter NS_SWIFT_NAME(add(_:));
-
-/**
- *  Remove a formatter
- */
-- (void)removeFormatter:(id<DDLogFormatter>)formatter NS_SWIFT_NAME(remove(_:));
-
-/**
- *  Remove all existing formatters
- */
-- (void)removeAllFormatters NS_SWIFT_NAME(removeAll());
-
-/**
- *  Check if a certain formatter is used
- */
-- (BOOL)isFormattingWithFormatter:(id<DDLogFormatter>)formatter;
+@property (class, readonly, strong) DDOSLogger *sharedInstance;
 
 @end

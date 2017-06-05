@@ -25,11 +25,16 @@
 		6B670172A6A6155755BA4CCD /* Pods_PEUpdates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6D64D427903D017356C701 /* Pods_PEUpdates.framework */; };
 		C727CDA91E4220640070C0B2 /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C727CDA81E4220640070C0B2 /* String+Utilities.swift */; };
 		C736ACDD1E5334D900062485 /* NSObject+Reflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C736ACDC1E5334D900062485 /* NSObject+Reflection.swift */; };
+		C73BDDEE1EE5693000D8B16C /* RequestManager+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73BDDED1EE5693000D8B16C /* RequestManager+Authorization.swift */; };
+		C73BDDF01EE59FF600D8B16C /* RequestManager+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73BDDEF1EE59FF600D8B16C /* RequestManager+Profile.swift */; };
+		C73BDDF21EE5B79300D8B16C /* RequestManager+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73BDDF11EE5B79300D8B16C /* RequestManager+Data.swift */; };
+		C73BDDF41EE5BA5700D8B16C /* DataRequest+Serializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73BDDF31EE5BA5700D8B16C /* DataRequest+Serializers.swift */; };
 		C75E799F1E560B8C00FCCB6B /* LabourSpread.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75E799E1E560B8C00FCCB6B /* LabourSpread.swift */; };
 		C76176DF1E52026800CFFC40 /* AuthorizationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76176DE1E52026800CFFC40 /* AuthorizationInfo.swift */; };
 		C76176E11E52028F00CFFC40 /* BaseMemoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76176E01E52028F00CFFC40 /* BaseMemoryDataModel.swift */; };
 		C76176E31E5203CD00CFFC40 /* FieldDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76176E21E5203CD00CFFC40 /* FieldDescription.swift */; };
 		C76176E51E52053800CFFC40 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76176E41E52053800CFFC40 /* DataModel.swift */; };
+		C7690F7A1EE55C6200F7F105 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7690F791EE55C6200F7F105 /* RequestManager.swift */; };
 		C77F73501E5495A4001A0F54 /* Spread.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77F734E1E5495A4001A0F54 /* Spread.swift */; };
 		C788138C1E644E650008F7FA /* WeldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788138B1E644E650008F7FA /* WeldsViewController.swift */; };
 		C788138E1E644EE20008F7FA /* WeldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C788138D1E644EE20008F7FA /* WeldCell.swift */; };
@@ -38,7 +43,7 @@
 		C78813A61E6490000008F7FA /* DataStorage+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813A21E6490000008F7FA /* DataStorage+Profile.swift */; };
 		C78813A71E6490000008F7FA /* DataStorage+WeldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813A31E6490000008F7FA /* DataStorage+WeldData.swift */; };
 		C78813A81E6490000008F7FA /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813A41E6490000008F7FA /* DataStorage.swift */; };
-		C78813AD1E6490140008F7FA /* PPEServiceGateway+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813AA1E6490140008F7FA /* PPEServiceGateway+Data.swift */; };
+		C78813AD1E6490140008F7FA /* ServiceGateway+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813AA1E6490140008F7FA /* ServiceGateway+Data.swift */; };
 		C78813AE1E6490140008F7FA /* ServiceGateway+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813AB1E6490140008F7FA /* ServiceGateway+Login.swift */; };
 		C78813AF1E6490140008F7FA /* ServiceGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813AC1E6490140008F7FA /* ServiceGateway.swift */; };
 		C78813B61E64902B0008F7FA /* ServiceManager+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78813B11E64902B0008F7FA /* ServiceManager+Data.swift */; };
@@ -80,11 +85,16 @@
 		AB6D64D427903D017356C701 /* Pods_PEUpdates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PEUpdates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C727CDA81E4220640070C0B2 /* String+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
 		C736ACDC1E5334D900062485 /* NSObject+Reflection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Reflection.swift"; sourceTree = "<group>"; };
+		C73BDDED1EE5693000D8B16C /* RequestManager+Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestManager+Authorization.swift"; sourceTree = "<group>"; };
+		C73BDDEF1EE59FF600D8B16C /* RequestManager+Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestManager+Profile.swift"; sourceTree = "<group>"; };
+		C73BDDF11EE5B79300D8B16C /* RequestManager+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestManager+Data.swift"; sourceTree = "<group>"; };
+		C73BDDF31EE5BA5700D8B16C /* DataRequest+Serializers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataRequest+Serializers.swift"; sourceTree = "<group>"; };
 		C75E799E1E560B8C00FCCB6B /* LabourSpread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabourSpread.swift; sourceTree = "<group>"; };
 		C76176DE1E52026800CFFC40 /* AuthorizationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationInfo.swift; sourceTree = "<group>"; };
 		C76176E01E52028F00CFFC40 /* BaseMemoryDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMemoryDataModel.swift; sourceTree = "<group>"; };
 		C76176E21E5203CD00CFFC40 /* FieldDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldDescription.swift; sourceTree = "<group>"; };
 		C76176E41E52053800CFFC40 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		C7690F791EE55C6200F7F105 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		C77F734E1E5495A4001A0F54 /* Spread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spread.swift; sourceTree = "<group>"; };
 		C788138B1E644E650008F7FA /* WeldsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeldsViewController.swift; sourceTree = "<group>"; };
 		C788138D1E644EE20008F7FA /* WeldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeldCell.swift; sourceTree = "<group>"; };
@@ -93,7 +103,7 @@
 		C78813A21E6490000008F7FA /* DataStorage+Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataStorage+Profile.swift"; sourceTree = "<group>"; };
 		C78813A31E6490000008F7FA /* DataStorage+WeldData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataStorage+WeldData.swift"; sourceTree = "<group>"; };
 		C78813A41E6490000008F7FA /* DataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
-		C78813AA1E6490140008F7FA /* PPEServiceGateway+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PPEServiceGateway+Data.swift"; sourceTree = "<group>"; };
+		C78813AA1E6490140008F7FA /* ServiceGateway+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceGateway+Data.swift"; sourceTree = "<group>"; };
 		C78813AB1E6490140008F7FA /* ServiceGateway+Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceGateway+Login.swift"; sourceTree = "<group>"; };
 		C78813AC1E6490140008F7FA /* ServiceGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceGateway.swift; sourceTree = "<group>"; };
 		C78813B11E64902B0008F7FA /* ServiceManager+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceManager+Data.swift"; sourceTree = "<group>"; };
@@ -179,6 +189,7 @@
 				11728D381E22E8A1000FC4DB /* Extensions */,
 				C78813A91E6490140008F7FA /* ServiceGateway */,
 				C78813B01E64902B0008F7FA /* ServiceManager */,
+				C7690F781EE55BEA00F7F105 /* RequestManager */,
 				C78813A01E6490000008F7FA /* DataStorage */,
 				C788138F1E648FE80008F7FA /* ConfigurationManager */,
 				11B008201E61D111007A1468 /* UI */,
@@ -281,6 +292,18 @@
 			path = Memory;
 			sourceTree = "<group>";
 		};
+		C7690F781EE55BEA00F7F105 /* RequestManager */ = {
+			isa = PBXGroup;
+			children = (
+				C73BDDF31EE5BA5700D8B16C /* DataRequest+Serializers.swift */,
+				C7690F791EE55C6200F7F105 /* RequestManager.swift */,
+				C73BDDED1EE5693000D8B16C /* RequestManager+Authorization.swift */,
+				C73BDDEF1EE59FF600D8B16C /* RequestManager+Profile.swift */,
+				C73BDDF11EE5B79300D8B16C /* RequestManager+Data.swift */,
+			);
+			path = RequestManager;
+			sourceTree = "<group>";
+		};
 		C788138A1E644E430008F7FA /* WeldsViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,7 +339,7 @@
 			children = (
 				C78813AC1E6490140008F7FA /* ServiceGateway.swift */,
 				C78813AB1E6490140008F7FA /* ServiceGateway+Login.swift */,
-				C78813AA1E6490140008F7FA /* PPEServiceGateway+Data.swift */,
+				C78813AA1E6490140008F7FA /* ServiceGateway+Data.swift */,
 			);
 			path = ServiceGateway;
 			sourceTree = "<group>";
@@ -448,7 +471,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		FDCACA2A871BFBA463CE4578 /* [CP] Embed Pods Frameworks */ = {
@@ -476,18 +499,22 @@
 				C7E228D51E4374CB00EA9C83 /* Profile.swift in Sources */,
 				C788138E1E644EE20008F7FA /* WeldCell.swift in Sources */,
 				C75E799F1E560B8C00FCCB6B /* LabourSpread.swift in Sources */,
+				C73BDDF41EE5BA5700D8B16C /* DataRequest+Serializers.swift in Sources */,
 				C7CA3C781E5B3BDF00504F58 /* Weld.swift in Sources */,
 				C7E228D31E4374CB00EA9C83 /* BaseDBDataModel.swift in Sources */,
+				C73BDDF01EE59FF600D8B16C /* RequestManager+Profile.swift in Sources */,
 				C78813A71E6490000008F7FA /* DataStorage+WeldData.swift in Sources */,
 				11728D3C1E22E955000FC4DB /* NSError+Utitities.swift in Sources */,
+				C7690F7A1EE55C6200F7F105 /* RequestManager.swift in Sources */,
 				C78813B71E64902B0008F7FA /* ServiceManager+Login.swift in Sources */,
 				C78813B81E64902B0008F7FA /* ServiceManager+Profile.swift in Sources */,
 				C78813A81E6490000008F7FA /* DataStorage.swift in Sources */,
 				C727CDA91E4220640070C0B2 /* String+Utilities.swift in Sources */,
 				1164B87C1E9145CE001D6417 /* SearchPicker.swift in Sources */,
 				C76176E31E5203CD00CFFC40 /* FieldDescription.swift in Sources */,
-				C78813AD1E6490140008F7FA /* PPEServiceGateway+Data.swift in Sources */,
+				C78813AD1E6490140008F7FA /* ServiceGateway+Data.swift in Sources */,
 				C736ACDD1E5334D900062485 /* NSObject+Reflection.swift in Sources */,
+				C73BDDEE1EE5693000D8B16C /* RequestManager+Authorization.swift in Sources */,
 				C76176E11E52028F00CFFC40 /* BaseMemoryDataModel.swift in Sources */,
 				C78813AE1E6490140008F7FA /* ServiceGateway+Login.swift in Sources */,
 				1164B8801E9153D6001D6417 /* TempViewController.swift in Sources */,
@@ -501,6 +528,7 @@
 				C788138C1E644E650008F7FA /* WeldsViewController.swift in Sources */,
 				C788139F1E648FE80008F7FA /* ConfigurationManager.swift in Sources */,
 				C7CA3C7C1E5B497E00504F58 /* NSPredicate+Predicates.swift in Sources */,
+				C73BDDF21EE5B79300D8B16C /* RequestManager+Data.swift in Sources */,
 				C78813AF1E6490140008F7FA /* ServiceGateway.swift in Sources */,
 				C76176DF1E52026800CFFC40 /* AuthorizationInfo.swift in Sources */,
 				C78813B61E64902B0008F7FA /* ServiceManager+Data.swift in Sources */,

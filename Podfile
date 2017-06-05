@@ -8,5 +8,6 @@ target 'PEUpdates' do
   pod 'AFNetworking'
   pod 'SVProgressHUD'
   pod 'CocoaLumberjack/Swift'
+  pod 'Alamofire'
   
 end
