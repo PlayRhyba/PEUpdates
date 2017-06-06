@@ -15,19 +15,19 @@ extension ServiceGateway {
     class func login(email: String,
                      password: String,
                      server: String,
-                     completionHandler: @escaping ((Result<String>) -> Void)) {
+                     completionHandler: @escaping ((OperationResult<String>) -> Void)) {
         let url = URL(string: server)
         
         RequestManager.sharedInstance.login(email: email, password: password, serverURL: url, completionHandler: { (response) in
             if response.result.isFailure {
-                completionHandler(Result.failure(response.error!))
+                completionHandler(OperationResult.failure(response.error!))
             }
             else {
                 if response.value == Constants.Strings.LoggedIn {
-                    completionHandler(Result.success(response.value!))
+                    completionHandler(OperationResult.success(response.value!))
                 }
                 else {
-                    completionHandler(Result.failure(Errors.loginError(string: response.value)))
+                    completionHandler(OperationResult.failure(Errors.loginError(string: response.value)))
                 }
             }
         })
@@ -37,8 +37,8 @@ extension ServiceGateway {
     class func authenticate(email: String,
                             password: String,
                             server: String,
-                            completionHandler: @escaping ((Result<Profile>) -> Void)) {
-        let invokeCompletion = { (result: Result<Profile>) in
+                            completionHandler: @escaping ((OperationResult<Profile>) -> Void)) {
+        let invokeCompletion = { (result: OperationResult<Profile>) in
             DispatchQueue.main.async {
                 completionHandler(result)
             }
@@ -46,7 +46,7 @@ extension ServiceGateway {
         
         login(email: email, password: password, server: server) { result in
             if result.isFailure {
-                invokeCompletion(Result.failure(result.error!))
+                invokeCompletion(OperationResult.failure(result.error!))
             }
             else {
                 let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
@@ -58,7 +58,7 @@ extension ServiceGateway {
                 
                 requestManager.authorize(version: version, build: build, serverURL: url, completionHandler: { response in
                     if response.result.isFailure {
-                        invokeCompletion(Result.failure(response.error!))
+                        invokeCompletion(OperationResult.failure(response.error!))
                     }
                     else {
                         let authInfo = AuthorizationInfo(withDictionary: response.value as? [String: Any])
@@ -66,19 +66,19 @@ extension ServiceGateway {
                         if authInfo.isAuthorized() {
                             requestManager.loadProfile(serverURL: url, completionHandler: { response in
                                 if response.result.isFailure {
-                                    invokeCompletion(Result.failure(response.error!))
+                                    invokeCompletion(OperationResult.failure(response.error!))
                                 }
                                 else {
-                                    dataStorage.updateProfile(withDictionary: response.value as? Dictionary, completion: { (success, error) in
-                                        if !success {
-                                            invokeCompletion(Result.failure(error!))
+                                    dataStorage.updateProfile(withDictionary: response.value as? Dictionary, completionHandler: { result in
+                                        if result.isFailure {
+                                            invokeCompletion(OperationResult.failure(result.error!))
                                         }
                                         else {
                                             if let profile = dataStorage.profile() {
-                                                invokeCompletion(Result.success(profile))
+                                                invokeCompletion(OperationResult.success(profile))
                                             }
                                             else {
-                                                invokeCompletion(Result.failure(Errors.internalError()))
+                                                invokeCompletion(OperationResult.failure(Errors.internalError()))
                                             }
                                         }
                                     })

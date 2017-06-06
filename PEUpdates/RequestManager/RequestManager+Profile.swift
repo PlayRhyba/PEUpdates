@@ -11,6 +11,7 @@ import Alamofire
 
 
 extension RequestManager {
+    
     @discardableResult
     func loadProfile(serverURL: URL?,
                      completionHandler: @escaping ((DataResponse<Any>) -> Void)) -> DataRequest? {

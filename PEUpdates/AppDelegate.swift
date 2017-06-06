@@ -26,14 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         HUD.show(withStatus: "Data storage setup...")
         
-        DataStorage.sharedInstance.setup { (success, error) in
+        DataStorage.sharedInstance.setup { [unowned self] result in
             HUD.dismiss()
             
-            if success {
+            if result.isSuccess {
                 self.loadConfiguration()
             }
             else {
-                DDLogInfo("\(type(of: self)): CAN'T SETUP DATA STORAGE. ERROR : \(error!)")
+                DDLogInfo("\(type(of: self)): CAN'T SETUP DATA STORAGE. ERROR : \(result.error!)")
                 abort()
             }
         }

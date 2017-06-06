@@ -12,23 +12,22 @@ import CoreData
 
 extension DataStorage {
     
-    
-    func welds(completion: @escaping FetchCompletionBlock) {
-        Weld.performAsynchroniuosFetch(withRequestConfiguration: { (fetchRequest) in
+    func welds(completionHandler: @escaping ((OperationResult<[NSManagedObject]>) -> Void)) {
+        Weld.performAsynchroniuosFetch(requestConfiguration: { fetchRequest in
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Weld.weldNumber), ascending: true)]
-        }, inContext: persistentContainer.viewContext, completion: completion)
+        }, inContext: persistentContainer.viewContext, completionHandler: completionHandler)
     }
     
     
-    func pieces(completion: @escaping FetchCompletionBlock) {
-        Piece.performAsynchroniuosFetch(withRequestConfiguration: { (fetchRequest) in
+    func pieces(completionHandler: @escaping ((OperationResult<[NSManagedObject]>) -> Void)) {
+        Piece.performAsynchroniuosFetch(requestConfiguration: { fetchRequest in
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Piece.pieceNumber), ascending: true)]
-        }, inContext: persistentContainer.viewContext, completion: completion)
+        }, inContext: persistentContainer.viewContext, completionHandler: completionHandler)
     }
     
     
-    func populateWeldData(dictionaries: [[String: Any]]?, completion: OperationCompletionBlock?) {
-        persistentContainer.performBackgroundTask { (context) in
+    func populateWeldData(withDictionaries dictionaries: [[String: Any]]?, completionHandler: ((OperationResult<Void>) -> Void)?) {
+        persistentContainer.performBackgroundTask { [unowned self] context in
             if let objects = dictionaries {
                 self.clearWeldData(inContext: context)
                 
@@ -44,10 +43,10 @@ extension DataStorage {
                 
                 do {
                     try context.save()
-                    completion?(true, nil)
+                    completionHandler?(OperationResult.success())
                 }
                 catch {
-                    completion?(false, error)
+                    completionHandler?(OperationResult.failure(error))
                 }
             }
         }

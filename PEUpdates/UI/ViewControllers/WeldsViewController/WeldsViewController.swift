@@ -24,11 +24,11 @@ class WeldsViewController: UIViewController, UITableViewDataSource {
         
         HUD.show()
         
-        DataStorage.sharedInstance.welds { (welds, error) in
-            self.welds = welds as? [Weld]
+        DataStorage.sharedInstance.welds { [unowned self] result in
+            self.welds = result.value as? [Weld]
             
-            if error != nil {
-                HUD.showError(withStatus: error!.localizedDescription)
+            if result.isFailure {
+                HUD.showError(withStatus: result.error!.localizedDescription)
             }
             else {
                 HUD.dismiss()

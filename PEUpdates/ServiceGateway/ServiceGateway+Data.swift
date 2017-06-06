@@ -15,8 +15,8 @@ extension ServiceGateway {
     class func loadData(email: String,
                         password: String,
                         server: String,
-                        completionHandler: @escaping ((Result<Void>) -> Void)) {
-        let invokeCompletion = { (result: Result<Void>) in
+                        completionHandler: @escaping ((OperationResult<Void>) -> Void)) {
+        let invokeCompletion = { (result: OperationResult<Void>) in
             DispatchQueue.main.async {
                 completionHandler(result)
             }
@@ -27,23 +27,23 @@ extension ServiceGateway {
         
         login(email: email, password: password, server: server) { result in
             if result.isFailure {
-                invokeCompletion(Result.failure(result.error!))
+                invokeCompletion(OperationResult.failure(result.error!))
             }
             else {
                 let url = URL(string: server)
                 
                 requestManager.loadJobsSpreads(serverURL: url, completionHandler: { response in
                     if response.result.isFailure {
-                        invokeCompletion(Result.failure(response.error!))
+                        invokeCompletion(OperationResult.failure(response.error!))
                     }
                     else {
-                        dataStorage.populateJobsSpreadsData(withDictionary: response.value as? Dictionary, completion: { (success, error) in
-                            if !success {
-                                invokeCompletion(Result.failure(error!))
+                        dataStorage.populateJobsSpreadsData(withDictionary: response.value as? Dictionary, completionHandler: { result in
+                            if result.isFailure {
+                                invokeCompletion(OperationResult.failure(result.error!))
                             }
                             else {
                                 guard let spreads = dataStorage.spreads() else {
-                                    invokeCompletion(Result.failure(Errors.spreadsDataUnavailableError()))
+                                    invokeCompletion(OperationResult.failure(Errors.spreadsDataUnavailableError()))
                                     return
                                 }
                                 
@@ -80,17 +80,11 @@ extension ServiceGateway {
                                 }
                                 
                                 if let e = lastError {
-                                    invokeCompletion(Result.failure(e))
+                                    invokeCompletion(OperationResult.failure(e))
                                 }
                                 else {
-                                    dataStorage.populateWeldData(dictionaries: dictionaries, completion: { (success, error) in
-                                        if success {
-                                            invokeCompletion(Result.success())
-                                        }
-                                        else {
-                                            invokeCompletion(Result.failure(error!))
-                                        }
-                                    })
+                                    dataStorage.populateWeldData(withDictionaries: dictionaries,
+                                                                 completionHandler: invokeCompletion)
                                 }
                             }
                         })

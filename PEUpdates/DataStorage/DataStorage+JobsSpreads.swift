@@ -14,23 +14,23 @@ import CocoaLumberjack
 extension DataStorage {
     
     func spreads() -> [Spread]? {
-        return Spread.performFetch(withRequestConfiguration: nil,
+        return Spread.performFetch(requestConfiguration: nil,
                                    inContext: persistentContainer.viewContext) as? [Spread]
     }
     
     
     func populateJobsSpreadsData(withDictionary dictionary: [String: Any]?,
-                                 completion: OperationCompletionBlock?) {
-        persistentContainer.performBackgroundTask { (context) in
+                                 completionHandler: ((OperationResult<Void>) -> Void)?) {
+        persistentContainer.performBackgroundTask { [unowned self] context in
             self.populateSpreads(withDictionary: dictionary, inContext: context)
             self.populateLabourSpreads(withDictionary: dictionary, inContext: context)
             
             do {
                 try context.save()
-                completion?(true, nil)
+                completionHandler?(OperationResult.success())
             }
             catch {
-                completion?(false, error)
+                completionHandler?(OperationResult.failure(error))
             }
         }
     }

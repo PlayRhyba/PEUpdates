@@ -14,8 +14,8 @@ class WeldCell: UITableViewCell {
     
     weak var weld: Weld? {
         didSet {
-            self.textLabel?.text = weld?.weldNumber
-            self.detailTextLabel?.text = weld?.weldStatus
+            textLabel?.text = weld?.weldNumber
+            detailTextLabel?.text = weld?.weldStatus
         }
     }
 }

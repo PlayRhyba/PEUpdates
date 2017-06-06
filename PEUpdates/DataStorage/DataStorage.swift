@@ -13,10 +13,6 @@ import CocoaLumberjack
 
 class DataStorage: NSObject {
     
-    typealias OperationCompletionBlock = (Bool, Error?) -> Void
-    typealias FetchCompletionBlock = ([NSManagedObject]?, Error?) -> Void
-    
-    
     static let sharedInstance = DataStorage()
     let persistentContainer: NSPersistentContainer
     
@@ -32,13 +28,13 @@ class DataStorage: NSObject {
     //MARK: Public Methods
     
     
-    func setup(withCompletion completion: OperationCompletionBlock?) {
+    func setup(completionHaldler: ((OperationResult<Void>) -> Void)?) {
         persistentContainer.loadPersistentStores { (_, error) in
             if error == nil {
-                completion?(true, nil)
+                completionHaldler?(OperationResult.success())
             }
             else {
-                completion?(false, error)
+                completionHaldler?(OperationResult.failure(error!))
             }
         }
         

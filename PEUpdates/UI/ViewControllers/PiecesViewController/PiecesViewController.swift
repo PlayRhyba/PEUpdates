@@ -34,11 +34,11 @@ class PiecesViewController: UIViewController, UITableViewDataSource {
         
         HUD.show()
         
-        DataStorage.sharedInstance.pieces(completion: { (pieces, error) in
-            self.pieces = pieces as? [Piece]
+        DataStorage.sharedInstance.pieces { [unowned self] result in
+            self.pieces = result.value as? [Piece]
             
-            if error != nil {
-                HUD.showError(withStatus: error?.localizedDescription)
+            if result.isFailure {
+                HUD.showError(withStatus: result.error?.localizedDescription)
             }
             else {
                 HUD.dismiss()
@@ -46,7 +46,7 @@ class PiecesViewController: UIViewController, UITableViewDataSource {
             
             self.title = String(format: "Pieces (%d)", self.pieces?.count ?? 0)
             self.tableView.reloadData()
-        })
+        }
     }
     
     

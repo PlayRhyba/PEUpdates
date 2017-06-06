@@ -13,16 +13,21 @@ import CocoaLumberjack
 
 extension NSManagedObject {
     
-    class func performAsynchroniuosFetch(withRequestConfiguration configuration:(((NSFetchRequest<NSManagedObject>) -> Void)?),
+    class func performAsynchroniuosFetch(requestConfiguration:(((NSFetchRequest<NSManagedObject>) -> Void)?),
                                          inContext context: NSManagedObjectContext,
-                                         completion: @escaping DataStorage.FetchCompletionBlock) {
+                                         completionHandler: @escaping ((OperationResult<[NSManagedObject]>) -> Void)) {
         let fetchRequest = self.fetchRequest() as! NSFetchRequest<NSManagedObject>
         
-        configuration?(fetchRequest)
+        requestConfiguration?(fetchRequest)
         
-        let asyncFetchRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (result) in
+        let asyncFetchRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { result in
             DispatchQueue.main.async {
-                completion(result.finalResult, result.operationError)
+                if let error = result.operationError {
+                    completionHandler(OperationResult.failure(error))
+                }
+                else {
+                    completionHandler(OperationResult.success(result.finalResult!))
+                }
             }
         }
         
@@ -30,10 +35,14 @@ extension NSManagedObject {
     }
     
     
-    class func performFetch(withRequestConfiguration configuration: (((NSFetchRequest<NSManagedObject>) -> Void)?),
+    class func performFetch(requestConfiguration: (((NSFetchRequest<NSManagedObject>) -> Void)?),
                             inContext context: NSManagedObjectContext) -> [NSManagedObject]? {
+        let fetchRequest = self.fetchRequest() as! NSFetchRequest<NSManagedObject>
+        
+        requestConfiguration?(fetchRequest)
+        
         do {
-            let objects = try context.fetch(self.fetchRequest()) as! [NSManagedObject]
+            let objects = try context.fetch(fetchRequest)
             return objects
         }
         catch {
