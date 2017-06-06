@@ -53,11 +53,12 @@ class RequestManager: NSObject {
         let queue = DispatchQueue.global()
         
         return sessionManager.request(url, method: .post, parameters: parameters)
+            .log()
             .validate()
             .response(queue: queue,
                       responseSerializer: responseSerializer,
                       completionHandler: { response in
-                        print("\(type(of: self)): RESPONSE: \(response)")
+                        response.log()
                         completionHandler(response)
             })
     }
@@ -80,11 +81,12 @@ class RequestManager: NSObject {
         let queue = DispatchQueue.global()
         
         return sessionManager.request(url, method: .get, parameters: parameters)
+            .log()
             .validate()
             .response(queue: queue,
                       responseSerializer: responseSerializer,
                       completionHandler: { response in
-                        print("\(type(of: self)): RESPONSE: \(response)")
+                        response.log()
                         completionHandler(response)
             })
     }

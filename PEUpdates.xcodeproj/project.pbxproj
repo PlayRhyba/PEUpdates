@@ -20,6 +20,7 @@
 		11B008261E61D111007A1468 /* PiecesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B008241E61D111007A1468 /* PiecesViewController.swift */; };
 		11B008281E61D149007A1468 /* PieceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B008271E61D149007A1468 /* PieceCell.swift */; };
 		6B670172A6A6155755BA4CCD /* Pods_PEUpdates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6D64D427903D017356C701 /* Pods_PEUpdates.framework */; };
+		C70934D61EE6C0C40040C2E8 /* RequestManager+Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70934D51EE6C0C40040C2E8 /* RequestManager+Log.swift */; };
 		C727CDA91E4220640070C0B2 /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C727CDA81E4220640070C0B2 /* String+Utilities.swift */; };
 		C736ACDD1E5334D900062485 /* NSObject+Reflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C736ACDC1E5334D900062485 /* NSObject+Reflection.swift */; };
 		C73BDDEE1EE5693000D8B16C /* RequestManager+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73BDDED1EE5693000D8B16C /* RequestManager+Authorization.swift */; };
@@ -72,6 +73,7 @@
 		11B008271E61D149007A1468 /* PieceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieceCell.swift; sourceTree = "<group>"; };
 		4993C27132A9CC99C0117B74 /* Pods-PEUpdates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PEUpdates.release.xcconfig"; path = "Pods/Target Support Files/Pods-PEUpdates/Pods-PEUpdates.release.xcconfig"; sourceTree = "<group>"; };
 		AB6D64D427903D017356C701 /* Pods_PEUpdates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PEUpdates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70934D51EE6C0C40040C2E8 /* RequestManager+Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestManager+Log.swift"; sourceTree = "<group>"; };
 		C727CDA81E4220640070C0B2 /* String+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utilities.swift"; sourceTree = "<group>"; };
 		C736ACDC1E5334D900062485 /* NSObject+Reflection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Reflection.swift"; sourceTree = "<group>"; };
 		C73BDDED1EE5693000D8B16C /* RequestManager+Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestManager+Authorization.swift"; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				C73BDDF31EE5BA5700D8B16C /* DataRequest+Serializers.swift */,
+				C70934D51EE6C0C40040C2E8 /* RequestManager+Log.swift */,
 				C7690F791EE55C6200F7F105 /* RequestManager.swift */,
 				C73BDDED1EE5693000D8B16C /* RequestManager+Authorization.swift */,
 				C73BDDEF1EE59FF600D8B16C /* RequestManager+Profile.swift */,
@@ -470,6 +473,7 @@
 				C78813AD1E6490140008F7FA /* ServiceGateway+Data.swift in Sources */,
 				C736ACDD1E5334D900062485 /* NSObject+Reflection.swift in Sources */,
 				C73BDDEE1EE5693000D8B16C /* RequestManager+Authorization.swift in Sources */,
+				C70934D61EE6C0C40040C2E8 /* RequestManager+Log.swift in Sources */,
 				C76176E11E52028F00CFFC40 /* BaseMemoryDataModel.swift in Sources */,
 				C78813AE1E6490140008F7FA /* ServiceGateway+Login.swift in Sources */,
 				11B008251E61D111007A1468 /* MainViewController.swift in Sources */,
