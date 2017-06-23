@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.loadConfiguration()
             }
             else {
-                DDLogInfo("\(type(of: self)): CAN'T SETUP DATA STORAGE. ERROR : \(result.error!)")
+                DDLogInfo("\(type(of: self)): CAN'T SETUP DATA STORAGE. ERROR: \(result.error!)")
                 abort()
             }
         }
@@ -52,14 +52,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let defaultLogLevel: DDLogLevel = DDLogLevel.warning
             
             let path = (Constants.LocalPaths.DocumentsDirectory as NSString).appendingPathComponent(Constants.Configuration.LogsFolderName)
-            let logFileManager = DDLogFileManagerDefault.init(logsDirectory: path)
-            logFileManager?.maximumNumberOfLogFiles = 10
+            let logFileManager = DDLogFileManagerDefault(logsDirectory: path)
+            logFileManager!.maximumNumberOfLogFiles = 10
             
-            let fileLogger = DDFileLogger.init(logFileManager: logFileManager)
-            fileLogger?.maximumFileSize = UInt64(3 * 1024 * 1024)
-            fileLogger?.rollingFrequency = TimeInterval(60 * 60 * 24 * 7)
+            let fileLogger = DDFileLogger(logFileManager: logFileManager)
+            fileLogger!.maximumFileSize = UInt64(3 * 1024 * 1024)
+            fileLogger!.rollingFrequency = TimeInterval(60 * 60 * 24 * 7)
             
-            DDLog.add(fileLogger, with: defaultLogLevel)
+            DDLog.add(fileLogger!, with: defaultLogLevel)
         #endif
         
         DDLog.add(DDTTYLogger.sharedInstance, with: defaultLogLevel)
