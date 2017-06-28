@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         HUD.show(withStatus: "Data storage setup...")
         
-        DataStorage.sharedInstance.setup { [unowned self] result in
+        DataStorage.shared.setup { [unowned self] result in
             HUD.dismiss()
             
             if result.isSuccess {
@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     private func loadConfiguration() {
-        let configurationManager = ConfigurationManager.sharedInstance
+        let configurationManager = ConfigurationManager.shared
         
         if configurationManager.isLoaded() == false {
             HUD.show(withStatus: "Configuration loading...")

@@ -14,8 +14,8 @@ import CocoaLumberjack
 @objc class BaseDBDataModel: NSManagedObject, DataModel {
     
     enum ValueProcessingMode {
-        case Default
-        case Date
+        case `default`
+        case date
     }
     
     
@@ -38,7 +38,7 @@ import CocoaLumberjack
     }
     
     
-    func value(fromDictionary dictionary: [String: Any]?, propertyName: String, processingMode: ValueProcessingMode = .Default) -> Any? {
+    func value(fromDictionary dictionary: [String: Any]?, propertyName: String, processingMode: ValueProcessingMode = .default) -> Any? {
         guard let d = dictionary, let fd = fieldDescription(propertyName: propertyName) else {
             return nil
         }
@@ -69,12 +69,12 @@ import CocoaLumberjack
         }
         
         switch mode {
-        case .Date:
+        case .date:
             if value is String {
                 return Constants.DateFormats.date(fromString:value as! String)
             }
             
-        case .Default: break
+        case .default: break
         }
         
         return value
@@ -82,7 +82,7 @@ import CocoaLumberjack
     
     
     private func fieldDescription(propertyName: String) -> FieldDescription? {
-        let configurationManager = ConfigurationManager.sharedInstance
+        let configurationManager = ConfigurationManager.shared
         var fd = configurationManager.fieldDesctiption(propertyName: propertyName, table: tableName)
         
         if fd == nil {

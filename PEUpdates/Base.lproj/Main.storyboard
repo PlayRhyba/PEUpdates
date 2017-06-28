@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ew6-LY-3ZT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ew6-LY-3ZT">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -58,7 +58,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTI-oF-hKc">
-                                <rect key="frame" x="0.0" y="168" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="220" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="L4p-ml-c2l"/>
                                 </constraints>
@@ -68,13 +68,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfr-xO-VzF">
-                                <rect key="frame" x="0.0" y="220" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="272" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="YNu-ZG-M02"/>
                                 </constraints>
                                 <state key="normal" title="Welds"/>
                                 <connections>
                                     <segue destination="tMT-5W-JSE" kind="show" id="ciP-Fa-gTm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55Y-8b-6rf">
+                                <rect key="frame" x="0.0" y="168" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="69w-Bb-4If"/>
+                                </constraints>
+                                <state key="normal" title="Clear Data"/>
+                                <connections>
+                                    <action selector="clearDataButtonClickedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jTd-CJ-wKj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -86,11 +96,14 @@
                             <constraint firstAttribute="trailing" secondItem="CLg-vc-TNv" secondAttribute="trailing" id="FEh-oc-GSy"/>
                             <constraint firstItem="cek-nh-J6x" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GA2-g9-Wsl"/>
                             <constraint firstAttribute="trailing" secondItem="cek-nh-J6x" secondAttribute="trailing" id="GSx-aF-XcI"/>
+                            <constraint firstItem="55Y-8b-6rf" firstAttribute="top" secondItem="CLg-vc-TNv" secondAttribute="bottom" constant="8" id="J9f-7X-2JV"/>
                             <constraint firstItem="zfr-xO-VzF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kc5-Lv-kxo"/>
+                            <constraint firstItem="55Y-8b-6rf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Pme-ks-jjn"/>
                             <constraint firstItem="cek-nh-J6x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XCS-Ao-A5H"/>
                             <constraint firstItem="CLg-vc-TNv" firstAttribute="top" secondItem="cek-nh-J6x" secondAttribute="bottom" constant="8" id="iz9-FD-G1H"/>
+                            <constraint firstAttribute="trailing" secondItem="55Y-8b-6rf" secondAttribute="trailing" id="ksF-Nv-VaE"/>
+                            <constraint firstItem="DTI-oF-hKc" firstAttribute="top" secondItem="55Y-8b-6rf" secondAttribute="bottom" constant="8" id="l8q-ut-wtQ"/>
                             <constraint firstItem="CLg-vc-TNv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sgC-5D-DCG"/>
-                            <constraint firstItem="DTI-oF-hKc" firstAttribute="top" secondItem="CLg-vc-TNv" secondAttribute="bottom" constant="8" id="wxs-uX-IHk"/>
                             <constraint firstItem="zfr-xO-VzF" firstAttribute="top" secondItem="DTI-oF-hKc" secondAttribute="bottom" constant="8" id="zRN-7V-IuD"/>
                         </constraints>
                     </view>

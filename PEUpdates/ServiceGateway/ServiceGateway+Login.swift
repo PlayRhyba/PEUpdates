@@ -18,7 +18,7 @@ extension ServiceGateway {
                      completionHandler: @escaping ((OperationResult<String>) -> Void)) {
         let url = URL(string: server)
         
-        RequestManager.sharedInstance.login(email: email, password: password, serverURL: url, completionHandler: { (response) in
+        RequestManager.shared.login(email: email, password: password, serverURL: url, completionHandler: { (response) in
             if response.result.isFailure {
                 completionHandler(OperationResult.failure(response.error!))
             }
@@ -52,8 +52,8 @@ extension ServiceGateway {
                 let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
                 let build = Bundle.main.infoDictionary?[kCFBundleVersionKey as String] as! String
                 
-                let requestManager = RequestManager.sharedInstance
-                let dataStorage = DataStorage.sharedInstance
+                let requestManager = RequestManager.shared
+                let dataStorage = DataStorage.shared
                 let url = URL(string: server)
                 
                 requestManager.authorize(version: version, build: build, serverURL: url, completionHandler: { response in

@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
     
     
     @IBAction func loginButtonClicked(sender: UIButton) {
-        HUD.show(cancellationMode: .Network)
+        HUD.show(cancellationMode: .network)
         
         ServiceGateway.authenticate(email: email,
                                     password: password,
@@ -46,7 +46,7 @@ class MainViewController: UIViewController {
     
     
     @IBAction func loadDataButtonClicked(sender: UIButton) {
-        HUD.show(cancellationMode: .Network)
+        HUD.show(cancellationMode: .network)
         
         ServiceGateway.loadData(email: email,
                                 password: password,
@@ -57,6 +57,16 @@ class MainViewController: UIViewController {
                                     else {
                                         HUD.showError(withStatus: result.error!.localizedDescription)
                                     }
+        }
+    }
+    
+    
+    @IBAction func clearDataButtonClicked(sender: UIButton) {
+        do {
+            try DataStorage.shared.clear()
+        }
+        catch {
+            HUD.showError(withStatus: error.localizedDescription)
         }
     }
 }

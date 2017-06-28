@@ -17,7 +17,7 @@ class ConfigurationManager: NSObject {
     }
     
     
-    static let sharedInstance = ConfigurationManager()
+    static let shared = ConfigurationManager()
     private lazy var fields = [String: FieldDescription]()
     
     

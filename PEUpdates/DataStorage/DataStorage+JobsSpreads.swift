@@ -21,18 +21,33 @@ extension DataStorage {
     
     func populateJobsSpreadsData(withDictionary dictionary: [String: Any]?,
                                  completionHandler: ((OperationResult<Void>) -> Void)?) {
-        persistentContainer.performBackgroundTask { [unowned self] context in
-            self.populateSpreads(withDictionary: dictionary, inContext: context)
-            self.populateLabourSpreads(withDictionary: dictionary, inContext: context)
-            
-            do {
-                try context.save()
-                completionHandler?(OperationResult.success())
-            }
-            catch {
-                completionHandler?(OperationResult.failure(error))
+        if let dictionary = dictionary {
+            persistentContainer.performBackgroundTask { [unowned self] context in
+                self.clearJobsSpreadsData(inContext: context)
+                
+                self.populateSpreads(withDictionary: dictionary, inContext: context)
+                self.populateLabourSpreads(withDictionary: dictionary, inContext: context)
+                
+                do {
+                    try context.save()
+                    completionHandler?(OperationResult.success())
+                }
+                catch {
+                    completionHandler?(OperationResult.failure(error))
+                }
             }
         }
+    }
+    
+    
+    func clearJobsSpreadsData(inContext context: NSManagedObjectContext) {
+        Spread.deleteAll(inContext: context)
+        LabourSpread.deleteAll(inContext: context)
+        
+        
+        //TODO: Clear other models
+        
+        
     }
     
     
@@ -43,8 +58,6 @@ extension DataStorage {
                                  inContext context: NSManagedObjectContext) {
         if let spreadsData = dictionary?[Constants.Tables.Spread] {
             if spreadsData is [[String: Any]] {
-                Spread.deleteAll(inContext: context)
-                
                 for data in spreadsData as! [[String: Any]] {
                     let spread = Spread(context: context)
                     spread.fill(withDictionary: data)
@@ -58,8 +71,6 @@ extension DataStorage {
                                        inContext context: NSManagedObjectContext) {
         if let labourSpreadsData = dictionary?[Constants.Tables.LabourSpread] {
             if labourSpreadsData is [[String: Any]] {
-                LabourSpread.deleteAll(inContext: context)
-                
                 for data in labourSpreadsData as! [[String: Any]] {
                     let labourSpread = LabourSpread(context: context)
                     labourSpread.fill(withDictionary: data)

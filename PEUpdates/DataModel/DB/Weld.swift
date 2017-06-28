@@ -134,7 +134,7 @@ import CoreData
                 weldingCode = value(fromDictionary: d, propertyName: #keyPath(weldingCode)) as? String
                 weldingProcess = value(fromDictionary: d, propertyName: #keyPath(weldingProcess)) as? String
                 weldStatus = value(fromDictionary: d, propertyName: #keyPath(weldStatus)) as? String
-                weldDate = value(fromDictionary: d, propertyName: #keyPath(weldDate), processingMode: .Date) as? NSDate
+                weldDate = value(fromDictionary: d, propertyName: #keyPath(weldDate), processingMode: .date) as? NSDate
                 inspectorName = value(fromDictionary: d, propertyName: #keyPath(inspectorName)) as? String
                 weldComments = value(fromDictionary: d, propertyName: #keyPath(weldComments)) as? String
                 station = value(fromDictionary: d, propertyName: #keyPath(station)) as? String
@@ -145,7 +145,7 @@ import CoreData
                 heatNumber2 = value(fromDictionary: d, propertyName: #keyPath(heatNumber2)) as? String
                 pieceNumber1 = value(fromDictionary: d, propertyName: #keyPath(pieceNumber1)) as? String
                 pieceNumber2 = value(fromDictionary: d, propertyName: #keyPath(pieceNumber2)) as? String
-                weldAuditDate = value(fromDictionary: d, propertyName: #keyPath(weldAuditDate), processingMode: .Date) as? NSDate
+                weldAuditDate = value(fromDictionary: d, propertyName: #keyPath(weldAuditDate), processingMode: .date) as? NSDate
                 weldAuditAccRej = value(fromDictionary: d, propertyName: #keyPath(weldAuditAccRej)) as? String
                 weldAuditBy = value(fromDictionary: d, propertyName: #keyPath(weldAuditBy)) as? String
                 counted = value(fromDictionary: d, propertyName: #keyPath(counted)) as? NSNumber
@@ -160,7 +160,7 @@ import CoreData
                 contractorCompanyName = value(fromDictionary: d, propertyName: #keyPath(contractorCompanyName)) as? String
                 lineUpInspectorName = value(fromDictionary: d, propertyName: #keyPath(lineUpInspectorName)) as? String
                 lineUpInspectorUsername = value(fromDictionary: d, propertyName: #keyPath(lineUpInspectorUsername)) as? String
-                lineUpDate = value(fromDictionary: d, propertyName: #keyPath(lineUpDate), processingMode: .Date) as? NSDate
+                lineUpDate = value(fromDictionary: d, propertyName: #keyPath(lineUpDate), processingMode: .date) as? NSDate
                 lineUpClampType = value(fromDictionary: d, propertyName: #keyPath(lineUpClampType)) as? String
                 jointNumber1 = value(fromDictionary: d, propertyName: #keyPath(jointNumber1)) as? String
                 jointNumber2 = value(fromDictionary: d, propertyName: #keyPath(jointNumber2)) as? String
@@ -186,7 +186,7 @@ import CoreData
                 landSMAWBevelPrep2 = value(fromDictionary: d, propertyName: #keyPath(landSMAWBevelPrep2)) as? NSNumber
                 highLowInspectorName = value(fromDictionary: d, propertyName: #keyPath(highLowInspectorName)) as? String
                 highLowInspectorUsername = value(fromDictionary: d, propertyName: #keyPath(highLowInspectorUsername)) as? String
-                highLowDate = value(fromDictionary: d, propertyName: #keyPath(highLowDate), processingMode: .Date) as? NSDate
+                highLowDate = value(fromDictionary: d, propertyName: #keyPath(highLowDate), processingMode: .date) as? NSDate
                 hiLow0Location = value(fromDictionary: d, propertyName: #keyPath(hiLow0Location)) as? NSNumber
                 hiLow90Location = value(fromDictionary: d, propertyName: #keyPath(hiLow90Location)) as? NSNumber
                 hiLow180Location = value(fromDictionary: d, propertyName: #keyPath(hiLow180Location)) as? NSNumber
@@ -195,7 +195,7 @@ import CoreData
                 cutout = value(fromDictionary: d, propertyName: #keyPath(cutout)) as? NSNumber
                 defectAndQuadrant = value(fromDictionary: d, propertyName: #keyPath(defectAndQuadrant)) as? String
                 lineUpComment = value(fromDictionary: d, propertyName: #keyPath(lineUpComment)) as? String
-                transitionDate = value(fromDictionary: d, propertyName: #keyPath(transitionDate), processingMode: .Date) as? NSDate
+                transitionDate = value(fromDictionary: d, propertyName: #keyPath(transitionDate), processingMode: .date) as? NSDate
                 transitionNumber = value(fromDictionary: d, propertyName: #keyPath(transitionNumber)) as? String
                 transitionPieceNumber = value(fromDictionary: d, propertyName: #keyPath(transitionPieceNumber)) as? String
                 q1Q3OvalityID = value(fromDictionary: d, propertyName: #keyPath(q1Q3OvalityID)) as? NSNumber
@@ -217,7 +217,7 @@ import CoreData
                 transitionType = value(fromDictionary: d, propertyName: #keyPath(transitionType)) as? String
                 pieceUUID1 = value(fromDictionary: d, propertyName: #keyPath(pieceUUID1)) as? String
                 pieceUUID2 = value(fromDictionary: d, propertyName: #keyPath(pieceUUID2)) as? String
-                repairCutoutDate = value(fromDictionary: d, propertyName: #keyPath(repairCutoutDate), processingMode: .Date) as? NSDate
+                repairCutoutDate = value(fromDictionary: d, propertyName: #keyPath(repairCutoutDate), processingMode: .date) as? NSDate
                 installLength1 = value(fromDictionary: d, propertyName: #keyPath(installLength1)) as? String
                 installLength2 = value(fromDictionary: d, propertyName: #keyPath(installLength2)) as? String
                 lengthCut1 = value(fromDictionary: d, propertyName: #keyPath(lengthCut1)) as? String

@@ -34,7 +34,7 @@ class PiecesViewController: UIViewController, UITableViewDataSource {
         
         HUD.show()
         
-        DataStorage.sharedInstance.pieces { [unowned self] result in
+        DataStorage.shared.pieces { [unowned self] result in
             self.pieces = result.value as? [Piece]
             
             if result.isFailure {
@@ -70,7 +70,7 @@ class PiecesViewController: UIViewController, UITableViewDataSource {
     
     func saveButtonClicked() {
         do {
-            try DataStorage.sharedInstance.saveViewContext()
+            try DataStorage.shared.saveViewContext()
         }
         catch {
             HUD.showError(withStatus: error.localizedDescription)

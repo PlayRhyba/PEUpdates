@@ -27,11 +27,11 @@ extension DataStorage {
     
     
     func populateWeldData(withDictionaries dictionaries: [[String: Any]]?, completionHandler: ((OperationResult<Void>) -> Void)?) {
-        persistentContainer.performBackgroundTask { [unowned self] context in
-            if let objects = dictionaries {
+        if let dictionaries = dictionaries {
+            persistentContainer.performBackgroundTask { [unowned self] context in
                 self.clearWeldData(inContext: context)
                 
-                for dictionary in objects {
+                for dictionary in dictionaries {
                     self.populateWelds(withDictionary: dictionary, inContext: context)
                     self.populatePieces(withDictionary: dictionary, inContext: context)
                     
@@ -50,6 +50,17 @@ extension DataStorage {
                 }
             }
         }
+    }
+    
+    
+    func clearWeldData(inContext context: NSManagedObjectContext) {
+        Weld.deleteAll(inContext: context)
+        Piece.deleteAll(inContext: context)
+        
+        
+        //TODO: Clear other models
+        
+        
     }
     
     
@@ -79,16 +90,5 @@ extension DataStorage {
                 }
             }
         }
-    }
-    
-    
-    private func clearWeldData(inContext context: NSManagedObjectContext) {
-        Weld.deleteAll(inContext: context)
-        Piece.deleteAll(inContext: context)
-        
-        
-        //TODO: Clear other models
-        
-        
     }
 }

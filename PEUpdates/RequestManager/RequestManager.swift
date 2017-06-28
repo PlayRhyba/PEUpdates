@@ -12,7 +12,7 @@ import Alamofire
 
 class RequestManager: NSObject {
     
-    static let sharedInstance = RequestManager()
+    static let shared = RequestManager()
     private let sessionManager: SessionManager
     
     

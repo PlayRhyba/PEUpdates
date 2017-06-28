@@ -13,19 +13,19 @@ import SVProgressHUD
 class HUD: SVProgressHUD {
     
     enum CancellationMode {
-        case No
-        case Network
+        case no
+        case network
     }
     
     
-    private static var cancellationMode: CancellationMode = .No
+    private static var cancellationMode: CancellationMode = .no
     
     
     //MARK: SVProgressHUD
     
     
     override class func dismiss() {
-        cancellationMode = .No
+        cancellationMode = .no
         removeTouchObserver()
         
         super.dismiss()
@@ -49,8 +49,8 @@ class HUD: SVProgressHUD {
         self.cancellationMode = cancellationMode
         
         switch self.cancellationMode {
-        case .No: break
-        case .Network: addTouchObserver()
+        case .no: break
+        case .network: addTouchObserver()
         }
         
         show()
@@ -62,9 +62,9 @@ class HUD: SVProgressHUD {
     
     @objc private class func cancel() {
         switch cancellationMode {
-        case .No: break
-        case .Network:
-            RequestManager.sharedInstance.cancelAllOperations()
+        case .no: break
+        case .network:
+            RequestManager.shared.cancelAllOperations()
             dismiss()
         }
     }

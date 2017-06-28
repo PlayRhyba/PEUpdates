@@ -22,8 +22,8 @@ extension ServiceGateway {
             }
         }
         
-        let requestManager = RequestManager.sharedInstance
-        let dataStorage = DataStorage.sharedInstance
+        let requestManager = RequestManager.shared
+        let dataStorage = DataStorage.shared
         
         login(email: email, password: password, server: server) { result in
             if result.isFailure {

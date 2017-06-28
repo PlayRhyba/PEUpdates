@@ -13,59 +13,54 @@ import Foundation
 struct Errors {
     
     enum Domains: String {
-        case InternalErrorDomain = "InternalErrorDomain"
-        case ResponseObjectErrorDomain = "ResponseObjectErrorDomain"
-        case LoginErrorDomain = "LoginErrorDomain"
-        case ConfigurationManagerErrorDomain = "ConfigurationManagerErrorDomain"
+        case `internal` = "InternalErrorDomain"
+        case responseObject = "ResponseObjectErrorDomain"
+        case login = "LoginErrorDomain"
+        case configurationManager = "ConfigurationManagerErrorDomain"
     }
     
     
     enum Codes: Int {
-        case InternalErrorCode = 5000
-        case ResponseObjectErrorCode
-        case OperationCanceledErrorCode
-        case LoginErrorCode
-        case AuthorizationErrorCode
-        case ConfigurationDataFormatErrorCode
+        case `internal` = 5000
+        case responseObject
+        case operationCanceled
+        case login
+        case authorization
+        case configurationDataFormat
     }
     
     
-    struct Constants {
-        static let NotCompletedOperationErrorCode = -999
-    }
-    
-    
-    static func internalError() -> Error {
-        return NSError(domain: Domains.InternalErrorDomain.rawValue,
-                       code: Codes.InternalErrorCode.rawValue,
+    static func internalError() -> NSError {
+        return NSError(domain: Domains.internal.rawValue,
+                       code: Codes.internal.rawValue,
                        userInfo:[NSLocalizedDescriptionKey: "Internal Error"])
     }
     
     
-    static func unexpectedResponseDataStructureError() -> Error {
-        return NSError(domain: Domains.ResponseObjectErrorDomain.rawValue,
-                       code: Codes.ResponseObjectErrorCode.rawValue,
+    static func unexpectedResponseDataStructureError() -> NSError {
+        return NSError(domain: Domains.responseObject.rawValue,
+                       code: Codes.responseObject.rawValue,
                        userInfo: [NSLocalizedDescriptionKey: "Unexpected response data structure"])
     }
     
     
-    static func operationCanceledError() -> Error {
-        return NSError(domain: Domains.InternalErrorDomain.rawValue,
-                       code: Codes.OperationCanceledErrorCode.rawValue,
+    static func operationCanceledError() -> NSError {
+        return NSError(domain: Domains.internal.rawValue,
+                       code: Codes.operationCanceled.rawValue,
                        userInfo: [NSLocalizedDescriptionKey: "Operation canceled"])
     }
     
     
-    static func loginError(string: String?) -> Error {
+    static func loginError(string: String?) -> NSError {
         let description = string ?? "Login error"
         
-        return NSError(domain: Domains.LoginErrorDomain.rawValue,
-                       code: Codes.LoginErrorCode.rawValue,
+        return NSError(domain: Domains.login.rawValue,
+                       code: Codes.login.rawValue,
                        userInfo: [NSLocalizedDescriptionKey: description])
     }
     
     
-    static func authorizationError(authInfo: AuthorizationInfo) -> Error {
+    static func authorizationError(authInfo: AuthorizationInfo) -> NSError {
         var msg = ""
         
         func append(_ string: String) {
@@ -90,22 +85,22 @@ struct Errors {
             append("Your User account is not active. Contact your administrator if you need access to Pipeline Enterprise.")
         }
         
-        return NSError(domain: Domains.LoginErrorDomain.rawValue,
-                       code: Codes.AuthorizationErrorCode.rawValue,
+        return NSError(domain: Domains.login.rawValue,
+                       code: Codes.authorization.rawValue,
                        userInfo: [NSLocalizedDescriptionKey: msg])
     }
     
     
-    static func spreadsDataUnavailableError() -> Error {
-        return NSError(domain: Domains.ResponseObjectErrorDomain.rawValue,
-                       code:Codes.ResponseObjectErrorCode.rawValue,
+    static func spreadsDataUnavailableError() -> NSError {
+        return NSError(domain: Domains.responseObject.rawValue,
+                       code:Codes.responseObject.rawValue,
                        userInfo: [NSLocalizedDescriptionKey: "Spreads data is unavailable"])
     }
     
     
-    static func configurationDataFormatError() -> Error {
-        return NSError(domain: Domains.ConfigurationManagerErrorDomain.rawValue,
-                       code: Codes.ConfigurationDataFormatErrorCode.rawValue,
+    static func configurationDataFormatError() -> NSError {
+        return NSError(domain: Domains.configurationManager.rawValue,
+                       code: Codes.configurationDataFormat.rawValue,
                        userInfo: [NSLocalizedDescriptionKey: "Configuration data format error"])
     }
 }

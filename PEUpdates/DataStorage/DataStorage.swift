@@ -13,7 +13,7 @@ import CocoaLumberjack
 
 class DataStorage: NSObject {
     
-    static let sharedInstance = DataStorage()
+    static let shared = DataStorage()
     let persistentContainer: NSPersistentContainer
     
     
@@ -48,5 +48,15 @@ class DataStorage: NSObject {
         if persistentContainer.viewContext.hasChanges {
             try persistentContainer.viewContext.save()
         }
+    }
+    
+    
+    func clear() throws {
+        let context = persistentContainer.viewContext
+        
+        clearJobsSpreadsData(inContext: context)
+        clearWeldData(inContext: context)
+        
+        try saveViewContext()
     }
 }

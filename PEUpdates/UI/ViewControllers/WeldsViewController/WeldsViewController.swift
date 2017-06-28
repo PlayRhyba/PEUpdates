@@ -24,7 +24,7 @@ class WeldsViewController: UIViewController, UITableViewDataSource {
         
         HUD.show()
         
-        DataStorage.sharedInstance.welds { [unowned self] result in
+        DataStorage.shared.welds { [unowned self] result in
             self.welds = result.value as? [Weld]
             
             if result.isFailure {
